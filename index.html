@@ -229,125 +229,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/ihao/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wuxiaolong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my-logo.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leon private">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/07/ihao/" itemprop="url">ihao</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T01:34:10+08:00">
-                2018-02-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/vs code 常用插件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1489,131 +1370,6 @@ span {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/图片上传时实现本地预览功能的原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wuxiaolong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my-logo.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leon private">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/07/图片上传时实现本地预览功能的原理/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T01:15:23+08:00">
-                2018-02-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>最近在项目上加一个图片裁剪上传的功能，用的是cropper插件，注意到选择本地图片后就会有预览效果，这里整理一下这种预览效果的实现原理；</p>
-<h4 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h4><p>通过input的 type = file属性和js的内置FileReader对象，利用FileReader对象的readAsDataURL方法，把图片数据转成base64字符串数据，然后把这个base64字符串数据赋值给一个图片标签的src。</p>
-<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//input标签，获取本地图片</span><br><span class="line">&lt;input type=&quot;file&quot; onchange=&quot;uploadImg(this)&quot; accept=&quot;image/*&quot;/&gt;</span><br><span class="line"></span><br><span class="line">//预览图片标签</span><br><span class="line"> &lt;img id=&quot;viewImg&quot;/&gt;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> function uploadImg(fileDom) &#123;</span><br><span class="line">    //取到file文件的本地路径，就是你电脑上的存储路径</span><br><span class="line">    console.log(fileDom.value);</span><br><span class="line">    </span><br><span class="line">    // 获取图片数据</span><br><span class="line">    var file = fileDom.files[0];</span><br><span class="line">    </span><br><span class="line">    // 获取图片名字</span><br><span class="line">	console.log(file.name); </span><br><span class="line">	</span><br><span class="line">	// 获取图片文件大小,单位为byte</span><br><span class="line">	console.log(file.size);</span><br><span class="line">	</span><br><span class="line">    var reader = new FileReader();</span><br><span class="line">	reader.readAsDataURL(file);</span><br><span class="line">	</span><br><span class="line">	//确保文件成功获取，base64数据量比较大</span><br><span class="line">    reader.onload = function (e) &#123;</span><br><span class="line">        var img = document.getElementById(&quot;viewImg&quot;);</span><br><span class="line">        img.src = e.target.result;</span><br><span class="line">        //或者 img.src = this.result; 因为e.target == this</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="知识延伸"><a href="#知识延伸" class="headerlink" title="知识延伸"></a>知识延伸</h4><p>FileReader除了readAsDataURL方法之外，还有另外两个比较重要的方法，分别为readAsBinaryString 将选择的文件读取成二进制和readAsText将选择的文件读取成文本格式 ；</p>
-<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/js编码的实用技巧(二)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1846,6 +1602,341 @@ span {
 <p>我们稍微修改一下上面的代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a &amp;&amp; console.log(&quot;hello leonWu&quot;); //结果是一样的，但是这样是不是简单清晰多了，代码量也少了</span><br></pre></td></tr></table></figure>
 <h2 id="未完待续。。。。"><a href="#未完待续。。。。" class="headerlink" title="未完待续。。。。"></a>未完待续。。。。</h2><p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
+<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wuxiaolong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my-logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon private">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/07/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T01:15:23+08:00">
+                2018-02-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="先热身"><a href="#先热身" class="headerlink" title="先热身"></a>先热身</h3><p>看看下面的额代码会打印出什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">		  	setTimeout(function () &#123;</span><br><span class="line">		   		 console.log(i);</span><br><span class="line">		  	&#125;, 100);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面的结果是 5  5  5  5  5</p>
+</blockquote>
+<p>我对上面的代码的理解是：</p>
+<p>setTimeout是一个注册事件，当for循环遇见他时，会先注册这个事件，而不会去触发此事件，for循环的时间很短，所以当100毫秒后触发打印事件时，此时的i已经变为5，所以会打印出5个5；</p>
+<h3 id="那么上面的额代码我们改如何修改才能打印出0-4呢？"><a href="#那么上面的额代码我们改如何修改才能打印出0-4呢？" class="headerlink" title="那么上面的额代码我们改如何修改才能打印出0~4呢？"></a>那么上面的额代码我们改如何修改才能打印出0~4呢？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">		(function(k)&#123;				</span><br><span class="line">			setTimeout(function() &#123;</span><br><span class="line">				console.log(k);</span><br><span class="line">			&#125;, 100);</span><br><span class="line">		&#125;)(i);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>没错，上面的代码可以打印出我们想要的结果，他的结果为0~4，可是为什么呢？</p>
+<p>我们所采用的解决方案是闭包，闭包可以延长其私有变量的生命周期，意思就是内部私有变量和函数保存下来，一直在内存中，之后到你用时他再给你</p>
+</blockquote>
+<h3 id="那么我们可以再把上面的题目延伸一下"><a href="#那么我们可以再把上面的题目延伸一下" class="headerlink" title="那么我们可以再把上面的题目延伸一下"></a>那么我们可以再把上面的题目延伸一下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 5; ++i) &#123;</span><br><span class="line">		  	setTimeout(function () &#123;</span><br><span class="line">		   		 console.log(i + &apos; &apos;);</span><br><span class="line">		  	&#125;,0);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">console.log(0);</span><br><span class="line">//请看这段代码,我在for循环后面加了段代码，而且把延时器事件的触发时间改为了0，请先想想结果会是什么？</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可能有会两种想法</p>
+<p>第一种为：5  5  5  5   5  0；</p>
+<p>第二种结果为： 0 5  5  5  5   5；</p>
+<p>那么哪一种结果是正确的呢？</p>
+<p><strong>其实正确结果是第二种</strong></p>
+<p>那么为什么呢？因为setTimeout是异步的（是注册事件），他会先把函数注册到事件队列当中，等待主程序走完，然后再被调用。所以答案为第二种；</p>
+</blockquote>
+<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
+<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/javaScript数据类型你都弄明白了吗？绝对干货/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wuxiaolong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my-logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon private">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/07/javaScript数据类型你都弄明白了吗？绝对干货/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T01:15:23+08:00">
+                2018-02-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="数据类型的分类"><a href="#数据类型的分类" class="headerlink" title="数据类型的分类"></a>数据类型的分类</h4><p>JavaScript的数据类型分为两大类，基本数据类型和复杂数据类型。</p>
+<p>基本数据类型：Null、Undefined、Number，String，Boolean。</p>
+<p>复杂数据类型：Object。</p>
+<h3 id="一、Object"><a href="#一、Object" class="headerlink" title="一、Object"></a>一、Object</h3><p>《JavaScript语言精辟》这本书里面是这么定义的：数组是对象，函数是对象，正则表达式也是对象，当然，对象也是对象。</p>
+<p>JavaScript包括一个原型链特性，允许对象继承另一个对象的属性，正确的使用它能减少对象初始化的时间和内存消耗。</p>
+<h3 id="二、undefined"><a href="#二、undefined" class="headerlink" title="二、undefined"></a>二、undefined</h3><p>这个数据类型只有一个值，就是undefined，它是在var了一个变量之后没有对其初始化的结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var  a;</span><br><span class="line"></span><br><span class="line">console.log(a) //undefined</span><br></pre></td></tr></table></figure>
+<h3 id="三、null"><a href="#三、null" class="headerlink" title="三、null"></a>三、null</h3><p>这个数据类型也只有一个值，就是null，他表示的是一个空指针对象，这也是typeof类型检测null为什么返回object的原因。</p>
+<p>如果我们申明一个变量是为了在以后保存某个值，那么现在我们就把null赋值给它，而不是其他的值。然后我们就可以判断它的值进行一系列的操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//例如</span><br><span class="line">var a = null;</span><br><span class="line"></span><br><span class="line">if(a != null)&#123;</span><br><span class="line">    //为undefined时也不能进来</span><br><span class="line">    //进行一系列操作</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还有一点就是，undefined值是派生自null值，所以ECMA规定他们相等测试返回值是true。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(undefined == null); // true</span><br></pre></td></tr></table></figure>
+<h3 id="四、Boolean"><a href="#四、Boolean" class="headerlink" title="四、Boolean"></a>四、Boolean</h3><p>这个数据类型只有两个值true、false，他们的值分别等价于1和0，但是值类型不相等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(true == 1,true === 0,false == 0,false === 0);  //true false true false</span><br></pre></td></tr></table></figure>
+<p>其实在JavaScript中，每种数据类型的值都可以转换为和Boolean类型相等的值，我们可以调用类型转换函数Boolean();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var aa = 0,bb = &quot;leonWu&quot;,cc = [1,2,3],cc1 = [], dd = undefined,ee = null;</span><br><span class="line"></span><br><span class="line">console.log(Boolean(aa)); //false</span><br><span class="line">console.log(Boolean(bb)); //true</span><br><span class="line">console.log(Boolean(cc)); //true</span><br><span class="line">console.log(Boolean(cc1)); //true</span><br><span class="line">console.log(Boolean(dd)); //false</span><br><span class="line">console.log(Boolean(ee)); //false</span><br></pre></td></tr></table></figure>
+<p>由上面的例子我们可以看出，调用的Boolean()函数返回值是boolean数据类型的值，至于返回的是true还是false，取决于被转换值的数据类型及其实际值。</p>
+<p>它的转换规则详见下表</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>转换为true的值</th>
+<th>转换为false的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>String</td>
+<td>任何非空字符串</td>
+<td>“ “(空字符串)</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>任何非0整数（包括无穷大）</td>
+<td>0和NaN</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>任何对象</td>
+<td>null</td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td>不适用</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<p>当然，在有的时候，Boolean()函数会被隐式调用，看下面代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var a1 = &quot;leonWu&quot;,a2 = 0;</span><br><span class="line"></span><br><span class="line">//1、可以打印出 &quot;进来了&quot;</span><br><span class="line">if(a1)&#123;</span><br><span class="line">    console.log(&quot;进来了&quot;) </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//2、不能打印出 &quot;进来了&quot;</span><br><span class="line">if(a2)&#123;</span><br><span class="line">    console.log(&quot;进来了&quot;) //</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(!a1,!a2) // 3、false true</span><br></pre></td></tr></table></figure>
+<p>上面的代码就是在if判断和取非的时候隐式调用了Boolean()函数，第一个相当于Boolean(a1)返回true，第二个相当于Boolean(a2)返回false,第三个相当于 !Boolean(a1)、!Boolean(a2)返回false、true。</p>
+<p>在实际编码中 !a2的写法肯定比 !Boolean(a2)的写法简单的多，但是Boolean(a2)的返回值本来是false，我们为了简单，写成了 !a2返回值却是true，和我们想要的结果不一致，容易弄混，所以我们就可以写成 !!a2,这样就可以返回我们想要的值了。</p>
+<p>看下面代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var b1 = &quot;&quot;,b2 = &quot;ddd&quot;;</span><br><span class="line"></span><br><span class="line">console.log(!!b1) // false</span><br><span class="line">console.log(!!b2) // true</span><br></pre></td></tr></table></figure></p>
+<p><strong>本文内容稍有点长，请你耐心往下看</strong></p>
+<h3 id="五、String"><a href="#五、String" class="headerlink" title="五、String"></a>五、String</h3><p>我对这个数据类型的理解是由零或多个16位Unicode字符组成的字符序列，即字符串。字符串可以由单引号(‘)或双引号(“)表示。</p>
+<p>他也有个强制转换为字符串的String()方法,可以把任何数据类型转换为字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var bb1 = 123, bb2 = null;</span><br><span class="line"></span><br><span class="line">console.log(String(bb1)); // &quot;123&quot;</span><br><span class="line"></span><br><span class="line">console.log(String(bb2)); // &quot;null&quot;</span><br></pre></td></tr></table></figure>
+<p>还有一个方法.toString()方法，但是只有数值，字符串，对象，布尔值有这个方法，null和undefined没有这个方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var bb1 = 123, bb2 = null, bb3 = undefined;</span><br><span class="line"></span><br><span class="line">console.log(bb1.toString()); // &quot;123&quot;</span><br><span class="line"></span><br><span class="line">console.log(bb2.toString()); // 报错</span><br><span class="line"></span><br><span class="line">console.log(bb3.toString()); // 报错</span><br></pre></td></tr></table></figure>
+<h3 id="六、Number"><a href="#六、Number" class="headerlink" title="六、Number"></a>六、Number</h3><p>这个数据类型包括整数型、浮点型、NaN(not  a number),NaN是个特殊的数值，它表示本来要返回一个数值类型的值，但是没有返回，中途出错了，这样可以避免抛出错误。</p>
+<p>比如下面几个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;leonWu&quot;,b = 12,c = null,d = &quot;lwonWu123&quot;;</span><br><span class="line">    c = a * b;</span><br><span class="line">    console.log(c) // NaN</span><br><span class="line">    console.log(parseInt(d)); // NaN</span><br><span class="line">    console.log(Number(d)); //NaN</span><br></pre></td></tr></table></figure>
+<p>和NaN有关的运算符操作，结果也是NaN，NaN和任何数都不相等，页包括它自己。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof NaN); //number</span><br><span class="line"></span><br><span class="line">console.log(NaN == NaN); //false</span><br></pre></td></tr></table></figure>
+<p>再看下面几个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;123leonWu&quot;, b = &quot;leonWu123&quot;,c = &quot;12.34&quot;;</span><br><span class="line"></span><br><span class="line">console.log(parseInt(a)); //123</span><br><span class="line">console.log(parseFloat(a)); //123</span><br><span class="line">console.log(Number(a));  //NaN</span><br><span class="line"></span><br><span class="line">console.log(parseInt(b)); //NaN</span><br><span class="line">console.log(parseFloat(b));  //NaN</span><br><span class="line">console.log(Number(b)); //NaN</span><br><span class="line"></span><br><span class="line">console.log(parseInt(c)); //12</span><br><span class="line">console.log(parseFloat(c)); //12.34</span><br><span class="line">console.log(Number(c)); //12.34</span><br></pre></td></tr></table></figure>
+<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
 <p><strong>邮箱：wuxiaolong802@163.com</strong></p>
 
           

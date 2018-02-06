@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript基础," />
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="vs code的常用插件   名称 功能     Auto Close Tag 自动闭合HTML标签   Auto Import    Typescript 自动import提示   Auto Rename Tag 修改HTML标签时，自动修改匹配的标签   Beautify css/sass/scss/less css/sass/less格式化   Better Comments 编写更加人性化">
+<meta name="description" content="前言 既然我们选择了vue，那么在做东西时就不要想着去操作dom，所有的都交给vue来解决。 下面来说一个很简单但是很常用的效果，可能人人都会用到这样的需求 请看下图   导航栏的样式切换功能，如果我们使用jquery之类的东西来写，可能要写好多代码，那么我们用vue呢，  代码如下html 附上vue中style与class绑定API 1234&amp;lt;div id=&amp;quot;wrap&amp;quot">
+<meta name="keywords" content="JavaScript基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leon private">
-<meta property="og:url" content="http://yoursite.com/2018/02/07/vs code 常用插件/index.html">
+<meta property="og:title" content="vue中如何实现样式之间的切换">
+<meta property="og:url" content="http://yoursite.com/2017/12/04/vue中如何实现样式之间的切换/index.html">
 <meta property="og:site_name" content="Leon private">
-<meta property="og:description" content="vs code的常用插件   名称 功能     Auto Close Tag 自动闭合HTML标签   Auto Import    Typescript 自动import提示   Auto Rename Tag 修改HTML标签时，自动修改匹配的标签   Beautify css/sass/scss/less css/sass/less格式化   Better Comments 编写更加人性化">
+<meta property="og:description" content="前言 既然我们选择了vue，那么在做东西时就不要想着去操作dom，所有的都交给vue来解决。 下面来说一个很简单但是很常用的效果，可能人人都会用到这样的需求 请看下图   导航栏的样式切换功能，如果我们使用jquery之类的东西来写，可能要写好多代码，那么我们用vue呢，  代码如下html 附上vue中style与class绑定API 1234&amp;lt;div id=&amp;quot;wrap&amp;quot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-19T10:14:40.044Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20170805170856509?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-02-06T17:41:09.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leon private">
-<meta name="twitter:description" content="vs code的常用插件   名称 功能     Auto Close Tag 自动闭合HTML标签   Auto Import    Typescript 自动import提示   Auto Rename Tag 修改HTML标签时，自动修改匹配的标签   Beautify css/sass/scss/less css/sass/less格式化   Better Comments 编写更加人性化">
+<meta name="twitter:title" content="vue中如何实现样式之间的切换">
+<meta name="twitter:description" content="前言 既然我们选择了vue，那么在做东西时就不要想着去操作dom，所有的都交给vue来解决。 下面来说一个很简单但是很常用的效果，可能人人都会用到这样的需求 请看下图   导航栏的样式切换功能，如果我们使用jquery之类的东西来写，可能要写好多代码，那么我们用vue呢，  代码如下html 附上vue中style与class绑定API 1234&amp;lt;div id=&amp;quot;wrap&amp;quot">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170805170856509?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/07/vs code 常用插件/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/04/vue中如何实现样式之间的切换/"/>
 
 
 
 
 
-  <title> | Leon private</title>
+  <title>vue中如何实现样式之间的切换 | Leon private</title>
   
 
 
@@ -232,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/vs code 常用插件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/04/vue中如何实现样式之间的切换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -249,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">vue中如何实现样式之间的切换</h1>
         
 
         <div class="post-meta">
@@ -261,8 +264,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T01:16:48+08:00">
-                2018-02-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T01:34:10+08:00">
+                2017-12-04
               </time>
             
 
@@ -299,336 +302,23 @@
       
 
       
-        <h3 id="vs-code的常用插件"><a href="#vs-code的常用插件" class="headerlink" title="vs code的常用插件"></a>vs code的常用插件</h3><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Auto Close Tag</td>
-<td>自动闭合HTML标签</td>
-</tr>
-<tr>
-<td>Auto Import    Typescript</td>
-<td>自动import提示</td>
-</tr>
-<tr>
-<td>Auto Rename Tag</td>
-<td>修改HTML标签时，自动修改匹配的标签</td>
-</tr>
-<tr>
-<td>Beautify css/sass/scss/less</td>
-<td>css/sass/less格式化</td>
-</tr>
-<tr>
-<td>Better Comments</td>
-<td>编写更加人性化的注释</td>
-</tr>
-<tr>
-<td>Bookmarks</td>
-<td>添加行书签</td>
-</tr>
-<tr>
-<td>Can I Use</td>
-<td>HTML5、CSS3、SVG的浏览器兼容性检查</td>
-</tr>
-<tr>
-<td>Code Runner</td>
-<td>运行选中代码段（支持大量语言，包括Node）</td>
-</tr>
-<tr>
-<td>Code Spellchecker</td>
-<td>单词拼写检查</td>
-</tr>
-<tr>
-<td>CodeBing</td>
-<td>在VSCode中弹出浏览器并搜索，可编辑搜索引擎</td>
-</tr>
-<tr>
-<td>Color Highlight</td>
-<td>颜色值在代码中高亮显示</td>
-</tr>
-<tr>
-<td>Color Info</td>
-<td>小窗口显示颜色值，rgb,hsl,cmyk,hex等等</td>
-</tr>
-<tr>
-<td>Color Picker</td>
-<td>拾色器</td>
-</tr>
-<tr>
-<td>Document This</td>
-<td>注释文档生成</td>
-</tr>
-<tr>
-<td>ESLint</td>
-<td>ESLint插件，高亮提示</td>
-</tr>
-<tr>
-<td>EditorConfig for VS Code</td>
-<td>EditorConfig插件</td>
-</tr>
-<tr>
-<td>Emoji</td>
-<td>在代码中输入emoji</td>
-</tr>
-<tr>
-<td>File Peek</td>
-<td>根据路径字符串，快速定位到文件</td>
-</tr>
-<tr>
-<td>Font-awesome</td>
-<td>codes for html    FontAwesome提示代码段</td>
-</tr>
-<tr>
-<td>Git Blame</td>
-<td>在状态栏显示当前行的Git信息</td>
-</tr>
-<tr>
-<td>Git History(git log)</td>
-<td>查看git log</td>
-</tr>
-<tr>
-<td>GitLens</td>
-<td>显示文件最近的commit和作者，显示当前行commit信息</td>
-</tr>
-<tr>
-<td>Guides</td>
-<td>高亮缩进基准线</td>
-</tr>
-<tr>
-<td>Gulp Snippets</td>
-<td>Gulp代码段</td>
-</tr>
-<tr>
-<td>HTML CSS Class Completion</td>
-<td>CSS class提示</td>
-</tr>
-<tr>
-<td>HTML CSS Support</td>
-<td>css提示（支持vue）</td>
-</tr>
-<tr>
-<td>HTMLHint</td>
-<td>HTML格式提示</td>
-</tr>
-<tr>
-<td>Indenticator</td>
-<td>缩进高亮</td>
-</tr>
-<tr>
-<td>IntelliSense for css class names</td>
-<td>css class输入提示</td>
-</tr>
-<tr>
-<td>JavaScript (ES6) code snippets</td>
-<td>ES6语法代码段</td>
-</tr>
-<tr>
-<td>JavaScript Standard Style</td>
-<td>Standard风格</td>
-</tr>
-<tr>
-<td>Less IntelliSense</td>
-<td>less变量与混合提示</td>
-</tr>
-<tr>
-<td>Lodash</td>
-<td>Lodash代码段</td>
-</tr>
-<tr>
-<td>MochaSnippets</td>
-<td>Mocha代码段</td>
-</tr>
-<tr>
-<td>Node modules resolve</td>
-<td>快速导航到Node模块</td>
-</tr>
-<tr>
-<td>Code Outline</td>
-<td>展示代码结构树</td>
-</tr>
-<tr>
-<td>Output Colorizer</td>
-<td>彩色输出信息</td>
-</tr>
-<tr>
-<td>Partial Diff</td>
-<td>对比两段代码或文件</td>
-</tr>
-<tr>
-<td>Path Autocomplete</td>
-<td>路径完成提示</td>
-</tr>
-<tr>
-<td>Path Intellisense</td>
-<td>另一个路径完成提示</td>
-</tr>
-<tr>
-<td>PostCss Sorting</td>
-<td>css排序</td>
-</tr>
-<tr>
-<td>Prettify JSON</td>
-<td>格式化JSON</td>
-</tr>
-<tr>
-<td>Project Manager</td>
-<td>快速切换项目</td>
-</tr>
-<tr>
-<td>Quokka.js</td>
-<td>不需要手动运行，行内显示变量结果</td>
-</tr>
-<tr>
-<td>REST Client</td>
-<td>发送REST风格的HTTP请求</td>
-</tr>
-<tr>
-<td>React Native Storybooks</td>
-<td>storybook预览插件，支持react</td>
-</tr>
-<tr>
-<td>React Playground</td>
-<td>为编辑器提供一个react组件运行环境，方便调试</td>
-</tr>
-<tr>
-<td>React Standard Style code snippets</td>
-<td>react standar风格代码块</td>
-</tr>
-<tr>
-<td>Sass</td>
-<td>sass插件</td>
-</tr>
-<tr>
-<td>Settings Sync</td>
-<td>VSCode设置同步到Gist</td>
-</tr>
-<tr>
-<td>Sort Typescript Imports</td>
-<td>typescript的import排序</td>
-</tr>
-<tr>
-<td>Sort lines</td>
-<td>排序选中行</td>
-</tr>
-<tr>
-<td>String Manipulation</td>
-<td>字符串转换处理（驼峰、大写开头、下划线等等）</td>
-</tr>
-<tr>
-<td>Syncing    vscode</td>
-<td>设置同步到gist</td>
-</tr>
-<tr>
-<td>TODO Parser</td>
-<td>Todo管理</td>
-</tr>
-<tr>
-<td>TS/JS postfix completion</td>
-<td>ts/js前缀提示</td>
-</tr>
-<tr>
-<td>TSLint</td>
-<td>TypeScript语法检查</td>
-</tr>
-<tr>
-<td>Test Spec Generator</td>
-<td>测试用例生成（支持chai、should、jasmine）</td>
-</tr>
-<tr>
-<td>TypeScript Import</td>
-<td>TS自动import</td>
-</tr>
-<tr>
-<td>TypeSearch</td>
-<td>TS声明文件搜索</td>
-</tr>
-<tr>
-<td>Types auto installer</td>
-<td>自动安装@types声明依赖</td>
-</tr>
-<tr>
-<td>VSCode Great Icons</td>
-<td>文件图标拓展</td>
-</tr>
-<tr>
-<td>Version Lens</td>
-<td>package.json文件显示模块当前版本和最新版本</td>
-</tr>
-<tr>
-<td>View Node Package</td>
-<td>快速打开选中模块的主页和代码仓库</td>
-</tr>
-<tr>
-<td>VueHelper</td>
-<td>Vue2代码段（包括Vue2 api、vue-router2、vuex2）</td>
-</tr>
-<tr>
-<td>filesize</td>
-<td>状态栏显示当前文件大小</td>
-</tr>
-<tr>
-<td>ftp-sync</td>
-<td>同步文件到ftp</td>
-</tr>
-<tr>
-<td>gitignore</td>
-<td>.gitignore文件语法</td>
-</tr>
-<tr>
-<td>htmltagwrap</td>
-<td>快捷包裹html标签</td>
-</tr>
-<tr>
-<td>language-stylus</td>
-<td>Stylus语法高亮和提示</td>
-</tr>
-<tr>
-<td>markdownlint</td>
-<td>Markdown格式提示</td>
-</tr>
-<tr>
-<td>npm Intellisense</td>
-<td>导入模块时，提示已安装模块名称</td>
-</tr>
-<tr>
-<td>npm</td>
-<td>运行npm命令</td>
-</tr>
-<tr>
-<td>stylelint</td>
-<td>css/sass/less代码风格</td>
-</tr>
-<tr>
-<td>vetur</td>
-<td>目前比较好的Vue语法高亮</td>
-</tr>
-<tr>
-<td>vscode-database</td>
-<td>操作数据库，支持mysql和postgres</td>
-</tr>
-<tr>
-<td>vscode-icons</td>
-<td>文件图标，方便定位文件</td>
-</tr>
-<tr>
-<td>vscode-random</td>
-<td>随机字符串生成器</td>
-</tr>
-<tr>
-<td>vscode-styled-components</td>
-<td>styled-components高亮支持</td>
-</tr>
-<tr>
-<td>vscode-styled-jsx</td>
-<td>styled-jsx高亮支持</td>
-</tr>
-</tbody>
-</table>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p> 既然我们选择了vue，那么在做东西时就不要想着去操作dom，所有的都交给vue来解决。</p>
+<p>下面来说一个很简单但是很常用的效果，可能人人都会用到这样的需求</p>
+<h3 id="请看下图"><a href="#请看下图" class="headerlink" title="请看下图"></a>请看下图</h3><p><img src="http://img.blog.csdn.net/20170805170856509?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<hr>
+<p> 导航栏的样式切换功能，如果我们使用jquery之类的东西来写，可能要写好多代码，那么我们用vue呢，</p>
+<hr>
+<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><p><strong>html</strong></p>
+<p><a href="https://cn.vuejs.org/v2/guide/class-and-style.html#%E5%AF%B9%E8%B1%A1%E8%AF%AD%E6%B3%95" target="_blank" rel="noopener">附上vue中style与class绑定API</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=&quot;wrap&quot; class=&quot;box&quot;&gt;</span><br><span class="line">	&lt;div v-for=&quot;(list,index) in navLists&quot; class=&quot;nav&quot; :class=&quot;&#123; red:changeRed == index&#125;&quot; @click=&quot;reds(index)&quot;&gt;&#123;&#123;list.text&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>css</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	padding: 0;margin: 0;</span><br><span class="line">&#125;</span><br><span class="line">.box&#123;</span><br><span class="line">	height: 40px;</span><br><span class="line">	background: cyan;</span><br><span class="line">&#125;</span><br><span class="line">.nav&#123;</span><br><span class="line">	line-height: 40px;</span><br><span class="line">	display: inline-block;</span><br><span class="line">	margin-left: 100px;</span><br><span class="line">	cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line">.red&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>js</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//前提是必须引入vuejs哦！</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">			el:&quot;#wrap&quot;,</span><br><span class="line">			data:&#123;</span><br><span class="line">				navLists:[</span><br><span class="line">					&#123;</span><br><span class="line">						&quot;text&quot;:&quot;首页&quot;						</span><br><span class="line">					&#125;,</span><br><span class="line">					&#123;</span><br><span class="line">						&quot;text&quot;:&quot;组件&quot;						</span><br><span class="line">					&#125;,</span><br><span class="line">					&#123;</span><br><span class="line">						&quot;text&quot;:&quot;API&quot;						</span><br><span class="line">					&#125;,</span><br><span class="line">					&#123;</span><br><span class="line">						&quot;text&quot;:&quot;我们&quot;						</span><br><span class="line">					&#125;</span><br><span class="line">				],</span><br><span class="line">				changeRed:0</span><br><span class="line">			&#125;,</span><br><span class="line">			methods:&#123;</span><br><span class="line">				reds:function(index)&#123;</span><br><span class="line">					this.changeRed = index;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br></pre></td></tr></table></figure>
+<p>仔细看看我们的js代码除了模拟的数据其实就只有一个简单的逻辑处理，比起之前的各种操作dom省了好多事。</p>
+<p>有没有更喜欢vuejs啊</p>
+<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
+<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
 
       
     </div>
@@ -644,6 +334,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript基础/" rel="tag"># JavaScript基础</a>
+          
+        </div>
+      
 
       
       
@@ -653,15 +349,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/07/vue中v-if和v-show的区别/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/20/如何操作iframe父页面中的元素、方法、变量/" rel="prev" title="如何操作iframe父页面中的元素、方法、变量">
+                如何操作iframe父页面中的元素、方法、变量 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -788,7 +484,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vs-code的常用插件"><span class="nav-number">1.</span> <span class="nav-text">vs code的常用插件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请看下图"><span class="nav-number">2.</span> <span class="nav-text">请看下图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码如下"><span class="nav-number">3.</span> <span class="nav-text">代码如下</span></a></li></ol></div>
             
 
           </div>
