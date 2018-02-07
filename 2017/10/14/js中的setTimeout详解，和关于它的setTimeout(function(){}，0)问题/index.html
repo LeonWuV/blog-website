@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="快速排序代码12345678910111213141516171819202122232425262728293031323334function quickSort(arr)&amp;#123;    //判断如果数组长度为一，则直接返回        if(arr.length &amp;lt;= 1)&amp;#123;	    return arr;        &amp;#125;				//找出一个标识，一般为最中">
+<meta name="description" content="先热身看看下面的额代码会打印出什么？ 12345for (var i = 0; i &amp;lt; 5; i++) &amp;#123;		  	setTimeout(function () &amp;#123;		   		 console.log(i);		  	&amp;#125;, 100);		&amp;#125;  上面的结果是 5  5  5  5  5  我对上面的代码的理解是： setTimeout是一个注册事件，当">
 <meta name="keywords" content="JavaScript基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中的快速排序">
-<meta property="og:url" content="http://yoursite.com/2017/10/14/js中的快速排序/index.html">
+<meta property="og:title" content="js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题">
+<meta property="og:url" content="http://yoursite.com/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/index.html">
 <meta property="og:site_name" content="Leon private">
-<meta property="og:description" content="快速排序代码12345678910111213141516171819202122232425262728293031323334function quickSort(arr)&amp;#123;    //判断如果数组长度为一，则直接返回        if(arr.length &amp;lt;= 1)&amp;#123;	    return arr;        &amp;#125;				//找出一个标识，一般为最中">
+<meta property="og:description" content="先热身看看下面的额代码会打印出什么？ 12345for (var i = 0; i &amp;lt; 5; i++) &amp;#123;		  	setTimeout(function () &amp;#123;		   		 console.log(i);		  	&amp;#125;, 100);		&amp;#125;  上面的结果是 5  5  5  5  5  我对上面的代码的理解是： setTimeout是一个注册事件，当">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-07T15:35:26.001Z">
+<meta property="og:updated_time" content="2018-02-07T15:47:19.297Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中的快速排序">
-<meta name="twitter:description" content="快速排序代码12345678910111213141516171819202122232425262728293031323334function quickSort(arr)&amp;#123;    //判断如果数组长度为一，则直接返回        if(arr.length &amp;lt;= 1)&amp;#123;	    return arr;        &amp;#125;				//找出一个标识，一般为最中">
+<meta name="twitter:title" content="js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题">
+<meta name="twitter:description" content="先热身看看下面的额代码会打印出什么？ 12345for (var i = 0; i &amp;lt; 5; i++) &amp;#123;		  	setTimeout(function () &amp;#123;		   		 console.log(i);		  	&amp;#125;, 100);		&amp;#125;  上面的结果是 5  5  5  5  5  我对上面的代码的理解是： setTimeout是一个注册事件，当">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/14/js中的快速排序/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/"/>
 
 
 
 
 
-  <title>js中的快速排序 | Leon private</title>
+  <title>js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题 | Leon private</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/js中的快速排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js中的快速排序</h1>
+          <h1 class="post-title" itemprop="name headline">js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题</h1>
         
 
         <div class="post-meta">
@@ -330,7 +330,27 @@
       
 
       
-        <h3 id="快速排序代码"><a href="#快速排序代码" class="headerlink" title="快速排序代码"></a>快速排序代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr)&#123;</span><br><span class="line">    //判断如果数组长度为一，则直接返回</span><br><span class="line">        if(arr.length &lt;= 1)&#123;</span><br><span class="line">	    return arr;</span><br><span class="line">        &#125;</span><br><span class="line">			</span><br><span class="line">	//找出一个标识，一般为最中间的数组</span><br><span class="line">	var tag = Math.floor(arr.length/2);//向下取整，</span><br><span class="line">			</span><br><span class="line">	//截取标识位的数组，这里splice(index,howmany,addNewItem)可以改变原数组的长度，</span><br><span class="line">	//而同样可以截取的slice(starIndex,endIndex)方法不能改变原数组的长度；			</span><br><span class="line">	var middle = arr.splice(tag,1)[0];</span><br><span class="line">		</span><br><span class="line">	//申明两个空数组</span><br><span class="line">	var left = [],right = [];</span><br><span class="line">	for(i = 0; i &lt; arr.length; i ++)&#123;</span><br><span class="line">			</span><br><span class="line">	//比标识位小的放到左边，大的放到右边</span><br><span class="line">	if(arr[i] &lt; middle)&#123;</span><br><span class="line">	    left.push(arr[i]);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		right.push(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//利用递归，不停的自调用此方法，直到每个数组长度都为1时return；</span><br><span class="line">			</span><br><span class="line">	return quickSort(left).concat([middle],quickSort(right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">------------------------------------------------</span><br><span class="line"></span><br><span class="line">    arr1 = [15,12,18,20,2,15,34,100,7];</span><br><span class="line">	var aa = quickSort(arr1);</span><br><span class="line">	console.log(aa); //[2, 7, 12, 15, 15, 18, 20, 34, 100];</span><br></pre></td></tr></table></figure>
+        <h3 id="先热身"><a href="#先热身" class="headerlink" title="先热身"></a>先热身</h3><p>看看下面的额代码会打印出什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">		  	setTimeout(function () &#123;</span><br><span class="line">		   		 console.log(i);</span><br><span class="line">		  	&#125;, 100);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面的结果是 5  5  5  5  5</p>
+</blockquote>
+<p>我对上面的代码的理解是：</p>
+<p>setTimeout是一个注册事件，当for循环遇见他时，会先注册这个事件，而不会去触发此事件，for循环的时间很短，所以当100毫秒后触发打印事件时，此时的i已经变为5，所以会打印出5个5；</p>
+<h3 id="那么上面的额代码我们改如何修改才能打印出0-4呢？"><a href="#那么上面的额代码我们改如何修改才能打印出0-4呢？" class="headerlink" title="那么上面的额代码我们改如何修改才能打印出0~4呢？"></a>那么上面的额代码我们改如何修改才能打印出0~4呢？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">		(function(k)&#123;				</span><br><span class="line">			setTimeout(function() &#123;</span><br><span class="line">				console.log(k);</span><br><span class="line">			&#125;, 100);</span><br><span class="line">		&#125;)(i);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>没错，上面的代码可以打印出我们想要的结果，他的结果为0~4，可是为什么呢？</p>
+<p>我们所采用的解决方案是闭包，闭包可以延长其私有变量的生命周期，意思就是内部私有变量和函数保存下来，一直在内存中，之后到你用时他再给你</p>
+</blockquote>
+<h3 id="那么我们可以再把上面的题目延伸一下"><a href="#那么我们可以再把上面的题目延伸一下" class="headerlink" title="那么我们可以再把上面的题目延伸一下"></a>那么我们可以再把上面的题目延伸一下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 5; ++i) &#123;</span><br><span class="line">		  	setTimeout(function () &#123;</span><br><span class="line">		   		 console.log(i + &apos; &apos;);</span><br><span class="line">		  	&#125;,0);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">console.log(0);</span><br><span class="line">//请看这段代码,我在for循环后面加了段代码，而且把延时器事件的触发时间改为了0，请先想想结果会是什么？</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可能有会两种想法</p>
+<p>第一种为：5  5  5  5   5  0；</p>
+<p>第二种结果为： 0 5  5  5  5   5；</p>
+<p>那么哪一种结果是正确的呢？</p>
+<p><strong>其实正确结果是第二种</strong></p>
+<p>那么为什么呢？因为setTimeout是异步的（是注册事件），他会先把函数注册到事件队列当中，等待主程序走完，然后再被调用。所以答案为第二种；</p>
+</blockquote>
 <p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
 <p><strong>邮箱：wuxiaolong802@163.com</strong></p>
 
@@ -392,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/14/CSS中两种放大zoom和scale的区别/" rel="next" title="CSS中两种放大zoom和scale的区别">
-                <i class="fa fa-chevron-left"></i> CSS中两种放大zoom和scale的区别
+              <a href="/2017/10/14/js中的快速排序/" rel="next" title="js中的快速排序">
+                <i class="fa fa-chevron-left"></i> js中的快速排序
               </a>
             
           </div>
@@ -402,8 +422,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/" rel="prev" title="js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题">
-                js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/10/JSON.parse() 报错Unexpected token o in JSON at position 1/" rel="prev" title="JSON.parse() 报错Unexpected token o in JSON at position 1">
+                JSON.parse() 报错Unexpected token o in JSON at position 1 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序代码"><span class="nav-number">1.</span> <span class="nav-text">快速排序代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#先热身"><span class="nav-number">1.</span> <span class="nav-text">先热身</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么上面的额代码我们改如何修改才能打印出0-4呢？"><span class="nav-number">2.</span> <span class="nav-text">那么上面的额代码我们改如何修改才能打印出0~4呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么我们可以再把上面的题目延伸一下"><span class="nav-number">3.</span> <span class="nav-text">那么我们可以再把上面的题目延伸一下</span></a></li></ol></div>
             
 
           </div>

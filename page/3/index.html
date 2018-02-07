@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/JSON.parse() 报错Unexpected token o in JSON at position 1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/10/JSON.parse() 报错Unexpected token o in JSON at position 1/" itemprop="url">JSON.parse() 报错Unexpected token o in JSON at position 1</a></h1>
+                <a class="post-title-link" href="/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/" itemprop="url">js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题</a></h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T14:34:10+08:00">
-                2017-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-14T14:34:10+08:00">
+                2017-10-14
               </time>
             
 
@@ -330,20 +330,149 @@
       
         
           
-            <h4 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h4><p>这个问题在之前做项目时碰到过一次，当时按照网上的做法，去掉JSON.parse()这一层转换后就没有这个报错了，数据也能正常使用，就没多想，也没深究是什么原因。可是这次又碰到了，所以这次我必须要弄明白原因。</p>
-<h4 id="先看看它的作用"><a href="#先看看它的作用" class="headerlink" title="先看看它的作用"></a>先看看它的作用</h4><p>JSON.parse()用于从一个字符串中解析出json对象,如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;&#123;&quot;name&quot;:&quot;LeonWu&quot;,&quot;age&quot;:&quot;18&quot;&#125;&apos;</span><br><span class="line"></span><br><span class="line">JSON.parse(str);</span><br><span class="line"></span><br><span class="line">//结果为一个Object</span><br><span class="line">// age: &quot;18&quot;;</span><br><span class="line">// name: &quot;LeonWu&quot;;</span><br></pre></td></tr></table></figure>
-<p>JSON.stringify()用于从一个对象解析出字符串，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;a:1,b:2,c:&quot;LeonWu&quot;&#125;;</span><br><span class="line"> </span><br><span class="line"> JSON.stringify(a);</span><br><span class="line"> </span><br><span class="line"> //结果为 &quot;&#123;&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:&quot;LeonWu&quot;&#125;&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="背后的原因"><a href="#背后的原因" class="headerlink" title="背后的原因"></a>背后的原因</h4><ol>
-<li>报错的原因：</li>
-</ol>
-<p>因为你要转换的数据本来就是object，这个方法是把一个字符串解析出json对象，你再转换就会报错;</p>
-<ol>
-<li>为什么会有这样的错误：</li>
-</ol>
-<p>因为把Object作为参数传到JSON.parse()里时，它会默转为string，转换为”[object Object]”，JSON.parse将第一个字符’[‘理解为数组的开始，第二字符’o’不知道怎么处理;所以就抛出了上面的错误信息 Unexpected token o in JSON at position 1。</p>
-<hr>
+            <h3 id="先热身"><a href="#先热身" class="headerlink" title="先热身"></a>先热身</h3><p>看看下面的额代码会打印出什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">		  	setTimeout(function () &#123;</span><br><span class="line">		   		 console.log(i);</span><br><span class="line">		  	&#125;, 100);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面的结果是 5  5  5  5  5</p>
+</blockquote>
+<p>我对上面的代码的理解是：</p>
+<p>setTimeout是一个注册事件，当for循环遇见他时，会先注册这个事件，而不会去触发此事件，for循环的时间很短，所以当100毫秒后触发打印事件时，此时的i已经变为5，所以会打印出5个5；</p>
+<h3 id="那么上面的额代码我们改如何修改才能打印出0-4呢？"><a href="#那么上面的额代码我们改如何修改才能打印出0-4呢？" class="headerlink" title="那么上面的额代码我们改如何修改才能打印出0~4呢？"></a>那么上面的额代码我们改如何修改才能打印出0~4呢？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">		(function(k)&#123;				</span><br><span class="line">			setTimeout(function() &#123;</span><br><span class="line">				console.log(k);</span><br><span class="line">			&#125;, 100);</span><br><span class="line">		&#125;)(i);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>没错，上面的代码可以打印出我们想要的结果，他的结果为0~4，可是为什么呢？</p>
+<p>我们所采用的解决方案是闭包，闭包可以延长其私有变量的生命周期，意思就是内部私有变量和函数保存下来，一直在内存中，之后到你用时他再给你</p>
+</blockquote>
+<h3 id="那么我们可以再把上面的题目延伸一下"><a href="#那么我们可以再把上面的题目延伸一下" class="headerlink" title="那么我们可以再把上面的题目延伸一下"></a>那么我们可以再把上面的题目延伸一下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 5; ++i) &#123;</span><br><span class="line">		  	setTimeout(function () &#123;</span><br><span class="line">		   		 console.log(i + &apos; &apos;);</span><br><span class="line">		  	&#125;,0);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">console.log(0);</span><br><span class="line">//请看这段代码,我在for循环后面加了段代码，而且把延时器事件的触发时间改为了0，请先想想结果会是什么？</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可能有会两种想法</p>
+<p>第一种为：5  5  5  5   5  0；</p>
+<p>第二种结果为： 0 5  5  5  5   5；</p>
+<p>那么哪一种结果是正确的呢？</p>
+<p><strong>其实正确结果是第二种</strong></p>
+<p>那么为什么呢？因为setTimeout是异步的（是注册事件），他会先把函数注册到事件队列当中，等待主程序走完，然后再被调用。所以答案为第二种；</p>
+</blockquote>
+<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
+<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/js中的快速排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wuxiaolong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my-logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon private">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/14/js中的快速排序/" itemprop="url">js中的快速排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-14T14:34:10+08:00">
+                2017-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="快速排序代码"><a href="#快速排序代码" class="headerlink" title="快速排序代码"></a>快速排序代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr)&#123;</span><br><span class="line">    //判断如果数组长度为一，则直接返回</span><br><span class="line">        if(arr.length &lt;= 1)&#123;</span><br><span class="line">	    return arr;</span><br><span class="line">        &#125;</span><br><span class="line">			</span><br><span class="line">	//找出一个标识，一般为最中间的数组</span><br><span class="line">	var tag = Math.floor(arr.length/2);//向下取整，</span><br><span class="line">			</span><br><span class="line">	//截取标识位的数组，这里splice(index,howmany,addNewItem)可以改变原数组的长度，</span><br><span class="line">	//而同样可以截取的slice(starIndex,endIndex)方法不能改变原数组的长度；			</span><br><span class="line">	var middle = arr.splice(tag,1)[0];</span><br><span class="line">		</span><br><span class="line">	//申明两个空数组</span><br><span class="line">	var left = [],right = [];</span><br><span class="line">	for(i = 0; i &lt; arr.length; i ++)&#123;</span><br><span class="line">			</span><br><span class="line">	//比标识位小的放到左边，大的放到右边</span><br><span class="line">	if(arr[i] &lt; middle)&#123;</span><br><span class="line">	    left.push(arr[i]);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		right.push(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//利用递归，不停的自调用此方法，直到每个数组长度都为1时return；</span><br><span class="line">			</span><br><span class="line">	return quickSort(left).concat([middle],quickSort(right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">------------------------------------------------</span><br><span class="line"></span><br><span class="line">    arr1 = [15,12,18,20,2,15,34,100,7];</span><br><span class="line">	var aa = quickSort(arr1);</span><br><span class="line">	console.log(aa); //[2, 7, 12, 15, 15, 18, 20, 34, 100];</span><br></pre></td></tr></table></figure>
 <p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
 <p><strong>邮箱：wuxiaolong802@163.com</strong></p>
 
@@ -500,157 +629,6 @@ span {
 &lt;/div&gt;
 </code></pre><h4 id="下面看效果"><a href="#下面看效果" class="headerlink" title="下面看效果"></a>下面看效果</h4><p><img src="http://www.web-tinker.com/pictures/3c10006d368f755f48ebade31f496f00.png?_=4495393" alt="这是上面的效果图"></p>
 <h4 id="稍微解释一下"><a href="#稍微解释一下" class="headerlink" title="稍微解释一下"></a>稍微解释一下</h4><p>第一个测试中只设置了scale，于是元素以自己的中心为基点做缩放。<br>第二个测试中不仅设置了scale，还有origin来将缩放的基点设置到左上角，因此变化结束后元素呆在了左上角。虽然容器设置了和高度一样的行高，当它并没有在容器里居中，因为scale是先布局后变换的，变换不会对布局产生影响。<br>最后一个测试是使用zoom，虽然Firefox上不支持，但这是个很古老的特性了。它和第二个测试的区别是它先缩放，后计算布局。所以在例子中它得到了垂直居中效果。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/css3自定义滚动条样式写法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wuxiaolong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my-logo.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leon private">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/14/css3自定义滚动条样式写法/" itemprop="url">css3自定义滚动条样式写法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-14T14:34:10+08:00">
-                2017-10-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="先简单介绍一下各个属性"><a href="#先简单介绍一下各个属性" class="headerlink" title="先简单介绍一下各个属性"></a>先简单介绍一下各个属性</h4><ol>
-<li>::-webkit-scrollbar        滚动条整体部分，其中的属性有width,height,background,border等。</li>
-<li>::-webkit-scrollbar-button  滚动条两端的按钮。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。</li>
-<li>::-webkit-scrollbar-track         外层轨道。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。</li>
-<li>::-webkit-scrollbar-track-piece  内层轨道，具体区别看下面gif图，需要注意的就是它会覆盖第三个属性的样式。</li>
-<li>::-webkit-scrollbar-thumb     滚动条里面可以拖动的那部分</li>
-<li>::-webkit-scrollbar-corner   边角，两个滚动条交汇处</li>
-<li>::-webkit-resizer        两个滚动条交汇处用于拖动调整元素大小的小控件（基本用不上）</li>
-</ol>
-<p><img src="http://img.blog.csdn.net/20171222112553383?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="属性解释图，有注释"></p>
-<h4 id="下面看几组比较"><a href="#下面看几组比较" class="headerlink" title="下面看几组比较"></a>下面看几组比较</h4><hr>
-<h5 id="效果一"><a href="#效果一" class="headerlink" title="效果一"></a>效果一</h5><p><img src="http://img.blog.csdn.net/20171222112626423?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图1"></p>
-<p>上图滚动条效果的css代码,默认此部分为原始代码，后面修改都是在此基础上修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/*css主要部分的样式*/</span><br><span class="line"></span><br><span class="line">/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/</span><br><span class="line"></span><br><span class="line">		::-webkit-scrollbar &#123;</span><br><span class="line">		    width: 10px; /*对垂直流动条有效*/</span><br><span class="line">		    height: 10px; /*对水平流动条有效*/</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		/*定义滚动条的轨道颜色、内阴影及圆角*/</span><br><span class="line">		::-webkit-scrollbar-track&#123;</span><br><span class="line">		   	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);</span><br><span class="line">		   	background-color: rosybrown;</span><br><span class="line">		  	border-radius: 3px;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		    </span><br><span class="line">	   /*定义滑块颜色、内阴影及圆角*/</span><br><span class="line">		::-webkit-scrollbar-thumb&#123;</span><br><span class="line">		    border-radius: 7px;</span><br><span class="line">		    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);</span><br><span class="line">		    background-color: #E8E8E8;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	    /*定义两端按钮的样式*/</span><br><span class="line">	    ::-webkit-scrollbar-button &#123;</span><br><span class="line">	        background-color:cyan;</span><br><span class="line">	    &#125;</span><br><span class="line">	    </span><br><span class="line">	    /*定义右下角汇合处的样式*/</span><br><span class="line">	   ::-webkit-scrollbar-corner &#123;</span><br><span class="line">	        background:khaki;</span><br><span class="line">	    &#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h5 id="效果二"><a href="#效果二" class="headerlink" title="效果二"></a>效果二</h5><p>在上面原始代码上加如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">::-webkit-scrollbar-track-piece &#123;</span><br><span class="line">	background-color: darkred;</span><br><span class="line">		    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20171222112854508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图2"></p>
-<p>可看出覆盖了之前::-webkit-scrollbar-track属性的样式</p>
-<hr>
-<h5 id="效果三"><a href="#效果三" class="headerlink" title="效果三"></a>效果三</h5><p>在上面原始代码上加如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">::-webkit-scrollbar-track-piece &#123;</span><br><span class="line">	background-color: darkred;</span><br><span class="line">	background-image:url(https://www.baidu.com/img/baidu_jgylogo3.gif);</span><br><span class="line">		    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20171222113030621?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图3"></p>
-<p>现在是不是能理解上面说的内层轨道和外层轨道之分了</p>
-<hr>
-<h5 id="效果四"><a href="#效果四" class="headerlink" title="效果四"></a>效果四</h5><p>将原始代码的::-webkit-scrollbar-track属性改为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      ::-webkit-scrollbar-track&#123;</span><br><span class="line">   	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);</span><br><span class="line">   	background-image:url(https://www.baidu.com/img/baidu_jgylogo3.gif);</span><br><span class="line">   	background-color: rosybrown;</span><br><span class="line">  	border-radius: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20171222113201284?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图4"></p>
-<p>大家仔细观察上面的几种情况，得出结论。</p>
-<hr>
-<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
 
           
         
@@ -892,7 +870,7 @@ span {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/Date.parse()与Date.getTime()方法详解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/css3自定义滚动条样式写法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -911,7 +889,7 @@ span {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/14/Date.parse()与Date.getTime()方法详解/" itemprop="url">Date.parse()与Date.getTime()方法详解</a></h1>
+                <a class="post-title-link" href="/2017/10/14/css3自定义滚动条样式写法/" itemprop="url">css3自定义滚动条样式写法</a></h1>
         
 
         <div class="post-meta">
@@ -963,13 +941,39 @@ span {
       
         
           
-            <h2 id="这两个方法的返回值都是-1970-1-1-午夜距离该日期时间的毫秒数"><a href="#这两个方法的返回值都是-1970-1-1-午夜距离该日期时间的毫秒数" class="headerlink" title="这两个方法的返回值都是 1970/1/1 午夜距离该日期时间的毫秒数"></a>这两个方法的返回值都是 1970/1/1 午夜距离该日期时间的毫秒数</h2><h4 id="实际中如何使用"><a href="#实际中如何使用" class="headerlink" title="实际中如何使用"></a>实际中如何使用</h4><hr>
-<p>下面的例子中，我们将取得从 1970/01/01 到 2017/03/19 的毫秒数</p>
-<p>1、Date.parse()的 使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line"></span><br><span class="line">var d = Date.parse(&quot;2017/03/19&quot;)</span><br><span class="line">//或者var d = Date.parse(new Date());</span><br><span class="line">//返回当前时间毫秒数</span><br><span class="line">console.log(d)</span><br><span class="line">//返回的结果1489881600000，后三位默认为000</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+            <h4 id="先简单介绍一下各个属性"><a href="#先简单介绍一下各个属性" class="headerlink" title="先简单介绍一下各个属性"></a>先简单介绍一下各个属性</h4><ol>
+<li>::-webkit-scrollbar        滚动条整体部分，其中的属性有width,height,background,border等。</li>
+<li>::-webkit-scrollbar-button  滚动条两端的按钮。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。</li>
+<li>::-webkit-scrollbar-track         外层轨道。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。</li>
+<li>::-webkit-scrollbar-track-piece  内层轨道，具体区别看下面gif图，需要注意的就是它会覆盖第三个属性的样式。</li>
+<li>::-webkit-scrollbar-thumb     滚动条里面可以拖动的那部分</li>
+<li>::-webkit-scrollbar-corner   边角，两个滚动条交汇处</li>
+<li>::-webkit-resizer        两个滚动条交汇处用于拖动调整元素大小的小控件（基本用不上）</li>
+</ol>
+<p><img src="http://img.blog.csdn.net/20171222112553383?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="属性解释图，有注释"></p>
+<h4 id="下面看几组比较"><a href="#下面看几组比较" class="headerlink" title="下面看几组比较"></a>下面看几组比较</h4><hr>
+<h5 id="效果一"><a href="#效果一" class="headerlink" title="效果一"></a>效果一</h5><p><img src="http://img.blog.csdn.net/20171222112626423?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图1"></p>
+<p>上图滚动条效果的css代码,默认此部分为原始代码，后面修改都是在此基础上修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/*css主要部分的样式*/</span><br><span class="line"></span><br><span class="line">/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/</span><br><span class="line"></span><br><span class="line">		::-webkit-scrollbar &#123;</span><br><span class="line">		    width: 10px; /*对垂直流动条有效*/</span><br><span class="line">		    height: 10px; /*对水平流动条有效*/</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		/*定义滚动条的轨道颜色、内阴影及圆角*/</span><br><span class="line">		::-webkit-scrollbar-track&#123;</span><br><span class="line">		   	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);</span><br><span class="line">		   	background-color: rosybrown;</span><br><span class="line">		  	border-radius: 3px;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		    </span><br><span class="line">	   /*定义滑块颜色、内阴影及圆角*/</span><br><span class="line">		::-webkit-scrollbar-thumb&#123;</span><br><span class="line">		    border-radius: 7px;</span><br><span class="line">		    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);</span><br><span class="line">		    background-color: #E8E8E8;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	    /*定义两端按钮的样式*/</span><br><span class="line">	    ::-webkit-scrollbar-button &#123;</span><br><span class="line">	        background-color:cyan;</span><br><span class="line">	    &#125;</span><br><span class="line">	    </span><br><span class="line">	    /*定义右下角汇合处的样式*/</span><br><span class="line">	   ::-webkit-scrollbar-corner &#123;</span><br><span class="line">	        background:khaki;</span><br><span class="line">	    &#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<p>2、Date.getTime()的使用方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var dateNow = new Date();</span><br><span class="line">	var ff = dateNow.getTime();</span><br><span class="line">	console.log(ff);</span><br><span class="line">//打印出来的是1489899243209</span><br></pre></td></tr></table></figure>
+<h5 id="效果二"><a href="#效果二" class="headerlink" title="效果二"></a>效果二</h5><p>在上面原始代码上加如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">::-webkit-scrollbar-track-piece &#123;</span><br><span class="line">	background-color: darkred;</span><br><span class="line">		    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20171222112854508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图2"></p>
+<p>可看出覆盖了之前::-webkit-scrollbar-track属性的样式</p>
+<hr>
+<h5 id="效果三"><a href="#效果三" class="headerlink" title="效果三"></a>效果三</h5><p>在上面原始代码上加如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">::-webkit-scrollbar-track-piece &#123;</span><br><span class="line">	background-color: darkred;</span><br><span class="line">	background-image:url(https://www.baidu.com/img/baidu_jgylogo3.gif);</span><br><span class="line">		    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20171222113030621?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图3"></p>
+<p>现在是不是能理解上面说的内层轨道和外层轨道之分了</p>
+<hr>
+<h5 id="效果四"><a href="#效果四" class="headerlink" title="效果四"></a>效果四</h5><p>将原始代码的::-webkit-scrollbar-track属性改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      ::-webkit-scrollbar-track&#123;</span><br><span class="line">   	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);</span><br><span class="line">   	background-image:url(https://www.baidu.com/img/baidu_jgylogo3.gif);</span><br><span class="line">   	background-color: rosybrown;</span><br><span class="line">  	border-radius: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20171222113201284?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图4"></p>
+<p>大家仔细观察上面的几种情况，得出结论。</p>
+<hr>
+<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
+<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+
           
         
       
