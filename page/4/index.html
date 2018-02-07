@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/Date.parse()与Date.getTime()方法详解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/CSS中两种放大zoom和scale的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/14/Date.parse()与Date.getTime()方法详解/" itemprop="url">Date.parse()与Date.getTime()方法详解</a></h1>
+                <a class="post-title-link" href="/2017/10/14/CSS中两种放大zoom和scale的区别/" itemprop="url">CSS中两种放大zoom和scale的区别</a></h1>
         
 
         <div class="post-meta">
@@ -330,13 +330,42 @@
       
         
           
-            <h2 id="这两个方法的返回值都是-1970-1-1-午夜距离该日期时间的毫秒数"><a href="#这两个方法的返回值都是-1970-1-1-午夜距离该日期时间的毫秒数" class="headerlink" title="这两个方法的返回值都是 1970/1/1 午夜距离该日期时间的毫秒数"></a>这两个方法的返回值都是 1970/1/1 午夜距离该日期时间的毫秒数</h2><h4 id="实际中如何使用"><a href="#实际中如何使用" class="headerlink" title="实际中如何使用"></a>实际中如何使用</h4><hr>
-<p>下面的例子中，我们将取得从 1970/01/01 到 2017/03/19 的毫秒数</p>
-<p>1、Date.parse()的 使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line"></span><br><span class="line">var d = Date.parse(&quot;2017/03/19&quot;)</span><br><span class="line">//或者var d = Date.parse(new Date());</span><br><span class="line">//返回当前时间毫秒数</span><br><span class="line">console.log(d)</span><br><span class="line">//返回的结果1489881600000，后三位默认为000</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>2、Date.getTime()的使用方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var dateNow = new Date();</span><br><span class="line">	var ff = dateNow.getTime();</span><br><span class="line">	console.log(ff);</span><br><span class="line">//打印出来的是1489899243209</span><br></pre></td></tr></table></figure>
+            <h3 id="先说原理"><a href="#先说原理" class="headerlink" title="先说原理"></a>先说原理</h3><p>zoom和scale这两个东西都是用于对元素的缩放，但两者除了兼容性之外还有一些不同的地方。zoom缩放会将元素保持在左上角，而scale默认是中间位置，可以通过transform-origin来设置。另外他们执行的渲染顺序也不同zoom可能影响到盒子的计算。</p>
+<h3 id="我们看个例子"><a href="#我们看个例子" class="headerlink" title="我们看个例子"></a>我们看个例子</h3><h4 id="这是几行伪代码"><a href="#这是几行伪代码" class="headerlink" title="这是几行伪代码"></a>这是几行伪代码</h4><pre><code>&lt;style&gt;
+div {
+      width:300px;height:100px;
+  border:1px solid #CCC;
+  font-size:0px;
+  line-height:100px;
+  margin:10px;
+}
+span {
+  display:inline-block;
+  height:80px;width:200px;background:#F5F5F5;
+  vertical-align:middle;
+  overflow:hidden;
+}
+&lt;/style&gt;
+
+
+----------
+
+&lt;div&gt;
+  &lt;span style=&quot;-webkit-transform:scale(0.5);&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span style=&quot;
+    -webkit-transform-origin:top left;
+    -webkit-transform:scale(0.5);
+  &quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span style=&quot;zoom:0.5;&quot;&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre><h4 id="下面看效果"><a href="#下面看效果" class="headerlink" title="下面看效果"></a>下面看效果</h4><p><img src="http://www.web-tinker.com/pictures/3c10006d368f755f48ebade31f496f00.png?_=4495393" alt="这是上面的效果图"></p>
+<h4 id="稍微解释一下"><a href="#稍微解释一下" class="headerlink" title="稍微解释一下"></a>稍微解释一下</h4><p>第一个测试中只设置了scale，于是元素以自己的中心为基点做缩放。<br>第二个测试中不仅设置了scale，还有origin来将缩放的基点设置到左上角，因此变化结束后元素呆在了左上角。虽然容器设置了和高度一样的行高，当它并没有在容器里居中，因为scale是先布局后变换的，变换不会对布局产生影响。<br>最后一个测试是使用zoom，虽然Firefox上不支持，但这是个很古老的特性了。它和第二个测试的区别是它先缩放，后计算布局。所以在例子中它得到了垂直居中效果。</p>
+
           
         
       
