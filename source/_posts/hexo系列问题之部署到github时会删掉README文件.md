@@ -1,9 +1,9 @@
+
 ---
 title: hexo系列问题之部署到github时会删掉README文件
 date: 2018-02-08 16:51:10
 tags: hexo
 ---
-
 #### 先说为什么
 1. 我们执行命令hexo g之后，会把source文件里的.md格式的文件渲染为html文件并放到public下面；
 2. 继续执行命令hexo d之后，会把public下面的所有文件提交到对应的XXX.github.io这个仓库；
