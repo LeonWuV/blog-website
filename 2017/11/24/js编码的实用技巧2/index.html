@@ -83,8 +83,8 @@
 <meta name="keywords" content="JavaScript基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js编码的实用技巧(二)">
-<meta property="og:url" content="http://yoursite.com/2017/11/24/js编码的实用技巧2/index.html">
-<meta property="og:site_name" content="Leon private">
+<meta property="og:url" content="http://xiaolongwu.cn/2017/11/24/js编码的实用技巧2/index.html">
+<meta property="og:site_name" content="Leon Private">
 <meta property="og:description" content="接上篇文章   js编码的实用技巧(一)5、合理利用||运算符使用||可以作为参数之外的默认值，当第一个参数返回值为false时，那么第二个值就为默认值。 一般在面向对象思想中这么使用。1234567891011function User(name, age) &amp;#123;    this.name = name || &amp;quot;leonWu&amp;quot;;    this.age = age |">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://olv6wm3nj.bkt.clouddn.com/17-12-6/53549635.jpg">
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/24/js编码的实用技巧2/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2017/11/24/js编码的实用技巧2/"/>
 
 
 
 
 
-  <title>js编码的实用技巧(二) | Leon private</title>
+  <title>js编码的实用技巧(二) | Leon Private</title>
   
 
 
@@ -158,12 +158,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Leon private</span>
+        <span class="site-title">Leon Private</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Welcome Everyone To Exchange</p>
       
   </div>
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/24/js编码的实用技巧2/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/11/24/js编码的实用技巧2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -274,7 +274,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leon private">
+      <meta itemprop="name" content="Leon Private">
     </span>
 
     
@@ -332,7 +332,7 @@
       
 
       
-        <h4 id="接上篇文章-js编码的实用技巧-一"><a href="#接上篇文章-js编码的实用技巧-一" class="headerlink" title="接上篇文章   js编码的实用技巧(一)"></a>接上篇文章   <a href="http://xiaolongwu.cn/2017/11/24/js%E7%BC%96%E7%A0%81%E7%9A%84%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A71/#more" target="_blank" rel="noopener">js编码的实用技巧(一)</a></h4><h3 id="5、合理利用-运算符"><a href="#5、合理利用-运算符" class="headerlink" title="5、合理利用||运算符"></a>5、合理利用||运算符</h3><p>使用||可以作为参数之外的默认值，当第一个参数返回值为false时，那么第二个值就为默认值。</p>
+        <h4 id="接上篇文章-js编码的实用技巧-一"><a href="#接上篇文章-js编码的实用技巧-一" class="headerlink" title="接上篇文章   js编码的实用技巧(一)"></a>接上篇文章   <a href="http://xiaolongwu.cn/2017/11/24/js%E7%BC%96%E7%A0%81%E7%9A%84%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A71/#more">js编码的实用技巧(一)</a></h4><h3 id="5、合理利用-运算符"><a href="#5、合理利用-运算符" class="headerlink" title="5、合理利用||运算符"></a>5、合理利用||运算符</h3><p>使用||可以作为参数之外的默认值，当第一个参数返回值为false时，那么第二个值就为默认值。</p>
 <p>一般在面向对象思想中这么使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function User(name, age) &#123;</span><br><span class="line">    this.name = name || &quot;leonWu&quot;;</span><br><span class="line">    this.age = age || 29;</span><br><span class="line">&#125;</span><br><span class="line">var user1 = new User();</span><br><span class="line">console.log(user1.name); // leonWu</span><br><span class="line">console.log(user1.age); // 29</span><br><span class="line"> </span><br><span class="line">var user2 = new User(&quot;delia&quot;, 28);</span><br><span class="line">console.log(user2.name + &quot; is my wife&quot;); // delia is my wife</span><br><span class="line">console.log(user2.age); // 28</span><br></pre></td></tr></table></figure></p>
 <h3 id="6、三木运算符"><a href="#6、三木运算符" class="headerlink" title="6、三木运算符"></a>6、三木运算符</h3><p>看看下面的例子，我相信你就会立马理解了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var x = 10,b = null;</span><br><span class="line">if (x &gt; 5) &#123;</span><br><span class="line">    b = 7;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    b = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -352,7 +352,7 @@
 <p>上代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//先看看下面这个方法，不理解不要紧，继续向下看你就会理解它</span><br><span class="line"></span><br><span class="line">var a = Math.floor(Math.random() * (max - min + 1)) + min; </span><br><span class="line"></span><br><span class="line">//下面就让我们慢慢的理解上面这个方法是怎么来的</span><br><span class="line"></span><br><span class="line">//先写出在[0-10]之间取随机整数的方法</span><br><span class="line"></span><br><span class="line">var b = Math.floor(Math.random() * 10) //这个返回的是[0-10),不包括10，最大到9</span><br><span class="line"></span><br><span class="line"> b = Math.floor(Math.random() * (10 + 1)); //这样就能取到[0-10]之间的随即整数了</span><br><span class="line"></span><br><span class="line">//然后取一个[30-40]之间的随机整数</span><br><span class="line"></span><br><span class="line">//我们把上面的任务分解为先取一个[0-10]之间的随机整数，然后再加上30，是不是就能满足我们上面的需求了，看代码</span><br><span class="line"></span><br><span class="line">var c = Math.floor(Math.random() * (40-30 + 1)) + 30;</span><br><span class="line"></span><br><span class="line">//那我们要取[max-min]之间的随机整数，代码是不是就为</span><br><span class="line"></span><br><span class="line">var a = Math.floor(Math.random() * (max - min + 1)) + min;</span><br><span class="line"></span><br><span class="line">//我们是不是已经理解了这段代码的意义呢，是不是想忘记都会很难呢？如果没理解就再多想想。</span><br></pre></td></tr></table></figure>
 <p>下图为Math对象的常用方法，以供大家学习参考<br><img src="http://olv6wm3nj.bkt.clouddn.com/17-12-6/53549635.jpg" alt="这里提供Math对象的常用方法"></p>
-<h4 id="接上篇文章-js编码的实用技巧-一-1"><a href="#接上篇文章-js编码的实用技巧-一-1" class="headerlink" title="接上篇文章   js编码的实用技巧(一)"></a>接上篇文章   <a href="http://xiaolongwu.cn/2017/11/24/js%E7%BC%96%E7%A0%81%E7%9A%84%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A71/#more" target="_blank" rel="noopener">js编码的实用技巧(一)</a></h4><p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
+<h4 id="接上篇文章-js编码的实用技巧-一-1"><a href="#接上篇文章-js编码的实用技巧-一-1" class="headerlink" title="接上篇文章   js编码的实用技巧(一)"></a>接上篇文章   <a href="http://xiaolongwu.cn/2017/11/24/js%E7%BC%96%E7%A0%81%E7%9A%84%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A71/#more">js编码的实用技巧(一)</a></h4><p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
 <p><strong>邮箱：wuxiaolong802@163.com</strong></p>
 
       
@@ -496,7 +496,7 @@
                 alt="wuxiaolong" />
             
               <p class="site-author-name" itemprop="name">wuxiaolong</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">This is a place share code.JavaScript，js，前端，vue</p>
           </div>
 
           <nav class="site-state motion-element">
