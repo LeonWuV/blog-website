@@ -421,7 +421,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/10/14/Date.parse()与Date.getTime()方法详解/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/10/14/CSS中两种放大zoom和scale的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -440,7 +440,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/14/Date.parse()与Date.getTime()方法详解/" itemprop="url">Date.parse()与Date.getTime()方法详解</a></h1>
+                <a class="post-title-link" href="/2017/10/14/CSS中两种放大zoom和scale的区别/" itemprop="url">CSS中两种放大zoom和scale的区别</a></h1>
         
 
         <div class="post-meta">
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  147字
+                  369字
                 </span>
               
 
@@ -523,14 +523,12 @@
       
         
           
-          这两个方法的返回值都是 1970/1/1 午夜距离该日期时间的毫秒数实际中如何使用
-下面的例子中，我们将取得从 1970/01/01 到 2017/03/19 的毫秒数
-1、Date.parse()的 使用
-123456789&lt;script type=&quot;text/javascript
+          先说原理zoom和scale这两个东西都是用于对元素的缩放，但两者除了兼容性之外还有一些不同的地方。zoom缩放会将元素保持在左上角，而scale默认是中间位置，可以通过transform-origin来设置。另外他们执行的渲染顺序也不同zoom可能影响到盒子的计算。
+我们看个例子这是几行伪代码&l
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/14/Date.parse()与Date.getTime()方法详解/#more" rel="contents">
+            <a class="btn" href="/2017/10/14/CSS中两种放大zoom和scale的区别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
