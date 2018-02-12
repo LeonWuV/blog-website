@@ -1,0 +1,59 @@
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">{#
+#}{% set current = date(Date.now(), "YYYY") %}{#
+#}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} &mdash; {% endif %}{#
+#}<span itemprop="copyrightYear">{{ current }}</span>
+  <span class="with-love">
+    <i class="fa fa-{{ theme.footer.icon }}"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
+
+  {% if theme.post_wordcount.totalcount %}
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    {% if theme.post_wordcount.item_text %}
+      <span class="post-meta-item-text">{{ __('post.totalcount') }}&#58;</span>
+    {% endif %}
+    <span title="{{ __('post.totalcount') }}">{#
+    #}{{ totalcount(site, '0,0.0a') }}{#
+  #}</span>
+  {% endif %}
+</div>
+
+{% if theme.footer.powered %}
+  <div class="powered-by">{#
+  #}{{ __('footer.powered', '<a class="theme-link" target="_blank" href="http://blog.csdn.net/wxl1555">我的CSDN</a>') }}{#
+#}</div>
+{% endif %}
+
+{% if theme.footer.powered and theme.footer.theme.enable %}
+  <span class="post-meta-divider">|</span>
+{% endif %}
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+{% if theme.footer.powered and theme.footer.theme.enable %}
+  <span class="post-meta-divider">|</span>
+{% endif %}
+{% if theme.footer.theme.enable %}
+  <div class="theme-info">{#
+  #} {#
+  #}<a class="theme-link" target="_blank" href="http://www.enjoychineselearning.com">{#
+    #}媳妇网站{#
+  #}</a>{% if theme.footer.theme.version %} {% endif %}{#
+#}</div>
+{% endif %}
+
+{% if theme.footer.custom_text %}
+  <div class="footer-custom">{#
+  #}{{ theme.footer.custom_text }}{#
+#}</div>
+{% endif %}
