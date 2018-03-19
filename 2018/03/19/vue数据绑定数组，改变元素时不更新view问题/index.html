@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="先说为什么 我们执行命令hexo g之后，会把source文件里的.md格式的文件渲染为html文件并放到public下面； 继续执行命令hexo d之后，会把public下面的所有文件提交到对应的XXX.github.io这个仓库；  由于本地public文件夹里没有README.md这个文件，所以在提交public文件时，github会认为你把README.md文件删掉了，同时github也会">
-<meta name="keywords" content="hexo">
+<meta name="description" content="前言关于这个问题，官网上说的很清楚官方文档 写个例子HTML123456&amp;lt;body&amp;gt;    &amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;        &amp;lt;div v-for=&amp;quot;aa in aas&amp;quot;&amp;gt;&amp;#123;&amp;#123;aa&amp;#125;&amp;#125;&amp;lt;/div&amp;gt;        &amp;lt;button @click=&amp;quo">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo系列问题之部署到github时会删掉README文件">
-<meta property="og:url" content="http://xiaolongwu.cn/2018/02/08/hexo系列问题之部署到github时会删掉README文件/index.html">
+<meta property="og:title" content="vue数据绑定数组，改变元素时不更新view问题">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/03/19/vue数据绑定数组，改变元素时不更新view问题/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="先说为什么 我们执行命令hexo g之后，会把source文件里的.md格式的文件渲染为html文件并放到public下面； 继续执行命令hexo d之后，会把public下面的所有文件提交到对应的XXX.github.io这个仓库；  由于本地public文件夹里没有README.md这个文件，所以在提交public文件时，github会认为你把README.md文件删掉了，同时github也会">
+<meta property="og:description" content="前言关于这个问题，官网上说的很清楚官方文档 写个例子HTML123456&amp;lt;body&amp;gt;    &amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;        &amp;lt;div v-for=&amp;quot;aa in aas&amp;quot;&amp;gt;&amp;#123;&amp;#123;aa&amp;#125;&amp;#125;&amp;lt;/div&amp;gt;        &amp;lt;button @click=&amp;quo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-08T12:01:37.521Z">
+<meta property="og:image" content="http://olv6wm3nj.bkt.clouddn.com/18-3-19/38442253.jpg">
+<meta property="og:image" content="http://olv6wm3nj.bkt.clouddn.com/18-3-19/52644173.jpg">
+<meta property="og:updated_time" content="2018-03-19T12:20:56.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo系列问题之部署到github时会删掉README文件">
-<meta name="twitter:description" content="先说为什么 我们执行命令hexo g之后，会把source文件里的.md格式的文件渲染为html文件并放到public下面； 继续执行命令hexo d之后，会把public下面的所有文件提交到对应的XXX.github.io这个仓库；  由于本地public文件夹里没有README.md这个文件，所以在提交public文件时，github会认为你把README.md文件删掉了，同时github也会">
+<meta name="twitter:title" content="vue数据绑定数组，改变元素时不更新view问题">
+<meta name="twitter:description" content="前言关于这个问题，官网上说的很清楚官方文档 写个例子HTML123456&amp;lt;body&amp;gt;    &amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;        &amp;lt;div v-for=&amp;quot;aa in aas&amp;quot;&amp;gt;&amp;#123;&amp;#123;aa&amp;#125;&amp;#125;&amp;lt;/div&amp;gt;        &amp;lt;button @click=&amp;quo">
+<meta name="twitter:image" content="http://olv6wm3nj.bkt.clouddn.com/18-3-19/38442253.jpg">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2018/02/08/hexo系列问题之部署到github时会删掉README文件/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/03/19/vue数据绑定数组，改变元素时不更新view问题/"/>
 
 
 
 
 
-  <title>hexo系列问题之部署到github时会删掉README文件 | Leon Private</title>
+  <title>vue数据绑定数组，改变元素时不更新view问题 | Leon Private</title>
   
 
 
@@ -263,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/02/08/hexo系列问题之部署到github时会删掉README文件/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/03/19/vue数据绑定数组，改变元素时不更新view问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -280,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo系列问题之部署到github时会删掉README文件</h1>
+          <h1 class="post-title" itemprop="name headline">vue数据绑定数组，改变元素时不更新view问题</h1>
         
 
         <div class="post-meta">
@@ -292,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T16:51:10+08:00">
-                2018-02-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T20:20:23+08:00">
+                2018-03-19
               </time>
             
 
@@ -324,7 +327,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  333字
+                  346字
                 </span>
               
 
@@ -340,7 +343,7 @@
                   <span class="post-meta-item-text">阅读时长 </span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  2分钟
                 </span>
               
             </div>
@@ -361,19 +364,13 @@
       
 
       
-        <h4 id="先说为什么"><a href="#先说为什么" class="headerlink" title="先说为什么"></a>先说为什么</h4><ol>
-<li>我们执行命令hexo g之后，会把source文件里的.md格式的文件渲染为html文件并放到public下面；</li>
-<li><p>继续执行命令hexo d之后，会把public下面的所有文件提交到对应的XXX.github.io这个仓库；</p>
-</li>
-<li><p>由于本地public文件夹里没有README.md这个文件，所以在提交public文件时，github会认为你把README.md文件删掉了，同时github也会删掉仓库里的README.md文件，这就是具体的原因</p>
-<h4 id="我们解决问题"><a href="#我们解决问题" class="headerlink" title="我们解决问题"></a>我们解决问题</h4></li>
-<li><p>我们在本地的source文件里新建一个README.md文件。</p>
-</li>
-<li><p>修改Hexo根目录下的_config.yml文件，将skip_render参数的值设置为README.md</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">skip_render: README.md</span><br><span class="line"></span><br><span class="line">//  为什么需要设置这一步呢？</span><br><span class="line">//  因为你执行hexo g命令时，hexo会默认将source文件里的所有md文件渲染为html文件放到public中，</span><br><span class="line">//  同时README.md会被渲染为README.html文件放到public文件里</span><br><span class="line">//  加上这段设置，就是告诉hexo的解析器，你在渲染source文件里的md文件时，跳过README.md文件</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>我的个人博客：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></strong></p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>关于这个问题，官网上说的很清楚<a href="https://cn.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" target="_blank" rel="noopener">官方文档</a><br><img src="http://olv6wm3nj.bkt.clouddn.com/18-3-19/38442253.jpg" alt="1"><br><img src="http://olv6wm3nj.bkt.clouddn.com/18-3-19/52644173.jpg" alt="2"></p>
+<h4 id="写个例子"><a href="#写个例子" class="headerlink" title="写个例子"></a>写个例子</h4><h5 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">        &lt;div v-for=&quot;aa in aas&quot;&gt;&#123;&#123;aa&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;button @click=&quot;change&quot;&gt;变数据 &lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="js"><a href="#js" class="headerlink" title="js"></a>js</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">            el:&quot;.box&quot;,</span><br><span class="line">            data:&#123;</span><br><span class="line">                aas:[&quot;ss&quot;,&quot;ddd&quot;,&quot;fff&quot;,&quot;bbb&quot;]</span><br><span class="line">            &#125;,</span><br><span class="line">            methods:&#123;</span><br><span class="line">                change()&#123;</span><br><span class="line">                // 点击按钮时，改变aas的最后一个元素，</span><br><span class="line">                // 数据变了 但是view没有更新</span><br><span class="line">                    this.aas[3] = 444;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h5><p>因为vue实现双向数据绑定的机制是数据劫持，也就是在所有对象上有个Object.defineProperty()方法，通过监听set，get方法去实现，而数组没有这两个方法，所以就不会更新view；解决方案就是，需要我们主动通知vue；</p>
+<h5 id="解决方案1"><a href="#解决方案1" class="headerlink" title="解决方案1"></a>解决方案1</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> methods:&#123;</span><br><span class="line">    change()&#123;</span><br><span class="line">        this.aas[3] = 444;</span><br><span class="line">        // 在vm实例上通知</span><br><span class="line">        vm.$set(this.aas,3,this.aas[3])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="解决方案2"><a href="#解决方案2" class="headerlink" title="解决方案2"></a>解决方案2</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> methods:&#123;</span><br><span class="line">    change()&#123;</span><br><span class="line">        this.aas[3] = 444;</span><br><span class="line">        // 在全局对象上通知</span><br><span class="line">        Vue.set(this.aas,3,this.aas[3])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="解决方案3"><a href="#解决方案3" class="headerlink" title="解决方案3"></a>解决方案3</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> methods:&#123;</span><br><span class="line">    change()&#123;</span><br><span class="line">        // vue本身可以监听到数组的一些方法,例如:</span><br><span class="line">        // push(),pop(),shift(),unshift(),splice(),sort(),reverse()</span><br><span class="line">        this.aas.splice(3,1,&quot;444&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
 <p><strong>邮箱：wuxiaolong802@163.com</strong></p>
 
@@ -422,7 +419,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -435,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/25/图片上传时实现本地预览功能的原理/" rel="next" title="图片上传时实现本地预览功能的原理">
-                <i class="fa fa-chevron-left"></i> 图片上传时实现本地预览功能的原理
+              <a href="/2018/03/04/关于重绘（repaint）和回流（reflow）的理解/" rel="next" title="关于重绘（repaint）和回流（reflow）的理解">
+                <i class="fa fa-chevron-left"></i> 关于重绘（repaint）和回流（reflow）的理解
               </a>
             
           </div>
@@ -444,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/08/hexo系列问题之我们换了电脑怎么办/" rel="prev" title="hexo系列问题之我们换了电脑怎么办">
-                hexo系列问题之我们换了电脑怎么办 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -616,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#先说为什么"><span class="nav-number">1.</span> <span class="nav-text">先说为什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们解决问题"><span class="nav-number">2.</span> <span class="nav-text">我们解决问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写个例子"><span class="nav-number">2.</span> <span class="nav-text">写个例子</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML"><span class="nav-number">2.1.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#js"><span class="nav-number">2.2.</span> <span class="nav-text">js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为什么"><span class="nav-number">2.3.</span> <span class="nav-text">为什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案1"><span class="nav-number">2.4.</span> <span class="nav-text">解决方案1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案2"><span class="nav-number">2.5.</span> <span class="nav-text">解决方案2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案3"><span class="nav-number">2.6.</span> <span class="nav-text">解决方案3</span></a></li></ol></li></ol></div>
             
 
           </div>
