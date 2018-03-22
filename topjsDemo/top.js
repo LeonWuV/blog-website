@@ -46,7 +46,7 @@
             d.style.backgroundImage = "url(" + data.dImg +")";
         }
         document.body.onscroll = function(){
-            if(document.documentElement.scrollTop >= data.th){
+            if(document.documentElement.scrollTop >= data.th || document.body.scrollTop >= data.th){
                 d.style.display = "inline-block";
             }else{
                 d.style.display = "none";
