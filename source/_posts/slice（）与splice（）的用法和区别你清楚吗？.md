@@ -1,7 +1,7 @@
 ---
 title: slice（）与splice（）的用法和区别你清楚吗？
 date: 2018-02-27 14:46:10
-tags: js基础
+tags: JavaScript基础
 
 ---
 
