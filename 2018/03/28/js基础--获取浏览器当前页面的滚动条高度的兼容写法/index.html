@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Leon Private">
 <meta property="og:description" content="前言在开发中，兼容性问题是最常见的，今天就来介绍一下关于获取滚动条高度的兼容性写法，宽度同理，我在这里就不一一解释了 各浏览器的写法 IE6/7/8   1document.documentElement.scrollTop  IE9以上  1window.pageYOffset或者document.documentElement.scrollTop  Safari  1window.pageYO">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-28T13:06:20.114Z">
+<meta property="og:updated_time" content="2018-03-28T16:19:19.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js基础--获取浏览器当前页面的滚动条高度的兼容写法">
 <meta name="twitter:description" content="前言在开发中，兼容性问题是最常见的，今天就来介绍一下关于获取滚动条高度的兼容性写法，宽度同理，我在这里就不一一解释了 各浏览器的写法 IE6/7/8   1document.documentElement.scrollTop  IE9以上  1window.pageYOffset或者document.documentElement.scrollTop  Safari  1window.pageYO">
@@ -324,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  229字
+                  268字
                 </span>
               
 
@@ -384,6 +384,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.scrollTop</span><br></pre></td></tr></table></figure>
 <h4 id="具体的写法"><a href="#具体的写法" class="headerlink" title="具体的写法"></a>具体的写法</h4><p>通过上面列出的主流浏览器的兼容性，其实我们不难看出，其实只要我们判断到document.body.scrollTop和document.documentElement.scrollTop就会包括上面所有的浏览器；故最终的写法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">console.log(scrollTop);</span><br></pre></td></tr></table></figure>
+<p>如果需要监听滚动条，那么就监听onscroll事件即可；如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">document.body.onscroll = function()&#123;</span><br><span class="line">    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">    console.log(scrollTop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>我的CSDN博客：<a href="http://blog.csdn.net/wxl1555" target="_blank" rel="noopener">http://blog.csdn.net/wxl1555</a></strong></p>
 <p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
 <p><strong>邮箱：wuxiaolong802@163.com</strong></p>
