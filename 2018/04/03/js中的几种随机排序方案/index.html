@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vue," />
+  <meta name="keywords" content="js排序," />
 
 
 
@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="前言关于这个问题，官网上说的很清楚官方文档 写个例子HTML123456&amp;lt;body&amp;gt;    &amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;        &amp;lt;div v-for=&amp;quot;aa in aas&amp;quot;&amp;gt;&amp;#123;&amp;#123;aa&amp;#125;&amp;#125;&amp;lt;/div&amp;gt;        &amp;lt;button @click=&amp;quo">
-<meta name="keywords" content="vue">
+<meta name="description" content="今天我们来看看实现随即排序的几种做法 方法一思路为：遍历数组，每次循环都随机一个在数组长度范围内的数，并交换本次循环的位置和随机数位置上的元素 123456789101112131415function randomSort1(arr)&amp;#123;    for (let i = 0, l = arr.length; i &amp;lt; l; i++) &amp;#123;        let rc = pa">
+<meta name="keywords" content="js排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue数据绑定数组，改变元素时不更新view问题">
-<meta property="og:url" content="http://xiaolongwu.cn/2018/03/19/vue数据绑定数组，改变元素时不更新view问题/index.html">
+<meta property="og:title" content="js随机排序的几种方案">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/04/03/js中的几种随机排序方案/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="前言关于这个问题，官网上说的很清楚官方文档 写个例子HTML123456&amp;lt;body&amp;gt;    &amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;        &amp;lt;div v-for=&amp;quot;aa in aas&amp;quot;&amp;gt;&amp;#123;&amp;#123;aa&amp;#125;&amp;#125;&amp;lt;/div&amp;gt;        &amp;lt;button @click=&amp;quo">
+<meta property="og:description" content="今天我们来看看实现随即排序的几种做法 方法一思路为：遍历数组，每次循环都随机一个在数组长度范围内的数，并交换本次循环的位置和随机数位置上的元素 123456789101112131415function randomSort1(arr)&amp;#123;    for (let i = 0, l = arr.length; i &amp;lt; l; i++) &amp;#123;        let rc = pa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://olv6wm3nj.bkt.clouddn.com/18-3-19/38442253.jpg">
-<meta property="og:image" content="http://olv6wm3nj.bkt.clouddn.com/18-3-19/52644173.jpg">
-<meta property="og:updated_time" content="2018-03-19T12:20:56.071Z">
+<meta property="og:updated_time" content="2018-04-03T08:53:47.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue数据绑定数组，改变元素时不更新view问题">
-<meta name="twitter:description" content="前言关于这个问题，官网上说的很清楚官方文档 写个例子HTML123456&amp;lt;body&amp;gt;    &amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;        &amp;lt;div v-for=&amp;quot;aa in aas&amp;quot;&amp;gt;&amp;#123;&amp;#123;aa&amp;#125;&amp;#125;&amp;lt;/div&amp;gt;        &amp;lt;button @click=&amp;quo">
-<meta name="twitter:image" content="http://olv6wm3nj.bkt.clouddn.com/18-3-19/38442253.jpg">
+<meta name="twitter:title" content="js随机排序的几种方案">
+<meta name="twitter:description" content="今天我们来看看实现随即排序的几种做法 方法一思路为：遍历数组，每次循环都随机一个在数组长度范围内的数，并交换本次循环的位置和随机数位置上的元素 123456789101112131415function randomSort1(arr)&amp;#123;    for (let i = 0, l = arr.length; i &amp;lt; l; i++) &amp;#123;        let rc = pa">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2018/03/19/vue数据绑定数组，改变元素时不更新view问题/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/04/03/js中的几种随机排序方案/"/>
 
 
 
 
 
-  <title>vue数据绑定数组，改变元素时不更新view问题 | Leon Private</title>
+  <title>js随机排序的几种方案 | Leon Private</title>
   
 
 
@@ -266,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/03/19/vue数据绑定数组，改变元素时不更新view问题/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/04/03/js中的几种随机排序方案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -283,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue数据绑定数组，改变元素时不更新view问题</h1>
+          <h1 class="post-title" itemprop="name headline">js随机排序的几种方案</h1>
         
 
         <div class="post-meta">
@@ -295,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T20:20:23+08:00">
-                2018-03-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T16:55:10+08:00">
+                2018-04-03
               </time>
             
 
@@ -327,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  346字
+                  628字
                 </span>
               
 
@@ -343,7 +340,7 @@
                   <span class="post-meta-item-text">阅读时长 </span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  3分钟
                 </span>
               
             </div>
@@ -364,13 +361,27 @@
       
 
       
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>关于这个问题，官网上说的很清楚<a href="https://cn.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" target="_blank" rel="noopener">官方文档</a><br><img src="http://olv6wm3nj.bkt.clouddn.com/18-3-19/38442253.jpg" alt="1"><br><img src="http://olv6wm3nj.bkt.clouddn.com/18-3-19/52644173.jpg" alt="2"></p>
-<h4 id="写个例子"><a href="#写个例子" class="headerlink" title="写个例子"></a>写个例子</h4><h5 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">        &lt;div v-for=&quot;aa in aas&quot;&gt;&#123;&#123;aa&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;button @click=&quot;change&quot;&gt;变数据 &lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="js"><a href="#js" class="headerlink" title="js"></a>js</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">            el:&quot;.box&quot;,</span><br><span class="line">            data:&#123;</span><br><span class="line">                aas:[&quot;ss&quot;,&quot;ddd&quot;,&quot;fff&quot;,&quot;bbb&quot;]</span><br><span class="line">            &#125;,</span><br><span class="line">            methods:&#123;</span><br><span class="line">                change()&#123;</span><br><span class="line">                // 点击按钮时，改变aas的最后一个元素，</span><br><span class="line">                // 数据变了 但是view没有更新</span><br><span class="line">                    this.aas[3] = 444;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
-<h5 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h5><p>因为vue实现双向数据绑定的机制是数据劫持，也就是在所有对象上有个Object.defineProperty()方法，通过监听set，get方法去实现，而数组没有这两个方法，所以就不会更新view；解决方案就是，需要我们主动通知vue；</p>
-<h5 id="解决方案1"><a href="#解决方案1" class="headerlink" title="解决方案1"></a>解决方案1</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> methods:&#123;</span><br><span class="line">    change()&#123;</span><br><span class="line">        this.aas[3] = 444;</span><br><span class="line">        // 在vm实例上通知</span><br><span class="line">        vm.$set(this.aas,3,this.aas[3])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="解决方案2"><a href="#解决方案2" class="headerlink" title="解决方案2"></a>解决方案2</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> methods:&#123;</span><br><span class="line">    change()&#123;</span><br><span class="line">        this.aas[3] = 444;</span><br><span class="line">        // 在全局对象上通知</span><br><span class="line">        Vue.set(this.aas,3,this.aas[3])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="解决方案3"><a href="#解决方案3" class="headerlink" title="解决方案3"></a>解决方案3</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> methods:&#123;</span><br><span class="line">    change()&#123;</span><br><span class="line">        // vue本身可以监听到数组的一些方法,例如:</span><br><span class="line">        // push(),pop(),shift(),unshift(),splice(),sort(),reverse()</span><br><span class="line">        this.aas.splice(3,1,&quot;444&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>今天我们来看看实现随即排序的几种做法</p>
+<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>思路为：遍历数组，每次循环都随机一个在数组长度范围内的数，并交换本次循环的位置和随机数位置上的元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function randomSort1(arr)&#123;</span><br><span class="line">    for (let i = 0, l = arr.length; i &lt; l; i++) &#123;</span><br><span class="line">        let rc = parseInt(Math.random() * l );</span><br><span class="line">// 让当前循环的数组元素和随机出来的数组元素交换位置</span><br><span class="line">        const empty = arr[i];</span><br><span class="line">        arr[i] = arr[rc];</span><br><span class="line">        arr[rc] = empty;       </span><br><span class="line">     &#125;</span><br><span class="line">     return arr;</span><br><span class="line">&#125;</span><br><span class="line">// 例子</span><br><span class="line">var arr1 = [1,2,3,4,5,6,7,8,9];</span><br><span class="line">// 下面两次的结果肯定是不一样的；</span><br><span class="line">console.log(randomSort1(arr1));</span><br><span class="line">console.log(randomSort1(arr1));</span><br></pre></td></tr></table></figure>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>思路：</p>
+<ol>
+<li>申明一个新的空数组,利用while循环，如果数组长度大于0，就继续循环； </li>
+<li>每次循环都随机一个在数组长度范围内的数，将随机数位置上的元素push到新数组里，</li>
+<li>并利用splice（<a href="https://blog.csdn.net/wxl1555/article/details/79388292" target="_blank" rel="noopener">对splice不太理解的同学可以看这里</a>）截取出随机数位置上的元素，同时也修改了原始数组的长度；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function randomSort2(arr)&#123;</span><br><span class="line">    var mixedArr = [];</span><br><span class="line">    while(arr.length &gt; 0)&#123;</span><br><span class="line">        let rc = parseInt(Math.random() * arr.length );</span><br><span class="line">         mixedArr.push(arr[rc]);</span><br><span class="line">         arr.splice(rc,1);</span><br><span class="line">    &#125;</span><br><span class="line">    return mixedArr;</span><br><span class="line">&#125;</span><br><span class="line">// 例子</span><br><span class="line">var arr1 = [1,2,3,4,5,6,7,8,9];</span><br><span class="line"></span><br><span class="line">console.log(randomSort2(arr1));</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><p>思路：利用传入sort排序中的比较函数,比较函数的规则如下：</p>
+<ol>
+<li>如果 compareFunction(a, b)的返回值 小于 0 ，那么 a 会被排列到 b 之前；</li>
+<li>如果 compareFunction(a, b)的返回值 等于 0 ，那么a 和 b 的相对位置不变；</li>
+<li>如果 compareFunction(a, b)的返回值 大于 0 ，那么b 会被排列到 a 之前；</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> function randomSort3(arr)&#123;</span><br><span class="line">    arr.sort(function(a,b)&#123;</span><br><span class="line">        return Math.random() - 0.5;</span><br><span class="line">    &#125;);</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line">// 例子</span><br><span class="line">var arr1 = [1,2,3,4,5,6,7,8,9];</span><br><span class="line"></span><br><span class="line">console.log(randomSort3(arr1));</span><br></pre></td></tr></table></figure>
+<p>如果不传比较函数，会按照字典顺序对元素进行排序，看下面例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var array = [3, 2, 104, 8, 340, 540]  </span><br><span class="line">array.sort()  </span><br><span class="line">console.log(array) // [104, 2, 3, 340, 540, 8]</span><br></pre></td></tr></table></figure>
+<p>这几种方法就是我目前了解到的，如果您还有别的方案可以再下方留言或者和我联系，相互学习</p>
+<p><strong>我的CSDN博客：<a href="http://blog.csdn.net/wxl1555" target="_blank" rel="noopener">http://blog.csdn.net/wxl1555</a></strong></p>
 <p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
 <p><strong>邮箱：wuxiaolong802@163.com</strong></p>
 
@@ -419,7 +430,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
+            <a href="/tags/js排序/" rel="tag"># js排序</a>
           
         </div>
       
@@ -432,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/04/关于重绘（repaint）和回流（reflow）的理解/" rel="next" title="关于重绘（repaint）和回流（reflow）的理解">
-                <i class="fa fa-chevron-left"></i> 关于重绘（repaint）和回流（reflow）的理解
+              <a href="/2018/03/30/css基础--深入理解opacity和rgba的区别/" rel="next" title="css基础--深入理解opacity和rgba的区别">
+                <i class="fa fa-chevron-left"></i> css基础--深入理解opacity和rgba的区别
               </a>
             
           </div>
@@ -441,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/23/自己写了一个回到顶部的插件topjs，支持自定义，使用简单，带动画效果/" rel="prev" title="自己写了一个回到顶部的插件topjs，支持自定义，使用简单，带动画效果">
-                自己写了一个回到顶部的插件topjs，支持自定义，使用简单，带动画效果 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写个例子"><span class="nav-number">2.</span> <span class="nav-text">写个例子</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML"><span class="nav-number">2.1.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#js"><span class="nav-number">2.2.</span> <span class="nav-text">js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为什么"><span class="nav-number">2.3.</span> <span class="nav-text">为什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案1"><span class="nav-number">2.4.</span> <span class="nav-text">解决方案1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案2"><span class="nav-number">2.5.</span> <span class="nav-text">解决方案2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案3"><span class="nav-number">2.6.</span> <span class="nav-text">解决方案3</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三"><span class="nav-number">3.</span> <span class="nav-text">方法三</span></a></li></ol></div>
             
 
           </div>
