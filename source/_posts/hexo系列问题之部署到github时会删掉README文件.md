@@ -23,7 +23,7 @@ skip_render: README.md
 
 ```
 
-**我的个人博客：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)**
+**我的CSDN博客：[http://blog.csdn.net/wxl1555](http://blog.csdn.net/wxl1555)**
 
 **如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。**
 

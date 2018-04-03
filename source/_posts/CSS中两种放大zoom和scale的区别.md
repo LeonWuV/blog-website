@@ -1,7 +1,7 @@
 ---
 title: CSS中两种放大zoom和scale的区别
 date: 2017-10-14 14:34:10
-tags: JavaScript基础
+tags: css基础
 ---
 ### 先说原理
 zoom和scale这两个东西都是用于对元素的缩放，但两者除了兼容性之外还有一些不同的地方。zoom缩放会将元素保持在左上角，而scale默认是中间位置，可以通过transform-origin来设置。另外他们执行的渲染顺序也不同zoom可能影响到盒子的计算。

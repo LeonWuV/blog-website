@@ -1,7 +1,7 @@
 ---
 title: css3自定义滚动条样式写法
 date: 2017-10-14 14:34:10
-tags: JavaScript基础
+tags: css基础
 ---
 ####  先简单介绍一下各个属性
 

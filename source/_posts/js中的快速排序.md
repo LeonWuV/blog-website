@@ -1,7 +1,7 @@
 ---
 title: js中的快速排序
 date: 2017-10-14 14:34:10
-tags: JavaScript基础
+tags: js排序
 ---
 ### 快速排序代码
 
@@ -46,7 +46,7 @@ function quickSort(arr){
 
 		
 ```
-
+**我的CSDN博客：[http://blog.csdn.net/wxl1555](http://blog.csdn.net/wxl1555)**
 **如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。**
 
 **邮箱：wuxiaolong802@163.com**

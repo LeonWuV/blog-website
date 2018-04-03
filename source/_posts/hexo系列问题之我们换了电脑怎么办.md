@@ -54,7 +54,7 @@ tags: hexo
 12. 因为上面创建的是一个名字叫hexo的分支，所以这里-b后面的是hexo，再把后面的gitHub的地址换成你自己的hexo博客的地址就可以了。
 13. 这样做完了以后，每次写完博客发布之后不要忘了还要git push把源文件推到分支上。
 
-**我的个人博客：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)**
+**我的CSDN博客：[http://blog.csdn.net/wxl1555](http://blog.csdn.net/wxl1555)**
 
 **如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。**
 
