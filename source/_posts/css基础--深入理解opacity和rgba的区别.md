@@ -61,8 +61,8 @@ value:不透明度，从 0.0 （完全透明）到 1.0（完全不透明）
 
 ---
 
-**我的CSDN博客：[http://blog.csdn.net/wxl1555](http://blog.csdn.net/wxl1555)**
+我的CSDN博客：[http://blog.csdn.net/wxl1555](http://blog.csdn.net/wxl1555)
 
-**如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。**
+如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。
 
-**邮箱：wuxiaolong802@163.com**
+邮箱：wuxiaolong802@163.com
