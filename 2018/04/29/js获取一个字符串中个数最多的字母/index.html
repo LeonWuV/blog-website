@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript基础," />
+  <meta name="keywords" content="js简单算法," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="写在前面的话这个问题在之前做项目时碰到过一次，当时按照网上的做法，去掉JSON.parse()这一层转换后就没有这个报错了，数据也能正常使用，就没多想，也没深究是什么原因。可是这次又碰到了，所以这次我必须要弄明白原因。 先看看它的作用JSON.parse()用于从一个字符串中解析出json对象,如 1234567var str = &amp;apos;&amp;#123;&amp;quot;name&amp;quot;:&amp;quo">
-<meta name="keywords" content="JavaScript基础">
+<meta name="description" content="前言如题 代码123456789101112131415161718192021222324252627function num (str)&amp;#123;    var a = &amp;#123;&amp;#125;;    var b = str.split(&amp;quot;&amp;quot;);    // key为元素   值为个数    for (let i = 0; i &amp;lt; b.length; i++) &amp;">
+<meta name="keywords" content="js简单算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSON.parse() 报错Unexpected token o in JSON at position 1">
-<meta property="og:url" content="http://xiaolongwu.cn/2017/11/10/JSON.parse() 报错Unexpected token o in JSON at position 1/index.html">
+<meta property="og:title" content="js获取一个字符串中个数最多的字母">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/04/29/js获取一个字符串中个数最多的字母/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="写在前面的话这个问题在之前做项目时碰到过一次，当时按照网上的做法，去掉JSON.parse()这一层转换后就没有这个报错了，数据也能正常使用，就没多想，也没深究是什么原因。可是这次又碰到了，所以这次我必须要弄明白原因。 先看看它的作用JSON.parse()用于从一个字符串中解析出json对象,如 1234567var str = &amp;apos;&amp;#123;&amp;quot;name&amp;quot;:&amp;quo">
+<meta property="og:description" content="前言如题 代码123456789101112131415161718192021222324252627function num (str)&amp;#123;    var a = &amp;#123;&amp;#125;;    var b = str.split(&amp;quot;&amp;quot;);    // key为元素   值为个数    for (let i = 0; i &amp;lt; b.length; i++) &amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-08T10:55:31.444Z">
+<meta property="og:updated_time" content="2018-04-20T07:26:19.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSON.parse() 报错Unexpected token o in JSON at position 1">
-<meta name="twitter:description" content="写在前面的话这个问题在之前做项目时碰到过一次，当时按照网上的做法，去掉JSON.parse()这一层转换后就没有这个报错了，数据也能正常使用，就没多想，也没深究是什么原因。可是这次又碰到了，所以这次我必须要弄明白原因。 先看看它的作用JSON.parse()用于从一个字符串中解析出json对象,如 1234567var str = &amp;apos;&amp;#123;&amp;quot;name&amp;quot;:&amp;quo">
+<meta name="twitter:title" content="js获取一个字符串中个数最多的字母">
+<meta name="twitter:description" content="前言如题 代码123456789101112131415161718192021222324252627function num (str)&amp;#123;    var a = &amp;#123;&amp;#125;;    var b = str.split(&amp;quot;&amp;quot;);    // key为元素   值为个数    for (let i = 0; i &amp;lt; b.length; i++) &amp;">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2017/11/10/JSON.parse() 报错Unexpected token o in JSON at position 1/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/04/29/js获取一个字符串中个数最多的字母/"/>
 
 
 
 
 
-  <title>JSON.parse() 报错Unexpected token o in JSON at position 1 | Leon Private</title>
+  <title>js获取一个字符串中个数最多的字母 | Leon Private</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/11/10/JSON.parse() 报错Unexpected token o in JSON at position 1/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/04/29/js获取一个字符串中个数最多的字母/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JSON.parse() 报错Unexpected token o in JSON at position 1</h1>
+          <h1 class="post-title" itemprop="name headline">js获取一个字符串中个数最多的字母</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T14:34:10+08:00">
-                2017-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-29T15:20:14+08:00">
+                2018-04-29
               </time>
             
 
@@ -324,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  361字
+                  164字
                 </span>
               
 
@@ -361,22 +361,11 @@
       
 
       
-        <h4 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h4><p>这个问题在之前做项目时碰到过一次，当时按照网上的做法，去掉JSON.parse()这一层转换后就没有这个报错了，数据也能正常使用，就没多想，也没深究是什么原因。可是这次又碰到了，所以这次我必须要弄明白原因。</p>
-<h4 id="先看看它的作用"><a href="#先看看它的作用" class="headerlink" title="先看看它的作用"></a>先看看它的作用</h4><p>JSON.parse()用于从一个字符串中解析出json对象,如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;&#123;&quot;name&quot;:&quot;LeonWu&quot;,&quot;age&quot;:&quot;18&quot;&#125;&apos;</span><br><span class="line"></span><br><span class="line">JSON.parse(str);</span><br><span class="line"></span><br><span class="line">//结果为一个Object</span><br><span class="line">// age: &quot;18&quot;;</span><br><span class="line">// name: &quot;LeonWu&quot;;</span><br></pre></td></tr></table></figure>
-<p>JSON.stringify()用于从一个对象解析出字符串，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;a:1,b:2,c:&quot;LeonWu&quot;&#125;;</span><br><span class="line"> </span><br><span class="line"> JSON.stringify(a);</span><br><span class="line"> </span><br><span class="line"> //结果为 &quot;&#123;&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:&quot;LeonWu&quot;&#125;&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="背后的原因"><a href="#背后的原因" class="headerlink" title="背后的原因"></a>背后的原因</h4><ol>
-<li>报错的原因：</li>
-</ol>
-<p>因为你要转换的数据本来就是object，这个方法是把一个字符串解析出json对象，你再转换就会报错;</p>
-<ol>
-<li>为什么会有这样的错误：</li>
-</ol>
-<p>因为把Object作为参数传到JSON.parse()里时，它会默转为string，转换为”[object Object]”，JSON.parse将第一个字符’[‘理解为数组的开始，第二字符’o’不知道怎么处理;所以就抛出了上面的错误信息 Unexpected token o in JSON at position 1。</p>
-<hr>
-<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>如题</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function num (str)&#123;</span><br><span class="line">    var a = &#123;&#125;;</span><br><span class="line">    var b = str.split(&quot;&quot;);</span><br><span class="line">    // key为元素   值为个数</span><br><span class="line">    for (let i = 0; i &lt; b.length; i++) &#123;</span><br><span class="line">        if(a[b[i]])&#123;</span><br><span class="line">            a[b[i]]++;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            a[b[i]] = 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // 通过比较找出最大的</span><br><span class="line">    var maxLetter = &quot;&quot;;</span><br><span class="line">    var levelNum = 0;</span><br><span class="line">    for (const k in a) &#123;</span><br><span class="line">        if(a[k] &gt; levelNum)&#123;</span><br><span class="line">            levelNum = a[k];</span><br><span class="line">            maxLetter = k;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    console.log(maxLetter + &quot;:&quot; + levelNum);</span><br><span class="line">    </span><br><span class="line">    return maxLetter;</span><br><span class="line">&#125;</span><br><span class="line">var cc = &quot;dafsfsfasfafaqertyyuuioll,mmnnbvvsfsdfqgsafsafgff&quot;;</span><br><span class="line">num(cc);</span><br></pre></td></tr></table></figure>
+<p>我的CSDN博客：<a href="http://blog.csdn.net/wxl1555" target="_blank" rel="noopener">http://blog.csdn.net/wxl1555</a></p>
+<p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
+<p>邮箱：wuxiaolong802@163.com</p>
 
       
     </div>
@@ -423,7 +412,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript基础/" rel="tag"># JavaScript基础</a>
+            <a href="/tags/js简单算法/" rel="tag"># js简单算法</a>
           
         </div>
       
@@ -436,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/14/Date.parse()与Date.getTime()方法详解/" rel="next" title="Date.parse()与Date.getTime()方法详解">
-                <i class="fa fa-chevron-left"></i> Date.parse()与Date.getTime()方法详解
+              <a href="/2018/04/18/ie11 Object doesn't support property or method 'attachEvent'/" rel="next" title="ie11 Object doesn't support property or method 'attachEvent'">
+                <i class="fa fa-chevron-left"></i> ie11 Object doesn't support property or method 'attachEvent'
               </a>
             
           </div>
@@ -445,10 +434,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/24/js编码的实用技巧1/" rel="prev" title="js编码的实用技巧(一)">
-                js编码的实用技巧(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -617,7 +602,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#写在前面的话"><span class="nav-number">1.</span> <span class="nav-text">写在前面的话</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#先看看它的作用"><span class="nav-number">2.</span> <span class="nav-text">先看看它的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背后的原因"><span class="nav-number">3.</span> <span class="nav-text">背后的原因</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
