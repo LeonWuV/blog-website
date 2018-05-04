@@ -38,7 +38,7 @@ console.log(5);
 上图为《你不知道的JavaScript》中卷中第二部分的第一章第5小节的内容
 
 
-github资源地址：[]()
+github资源地址：[https://github.com/promise和setTimeout执行顺序的问题.md](https://github.com/LeonWuV/leonwuv.github.io/blob/hexo/source/_posts/promise%E5%92%8CsetTimeout%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98.md)
 
 我的个人博客：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)
 
