@@ -331,7 +331,7 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
 
 
 
-
+github资源地址：[https://github.com/深入理解弹性盒flex布局.md](https://github.com/LeonWuV/leonwuv.github.io/blob/hexo/source/_posts/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BC%B9%E6%80%A7%E7%9B%92flex%E5%B8%83%E5%B1%80.md)
 
 
 我的个人博客：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)
