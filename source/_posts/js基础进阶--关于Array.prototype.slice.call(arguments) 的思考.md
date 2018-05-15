@@ -1,4 +1,8 @@
-欢迎访问我的个人博客：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)
+---
+title: js基础进阶--关于Array.prototype.slice.call(arguments) 的思考
+date: 2018-05-15 21:01:11
+tags: js基础进阶
+---
 
 Array.prototype.slice.call(arguments)的作用为：强制转化arguments为数组格式，一般出现在框架活插件的源码中
 
@@ -82,7 +86,7 @@ arguments 为函数实参的一个集合，数据类型为对象类型
 
 ---
 
-github资源地址：[https://github.com/]()
+github资源地址：[https://github.com/关于Array.prototype.slice.call(arguments) 的思考.md](https://github.com/LeonWuV/leonwuv.github.io/blob/hexo/source/_posts/%E5%85%B3%E4%BA%8EArray.prototype.slice.call(arguments)%20%E7%9A%84%E6%80%9D%E8%80%83.md)
 
 我的个人博客：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)
 
