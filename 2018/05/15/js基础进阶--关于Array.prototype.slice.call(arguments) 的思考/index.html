@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前端页面优化," />
+  <meta name="keywords" content="js基础进阶," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="什么是页面的重绘与回流当页面中的部分或者全部元素改变宽度和高度、或者位置发生变化、删除或者增加某个或者某些元素时、某个元素影藏或者显示时，这时页面就需要重新加载了，这就叫做回流。 当页面的中的可见性发上变化时，比如：背景颜色吗，文字颜色等，这样就形成了重绘。 注：从上面可以看出，回流必将引起重绘，而重绘不一定会引起回流。 怎么减少重绘和回流呢一、使用cssText属性，在各浏览器中测试都通过了。一">
-<meta name="keywords" content="前端页面优化">
+<meta name="description" content="Array.prototype.slice.call(arguments)的作用为：强制转化arguments为数组格式，一般出现在框架活插件的源码中 如何理解上面的代码等价于[ ].slice.call(arguments) 或者随便一个数组调用都行 [1,2,4].slice.call(arguments)   因为，前面的调用者的作用只是沿着原型链向上找，最终找到Array为止，slice为">
+<meta name="keywords" content="js基础进阶">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于重绘（repaint）和回流（reflow）的理解">
-<meta property="og:url" content="http://xiaolongwu.cn/2018/03/04/关于重绘（repaint）和回流（reflow）的理解/index.html">
+<meta property="og:title" content="js基础进阶--关于Array.prototype.slice.call(arguments) 的思考">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/05/15/js基础进阶--关于Array.prototype.slice.call(arguments) 的思考/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="什么是页面的重绘与回流当页面中的部分或者全部元素改变宽度和高度、或者位置发生变化、删除或者增加某个或者某些元素时、某个元素影藏或者显示时，这时页面就需要重新加载了，这就叫做回流。 当页面的中的可见性发上变化时，比如：背景颜色吗，文字颜色等，这样就形成了重绘。 注：从上面可以看出，回流必将引起重绘，而重绘不一定会引起回流。 怎么减少重绘和回流呢一、使用cssText属性，在各浏览器中测试都通过了。一">
+<meta property="og:description" content="Array.prototype.slice.call(arguments)的作用为：强制转化arguments为数组格式，一般出现在框架活插件的源码中 如何理解上面的代码等价于[ ].slice.call(arguments) 或者随便一个数组调用都行 [1,2,4].slice.call(arguments)   因为，前面的调用者的作用只是沿着原型链向上找，最终找到Array为止，slice为">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-04T15:17:38.307Z">
+<meta property="og:updated_time" content="2018-05-15T12:52:08.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于重绘（repaint）和回流（reflow）的理解">
-<meta name="twitter:description" content="什么是页面的重绘与回流当页面中的部分或者全部元素改变宽度和高度、或者位置发生变化、删除或者增加某个或者某些元素时、某个元素影藏或者显示时，这时页面就需要重新加载了，这就叫做回流。 当页面的中的可见性发上变化时，比如：背景颜色吗，文字颜色等，这样就形成了重绘。 注：从上面可以看出，回流必将引起重绘，而重绘不一定会引起回流。 怎么减少重绘和回流呢一、使用cssText属性，在各浏览器中测试都通过了。一">
+<meta name="twitter:title" content="js基础进阶--关于Array.prototype.slice.call(arguments) 的思考">
+<meta name="twitter:description" content="Array.prototype.slice.call(arguments)的作用为：强制转化arguments为数组格式，一般出现在框架活插件的源码中 如何理解上面的代码等价于[ ].slice.call(arguments) 或者随便一个数组调用都行 [1,2,4].slice.call(arguments)   因为，前面的调用者的作用只是沿着原型链向上找，最终找到Array为止，slice为">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2018/03/04/关于重绘（repaint）和回流（reflow）的理解/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/05/15/js基础进阶--关于Array.prototype.slice.call(arguments) 的思考/"/>
 
 
 
 
 
-  <title>关于重绘（repaint）和回流（reflow）的理解 | Leon Private</title>
+  <title>js基础进阶--关于Array.prototype.slice.call(arguments) 的思考 | Leon Private</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/03/04/关于重绘（repaint）和回流（reflow）的理解/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/05/15/js基础进阶--关于Array.prototype.slice.call(arguments) 的思考/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于重绘（repaint）和回流（reflow）的理解</h1>
+          <h1 class="post-title" itemprop="name headline">js基础进阶--关于Array.prototype.slice.call(arguments) 的思考</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T23:14:30+08:00">
-                2018-03-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T21:01:11+08:00">
+                2018-05-15
               </time>
             
 
@@ -324,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  400字
+                  580字
                 </span>
               
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">阅读时长 </span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  3分钟
                 </span>
               
             </div>
@@ -361,21 +361,25 @@
       
 
       
-        <h4 id="什么是页面的重绘与回流"><a href="#什么是页面的重绘与回流" class="headerlink" title="什么是页面的重绘与回流"></a>什么是页面的重绘与回流</h4><p>当页面中的部分或者全部元素改变宽度和高度、或者位置发生变化、删除或者增加某个或者某些元素时、某个元素影藏或者显示时，这时页面就需要重新加载了，这就叫做回流。</p>
-<p>当页面的中的可见性发上变化时，比如：背景颜色吗，文字颜色等，这样就形成了重绘。</p>
-<p>注：从上面可以看出，回流必将引起重绘，而重绘不一定会引起回流。</p>
-<h4 id="怎么减少重绘和回流呢"><a href="#怎么减少重绘和回流呢" class="headerlink" title="怎么减少重绘和回流呢"></a>怎么减少重绘和回流呢</h4><p>一、使用cssText属性，在各浏览器中测试都通过了。一行代码即可，实在很妙。如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var head= document.getElementById(&quot;head&quot;);</span><br><span class="line"></span><br><span class="line">head.style.cssText=&quot;width:200px;height:70px;display:bolck&quot;;</span><br></pre></td></tr></table></figure>
-<p>但cssText也有个缺点，会覆盖之前的样式。如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;color:red;&quot;&gt;TEST&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>想给该div在添加个css属性width</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div.style.cssText = &quot;width:200px;&quot;</span><br></pre></td></tr></table></figure>
-<p>这时虽然width属性加上了，但之前的color却被覆盖丢失了。因此使用cssText时应该采用叠加的方式以保留原有的样式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function setStyle(el, strCss)&#123;</span><br><span class="line">    var sty = el.style;</span><br><span class="line">    sty.cssText = sty.cssText + strCss;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>二、不要一条条的修改DOM属性，可以预先定义好CSS的Class，然后修改DOM的ClassName；这方法应该很好理解我就不写例子了</p>
-<p><strong>我的CSDN个人博客：<a href="http://blog.csdn.net/wxl1555" target="_blank" rel="noopener">http://blog.csdn.net/wxl1555</a></strong></p>
-<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+        <p>Array.prototype.slice.call(arguments)的作用为：强制转化arguments为数组格式，一般出现在框架活插件的源码中</p>
+<h3 id="如何理解"><a href="#如何理解" class="headerlink" title="如何理解"></a>如何理解</h3><p>上面的代码等价于[ ].slice.call(arguments)</p>
+<p>或者随便一个数组调用都行 [1,2,4].slice.call(arguments)  </p>
+<p>因为，前面的调用者的作用只是沿着原型链向上找，最终找到Array为止，slice为Array原型上的一个方法</p>
+<p>slice内部的实现原理大概是这样的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.slice = function(start,end)&#123;</span><br><span class="line">     var result = new Array();</span><br><span class="line">     start = start || 0;        // 如果不传则取默认值</span><br><span class="line">     end = end || this.length;  // 如果不传则取默认值</span><br><span class="line">     </span><br><span class="line">     //this指向调用的对象，当用了call后，能够改变this的指向，也就是指向传进来的对象，这是关键</span><br><span class="line">     for(var i = start; i &lt; end; i++)&#123;</span><br><span class="line">          result.push(this[i]);</span><br><span class="line">     &#125;</span><br><span class="line">     return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>数组和字符串都有slice方法</p>
+<p>如果对slice不是很了解，请看这篇文章：<a href="https://blog.csdn.net/wxl1555/article/details/79388292" target="_blank" rel="noopener">slice（）与splice（）的用法和区别你清楚吗？</a></p>
+<p>call方法的作用为：改变调用者的this指向并且执行调用者，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function fn(a)&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">    console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">var obj = &#123;</span><br><span class="line">    a : 2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn.call(obj); //  2 </span><br><span class="line">              //  &#123;a : 2&#125; </span><br><span class="line">// 解释一下 fn的this指针指向了obj ，并且执行了fn函数</span><br></pre></td></tr></table></figure>
+<p>如果对call方法还是没理解，请看这边文章       <a href="https://blog.csdn.net/wxl1555/article/details/80327397" target="_blank" rel="noopener">js基础–深入理解call、apply、bind</a></p>
+<p>arguments 为函数实参的一个集合，数据类型为对象类型</p>
+<h3 id="写一个例子吧"><a href="#写一个例子吧" class="headerlink" title="写一个例子吧"></a>写一个例子吧</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function ary()&#123;</span><br><span class="line">    console.log(arguments,typeof arguments,arguments instanceof Object)</span><br><span class="line">    </span><br><span class="line">    // 自己实操一下  看看上面这行代码能打印出什么</span><br><span class="line">    </span><br><span class="line">    return [11,12].slice.call(arguments);</span><br><span class="line">    </span><br><span class="line">    //这里的[11,12]可以被替换为任意的数组，不影响结果</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    var a11 = ary(1,2,3,4,5,6,888,9,222);</span><br><span class="line">    </span><br><span class="line">    console.log(a11);   [1, 2, 3, 4, 5, 6, 888, 9, 222]</span><br><span class="line">    console.log(typeof a11);            //&quot;object&quot;</span><br><span class="line">    console.log(a11 instanceof Array);  //ture</span><br></pre></td></tr></table></figure>
+<hr>
+<p>github资源地址：<a href="https://github.com/LeonWuV/leonwuv.github.io/blob/hexo/source/_posts/%E5%85%B3%E4%BA%8EArray.prototype.slice.call(arguments" target="_blank" rel="noopener">https://github.com/关于Array.prototype.slice.call(arguments) 的思考.md</a>%20%E7%9A%84%E6%80%9D%E8%80%83.md)</p>
+<p>我的个人博客：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
+<p>csdn博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
+<p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
+<p>邮箱：wuxiaolong802@163.com</p>
 
       
     </div>
@@ -422,7 +426,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端页面优化/" rel="tag"># 前端页面优化</a>
+            <a href="/tags/js基础进阶/" rel="tag"># js基础进阶</a>
           
         </div>
       
@@ -435,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/27/slice（）与splice（）的用法和区别你清楚吗？/" rel="next" title="slice（）与splice（）的用法和区别你清楚吗？">
-                <i class="fa fa-chevron-left"></i> slice（）与splice（）的用法和区别你清楚吗？
+              <a href="/2018/05/03/深入理解弹性盒flex布局/" rel="next" title="深入理解弹性盒flex布局">
+                <i class="fa fa-chevron-left"></i> 深入理解弹性盒flex布局
               </a>
             
           </div>
@@ -444,10 +448,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/19/vue数据绑定数组，改变元素时不更新view问题/" rel="prev" title="vue数据绑定数组，改变元素时不更新view问题">
-                vue数据绑定数组，改变元素时不更新view问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -616,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是页面的重绘与回流"><span class="nav-number">1.</span> <span class="nav-text">什么是页面的重绘与回流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么减少重绘和回流呢"><span class="nav-number">2.</span> <span class="nav-text">怎么减少重绘和回流呢</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何理解"><span class="nav-number">1.</span> <span class="nav-text">如何理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写一个例子吧"><span class="nav-number">2.</span> <span class="nav-text">写一个例子吧</span></a></li></ol></div>
             
 
           </div>
