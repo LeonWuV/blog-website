@@ -1,4 +1,8 @@
-欢迎访问我的个人博客：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)
+---
+title: js基础进阶--关于Array.prototype.slice.call(arguments) 的思考
+date: 2018-05-14 21:05:10
+tags: js基础进阶
+---
 
 Array.prototype.slice.call(arguments)的作用为：强制转化arguments为数组格式，一般出现在框架活插件的源码中
 
@@ -77,8 +81,42 @@ arguments 为函数实参的一个集合，数据类型为对象类型
         
 ```
 
+### 技术延伸
+其实要实现将arguments强制转化为数组，还有几种方式
+
+#### 利用es6的Array.from()
 
 
+```
+    function fn(){
+        var a = Array.from(arguments);
+        var b = Array.from(arguments).slice(1);
+        console.log(a);
+        console.log(b);
+    }
+    
+    fn(1,2,6,3,4,12);
+    // 结果分别为 1,2,6,3,4,12  和 2,6,3,4,12
+
+```
+
+
+#### 利用es6的展开表达式
+
+
+```
+    function fn(){
+        var a = [...arguments];
+        var b = [...arguments].slice(1);
+        console.log(a);
+        console.log(b);
+    }
+    
+    fn(1,2,6,3,4,12);
+    // 结果分别为 1,2,6,3,4,12  和 2,6,3,4,12
+    
+```
+本文完
 
 ---
 
