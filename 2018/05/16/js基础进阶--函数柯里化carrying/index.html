@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前端页面优化," />
+  <meta name="keywords" content="js基础进阶," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="什么是页面的重绘与回流当页面中的部分或者全部元素改变宽度和高度、或者位置发生变化、删除或者增加某个或者某些元素时、某个元素影藏或者显示时，这时页面就需要重新加载了，这就叫做回流。 当页面的中的可见性发上变化时，比如：背景颜色吗，文字颜色等，这样就形成了重绘。 注：从上面可以看出，回流必将引起重绘，而重绘不一定会引起回流。 怎么减少重绘和回流呢一、使用cssText属性，在各浏览器中测试都通过了。一">
-<meta name="keywords" content="前端页面优化">
+<meta name="description" content="定义函数柯里化就是创建已经设置单个参数或者多个参数的函数，函数变为接受一个参数，返回一个值 来个例子12345678910111213141516171819202122232425262728293031323334353637383940function add()&amp;#123;    // 将传进来的实参转换为数组arr    var arr = Array.prototype.slice.c">
+<meta name="keywords" content="js基础进阶">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于重绘（repaint）和回流（reflow）的理解">
-<meta property="og:url" content="http://xiaolongwu.cn/2018/03/04/关于重绘（repaint）和回流（reflow）的理解/index.html">
+<meta property="og:title" content="js基础进阶--函数柯里化carrying">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/05/16/js基础进阶--函数柯里化carrying/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="什么是页面的重绘与回流当页面中的部分或者全部元素改变宽度和高度、或者位置发生变化、删除或者增加某个或者某些元素时、某个元素影藏或者显示时，这时页面就需要重新加载了，这就叫做回流。 当页面的中的可见性发上变化时，比如：背景颜色吗，文字颜色等，这样就形成了重绘。 注：从上面可以看出，回流必将引起重绘，而重绘不一定会引起回流。 怎么减少重绘和回流呢一、使用cssText属性，在各浏览器中测试都通过了。一">
+<meta property="og:description" content="定义函数柯里化就是创建已经设置单个参数或者多个参数的函数，函数变为接受一个参数，返回一个值 来个例子12345678910111213141516171819202122232425262728293031323334353637383940function add()&amp;#123;    // 将传进来的实参转换为数组arr    var arr = Array.prototype.slice.c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-04T15:17:38.307Z">
+<meta property="og:updated_time" content="2018-05-17T02:18:10.162Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于重绘（repaint）和回流（reflow）的理解">
-<meta name="twitter:description" content="什么是页面的重绘与回流当页面中的部分或者全部元素改变宽度和高度、或者位置发生变化、删除或者增加某个或者某些元素时、某个元素影藏或者显示时，这时页面就需要重新加载了，这就叫做回流。 当页面的中的可见性发上变化时，比如：背景颜色吗，文字颜色等，这样就形成了重绘。 注：从上面可以看出，回流必将引起重绘，而重绘不一定会引起回流。 怎么减少重绘和回流呢一、使用cssText属性，在各浏览器中测试都通过了。一">
+<meta name="twitter:title" content="js基础进阶--函数柯里化carrying">
+<meta name="twitter:description" content="定义函数柯里化就是创建已经设置单个参数或者多个参数的函数，函数变为接受一个参数，返回一个值 来个例子12345678910111213141516171819202122232425262728293031323334353637383940function add()&amp;#123;    // 将传进来的实参转换为数组arr    var arr = Array.prototype.slice.c">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2018/03/04/关于重绘（repaint）和回流（reflow）的理解/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/05/16/js基础进阶--函数柯里化carrying/"/>
 
 
 
 
 
-  <title>关于重绘（repaint）和回流（reflow）的理解 | Leon Private</title>
+  <title>js基础进阶--函数柯里化carrying | Leon Private</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/03/04/关于重绘（repaint）和回流（reflow）的理解/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/05/16/js基础进阶--函数柯里化carrying/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于重绘（repaint）和回流（reflow）的理解</h1>
+          <h1 class="post-title" itemprop="name headline">js基础进阶--函数柯里化carrying</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T23:14:30+08:00">
-                2018-03-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T21:05:10+08:00">
+                2018-05-16
               </time>
             
 
@@ -324,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  400字
+                  411字
                 </span>
               
 
@@ -361,21 +361,14 @@
       
 
       
-        <h4 id="什么是页面的重绘与回流"><a href="#什么是页面的重绘与回流" class="headerlink" title="什么是页面的重绘与回流"></a>什么是页面的重绘与回流</h4><p>当页面中的部分或者全部元素改变宽度和高度、或者位置发生变化、删除或者增加某个或者某些元素时、某个元素影藏或者显示时，这时页面就需要重新加载了，这就叫做回流。</p>
-<p>当页面的中的可见性发上变化时，比如：背景颜色吗，文字颜色等，这样就形成了重绘。</p>
-<p>注：从上面可以看出，回流必将引起重绘，而重绘不一定会引起回流。</p>
-<h4 id="怎么减少重绘和回流呢"><a href="#怎么减少重绘和回流呢" class="headerlink" title="怎么减少重绘和回流呢"></a>怎么减少重绘和回流呢</h4><p>一、使用cssText属性，在各浏览器中测试都通过了。一行代码即可，实在很妙。如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var head= document.getElementById(&quot;head&quot;);</span><br><span class="line"></span><br><span class="line">head.style.cssText=&quot;width:200px;height:70px;display:bolck&quot;;</span><br></pre></td></tr></table></figure>
-<p>但cssText也有个缺点，会覆盖之前的样式。如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;color:red;&quot;&gt;TEST&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>想给该div在添加个css属性width</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div.style.cssText = &quot;width:200px;&quot;</span><br></pre></td></tr></table></figure>
-<p>这时虽然width属性加上了，但之前的color却被覆盖丢失了。因此使用cssText时应该采用叠加的方式以保留原有的样式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function setStyle(el, strCss)&#123;</span><br><span class="line">    var sty = el.style;</span><br><span class="line">    sty.cssText = sty.cssText + strCss;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>二、不要一条条的修改DOM属性，可以预先定义好CSS的Class，然后修改DOM的ClassName；这方法应该很好理解我就不写例子了</p>
-<p><strong>我的CSDN个人博客：<a href="http://blog.csdn.net/wxl1555" target="_blank" rel="noopener">http://blog.csdn.net/wxl1555</a></strong></p>
-<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>函数柯里化就是创建已经设置单个参数或者多个参数的函数，函数变为接受一个参数，返回一个值</p>
+<h3 id="来个例子"><a href="#来个例子" class="headerlink" title="来个例子"></a>来个例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">function add()&#123;</span><br><span class="line"></span><br><span class="line">    // 将传进来的实参转换为数组arr</span><br><span class="line">    var arr = Array.prototype.slice.call(arguments);</span><br><span class="line">    var mun = 0;</span><br><span class="line">    </span><br><span class="line">    for (let i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        mun += arr[i];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // 返回传进来的实参之和</span><br><span class="line">    return mun;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function carrying(fn)&#123;</span><br><span class="line">    // 获取要复用的参数，除去第一个参数并转化为数组</span><br><span class="line">    var argsOut = Array.prototype.slice.call(arguments,1);</span><br><span class="line">    </span><br><span class="line">    return function ()&#123;</span><br><span class="line">        // 取的自身的参数并转换为数组</span><br><span class="line">        var argsInner = Array.prototype.slice.call(arguments);</span><br><span class="line">        </span><br><span class="line">        // 合并复用和自身的数组</span><br><span class="line">        var argsTotle = argsInner.concat(argsOut);</span><br><span class="line">        </span><br><span class="line">        // 调用传进来的fn函数，并将数组元素，利用apply的特点依次传入fn</span><br><span class="line">        return fn.apply(null,argsTotle);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a1 = carrying(add,4,6,7);  // 4,6,7 为复用参数</span><br><span class="line">// 这里的a1为carrying函数中return出来的匿名函数</span><br><span class="line">    </span><br><span class="line">console.log(a1()); //17  这里自身参数没有</span><br><span class="line"></span><br><span class="line">console.log(a1(2,3,45,66)) //133  这里2,3,45,66为自身参数</span><br><span class="line"></span><br><span class="line">var a2 = carrying(add,1);</span><br><span class="line"></span><br><span class="line">console.log(a2(4,2,3,4,66)) // 80</span><br></pre></td></tr></table></figure>
+<p>我的github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/js%E5%9F%BA%E7%A1%80%E8%BF%9B%E9%98%B6/js%E5%9F%BA%E7%A1%80%E8%BF%9B%E9%98%B6--%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96carrying.md" target="_blank" rel="noopener">https://github.com/js基础进阶–函数柯里化carrying.md</a></p>
+<p>我的个人博客地址：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
+<p>我的博客园地址：<a href="http://www.cnblogs.com/wuxiaolong555" target="_blank" rel="noopener">http://www.cnblogs.com/wuxiaolong555</a></p>
+<p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
+<p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
+<p>邮箱：wuxiaolong802@163.com</p>
 
       
     </div>
@@ -422,7 +415,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端页面优化/" rel="tag"># 前端页面优化</a>
+            <a href="/tags/js基础进阶/" rel="tag"># js基础进阶</a>
           
         </div>
       
@@ -435,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/27/slice（）与splice（）的用法和区别你清楚吗？/" rel="next" title="slice（）与splice（）的用法和区别你清楚吗？">
-                <i class="fa fa-chevron-left"></i> slice（）与splice（）的用法和区别你清楚吗？
+              <a href="/2018/05/03/深入理解弹性盒flex布局/" rel="next" title="深入理解弹性盒flex布局">
+                <i class="fa fa-chevron-left"></i> 深入理解弹性盒flex布局
               </a>
             
           </div>
@@ -444,10 +437,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/19/vue数据绑定数组，改变元素时不更新view问题/" rel="prev" title="vue数据绑定数组，改变元素时不更新view问题">
-                vue数据绑定数组，改变元素时不更新view问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -616,7 +605,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是页面的重绘与回流"><span class="nav-number">1.</span> <span class="nav-text">什么是页面的重绘与回流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么减少重绘和回流呢"><span class="nav-number">2.</span> <span class="nav-text">怎么减少重绘和回流呢</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#来个例子"><span class="nav-number">2.</span> <span class="nav-text">来个例子</span></a></li></ol></div>
             
 
           </div>
