@@ -1,5 +1,8 @@
-欢迎访问我的个人博客：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)
-
+---
+title: js基础进阶--函数柯里化carrying
+date: 2018-05-16 21:05:10
+tags: js基础进阶
+---
 ### 定义
 函数柯里化就是创建已经设置单个参数或者多个参数的函数，函数变为接受一个参数，返回一个值
 
@@ -48,7 +51,7 @@
     
 ```
 
-
+我的github资源地址：[https://github.com/js基础进阶--函数柯里化carrying.md](https://github.com/LeonWuV/FE-blog-repository/blob/master/js%E5%9F%BA%E7%A1%80%E8%BF%9B%E9%98%B6/js%E5%9F%BA%E7%A1%80%E8%BF%9B%E9%98%B6--%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96carrying.md)
 
 我的个人博客地址：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)
 
