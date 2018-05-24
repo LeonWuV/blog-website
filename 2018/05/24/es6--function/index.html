@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vue," />
+  <meta name="keywords" content="es6," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="相同点两者都是在判断DOM节点是否要显示。  不同点1、实现方式123v-if是根据后面数据的真假值判断直接从Dom树上删除或重建元素节点	v-show只是在修改元素的css样式，也就是display的属性值，元素始终在Dom树上。 2、编译过程123v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件； v-show只是简单的基于css切换； 3、编译条件12">
-<meta name="keywords" content="vue">
+<meta name="description" content="如同我们所看到的，ES6 中引入来箭头函数，相比 ES5 来讲是最为直观而明显的特性。在 ES6 之前，声明一个函数：function add(a, b) {  return a + b;}add(1, 2); // 3如果用箭头函数的形式写：const add = (a, b) =&amp;gt; a + b;add(1, 2); // 3计算圆面积的例子：const square = (r) =&amp;gt">
+<meta name="keywords" content="es6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue中v-if和v-show的区别">
-<meta property="og:url" content="http://xiaolongwu.cn/2017/12/04/vue中v-if和v-show的区别/index.html">
+<meta property="og:title" content="es6--function">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/05/24/es6--function/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="相同点两者都是在判断DOM节点是否要显示。  不同点1、实现方式123v-if是根据后面数据的真假值判断直接从Dom树上删除或重建元素节点	v-show只是在修改元素的css样式，也就是display的属性值，元素始终在Dom树上。 2、编译过程123v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件； v-show只是简单的基于css切换； 3、编译条件12">
+<meta property="og:description" content="如同我们所看到的，ES6 中引入来箭头函数，相比 ES5 来讲是最为直观而明显的特性。在 ES6 之前，声明一个函数：function add(a, b) {  return a + b;}add(1, 2); // 3如果用箭头函数的形式写：const add = (a, b) =&amp;gt; a + b;add(1, 2); // 3计算圆面积的例子：const square = (r) =&amp;gt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-08T10:55:31.452Z">
+<meta property="og:updated_time" content="2018-05-24T01:59:19.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue中v-if和v-show的区别">
-<meta name="twitter:description" content="相同点两者都是在判断DOM节点是否要显示。  不同点1、实现方式123v-if是根据后面数据的真假值判断直接从Dom树上删除或重建元素节点	v-show只是在修改元素的css样式，也就是display的属性值，元素始终在Dom树上。 2、编译过程123v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件； v-show只是简单的基于css切换； 3、编译条件12">
+<meta name="twitter:title" content="es6--function">
+<meta name="twitter:description" content="如同我们所看到的，ES6 中引入来箭头函数，相比 ES5 来讲是最为直观而明显的特性。在 ES6 之前，声明一个函数：function add(a, b) {  return a + b;}add(1, 2); // 3如果用箭头函数的形式写：const add = (a, b) =&amp;gt; a + b;add(1, 2); // 3计算圆面积的例子：const square = (r) =&amp;gt">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2017/12/04/vue中v-if和v-show的区别/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/05/24/es6--function/"/>
 
 
 
 
 
-  <title>vue中v-if和v-show的区别 | Leon Private</title>
+  <title>es6--function | Leon Private</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/12/04/vue中v-if和v-show的区别/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/05/24/es6--function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue中v-if和v-show的区别</h1>
+          <h1 class="post-title" itemprop="name headline">es6--function</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T14:34:10+08:00">
-                2017-12-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T09:58:43+08:00">
+                2018-05-24
               </time>
             
 
@@ -324,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  320字
+                  1,375字
                 </span>
               
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">阅读时长 </span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  6分钟
                 </span>
               
             </div>
@@ -361,14 +361,15 @@
       
 
       
-        <h2 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h2><p>两者都是在判断DOM节点是否要显示。</p>
-<hr>
-<h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><h3 id="1、实现方式"><a href="#1、实现方式" class="headerlink" title="1、实现方式"></a>1、实现方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v-if是根据后面数据的真假值判断直接从Dom树上删除或重建元素节点</span><br><span class="line">	</span><br><span class="line">v-show只是在修改元素的css样式，也就是display的属性值，元素始终在Dom树上。</span><br></pre></td></tr></table></figure>
-<h3 id="2、编译过程"><a href="#2、编译过程" class="headerlink" title="2、编译过程"></a>2、编译过程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件； </span><br><span class="line"></span><br><span class="line">v-show只是简单的基于css切换；</span><br></pre></td></tr></table></figure>
-<h3 id="3、编译条件"><a href="#3、编译条件" class="headerlink" title="3、编译条件"></a>3、编译条件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v-if是惰性的，如果初始条件为假，则什么也不做；只有在条件第一次变为真时才开始局部编译；</span><br><span class="line"></span><br><span class="line">v-show是在任何条件下（首次条件是否为真）都被编译，然后被缓存，而且DOM元素始终被保留；</span><br></pre></td></tr></table></figure>
-<h3 id="4、性能消耗"><a href="#4、性能消耗" class="headerlink" title="4、性能消耗"></a>4、性能消耗</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v-if有更高的切换消耗，不适合做频繁的切换；</span><br><span class="line"> </span><br><span class="line">v-show有更高的初始渲染消耗，适合做频繁的额切换；</span><br></pre></td></tr></table></figure>
-<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+        <div data-v-41d33d72="" itemprop="articleBody" class="entry-content article-content"><p>如同我们所看到的，ES6 中引入来箭头函数，相比 ES5 来讲是最为直观而明显的特性。</p><br><p>在 ES6 之前，声明一个函数：</p><br><pre><code>function add(a, b) {<br>  return a + b;<br>}<br>add(1, 2); // 3</code></pre><br><p>如果用箭头函数的形式写：</p><br><pre><code>const add = (a, b) =&gt; a + b;<br>add(1, 2); // 3</code></pre><br><p>计算圆面积的例子：</p><br><pre><code>const square = (r) =&gt; {<br>  const PI = 3.14;<br>  return PI<em>r</em>r;<br>}<br>square(4);</code></pre><br><p>形式上的改变仅仅是一部分，接下来关注一个很有用的特性：默认值。</p><br><h2 data-id="heading-0">默认值</h2><br><p>在 ES6 之前，函数内给定参数的默认值，只能这样：</p><br><pre><code>function add(a, b) {<br>  console.log(arguments[0]);<br>  a = a || 2000;<br>  b = b || 333;<br>  return a + b;<br>}<br>add(); // 2333</code></pre><br><p>但是此方案遇到 boolean 为 false 的 js 值无法工作，例如：</p><br><pre><code>add(0); // 2333</code></pre><br><p>显然，结果错误。运算中 a 仍旧采用了默认值。</p><br><p>所以，当函数传参为 <code>null, undefined, ‘’, 0, -0, NaN</code> 时，短路操作符 || 会给定默认值。</p><br><p>修订版成了这样：</p><br><pre><code>function add(a, b) {<br>  a = (typeof a !== ‘undefined’) ? a : 2000;<br>  b = (typeof b !== ‘undefined’) ? b : 333;<br>  return a + b;<br>}<br>add(0); // 333</code></pre><br><p>而在 ES6 中，只需要给参数直接赋予默认值即可：</p><br><pre><code>const add = (a = 2000, b = 333) =&gt; a + b;<br>add(); // 2333<br>add(0); // 333</code></pre><br><h3 data-id="heading-1">默认值对 arguments 的影响</h3><br><p>在 ES5 中：</p><br><pre><code>function add(a, b) {<br>  console.log(arguments.length);<br>  console.log(a === arguments[0]);<br>  console.log(b === arguments[1]);<br>  a = 200;<br>  b = 33;<br>  console.log(a === arguments[0]);<br>  console.log(b === arguments[1]);<br>}<br>add(1, 2);<br>// 2<br>// true<br>// true<br>// true<br>// true</code></pre><br><p>如果在严格模式下运行，结果是这样的：</p><br><pre><code>function add(a, b) {<br>  ‘use strict’;<br>  console.log(arguments.length);<br>  console.log(a === arguments[0]);<br>  console.log(b === arguments[1]);<br>  a = 200;<br>  b = 33;<br>  console.log(a === arguments[0]);<br>  console.log(b === arguments[1]);<br>}<br>add(1, 2);<br>// 2<br>// true<br>// true<br>// false<br>// false</code></pre><br><p>在 ES5 中的非严格模式下，更改参数值将会同步的更改 arguments 对象内的参数值，而在严格模式下不会更改。</p><br><p>对于 ES6 来说，无论是否在严格模式下，更改参数值的行为都不会同步更改 arguments 对象。</p><br><pre><code>function add(a = 2000, b = 333) {<br>  console.log(arguments.length);<br>  console.log(a === arguments[0]);<br>  console.log(b === arguments[1]);<br>  a = 200;<br>  b = 33;<br>  console.log(a === arguments[0]);<br>  console.log(b === arguments[1]);<br>}<br>add(0);<br>// 1<br>// true<br>// false<br>// false<br>// false</code></pre><br><p>再来看个例子：</p><br><pre><code>const add = (a = 2000, b = 333) =&gt; {<br>  console.log(arguments.length);<br>  console.log(a === arguments[0]);<br>  console.log(b === arguments[1]);<br>  a = 200;<br>  b = 33;<br>  console.log(a === arguments[0]);<br>  console.log(b === arguments[1]);<br>}<br>add(0);<br>// Uncaught ReferenceError: arguments is not defined</code></pre><br><p>另外需要注意的点是，箭头函数没有自己的 arguments 对象。但它可以访问外围函数的 arguments 对象：</p><br><pre><code>function add(a = 2000, b = 333) {<br>  return (() =&gt; arguments[0] + arguments[1])();<br>}<br>add(); // NaN<br>add(200, 33); // 233</code></pre><br><p>由于箭头函数没有自己的 arguments 对象，我们想要对箭头函数的参数进行扩展和处理，所以 ES6 中引入了 rest 参数。</p><br><h3 data-id="heading-2">rest 参数</h3><br><p>ES6 内 rest 参数的实现实际上更符合现代编程语言的直觉。在 ES5 中操作 arguments 对象的时候，由于 arguments 对象并非数组对象，需要先把它转换为数组对象来使用数组的方法。</p><br><pre><code>function numSort() {<br>  return Array.prototype.slice.call(arguments).sort();<br>}<br><br>numSort(3, 6, 5, 1); // [1, 3, 5, 6]</code></pre><br><p>而如果使用 rest 参数：</p><br><pre><code>function numSort(…nums) {<br>  return nums.sort()<br>}<br><br>numSort(3, 6, 5, 1); // [1, 3, 5, 6]</code></pre><br><p>nums 是一个纯数组对象，在 python 中类似的写法也称为不定参数的写法。因为 python 的参数个数是指定的，使用不定参数的方式是直接以字典或列表作为参数直接传进去，这样不够优雅，有了 <code>*args</code> 的写法。</p><br><p>而在 js 中本身具有 arguments 对象，天然可以利用它来对参数进行操作，引入箭头函数没有 arguments 对象，弥补这样的一个不足，引入 rest 参数这种更优雅的方式。</p><br><p>需要注意，如果同时传入 rest 参数和非 rest 参数：</p><br><pre><code>function numSort(first, …other) {<br>  return other.sort()<br>}<br><br>numSort(3, 6, 5, 1); // [1, 5, 6]</code></pre><br><p>rest 参数代表的也是一个指定的参数列表，而非全部参数。另外，如果对调普通参数和 rest 参数的位置：</p><br><pre><code>function numSort(…other, last) {<br>  return other.sort()<br>}<br><br>numSort(3, 6, 5, 1); // Uncaught SyntaxError: Rest parameter must be last formal parameter</code></pre><br><p>表明了， rest 参数只能位于参数列表的最后一位。</p><br><h2 data-id="heading-3">this</h2><br><p>在 ES6 的箭头函数中，this 值总是绑定到函数的定义：</p><br><pre><code>const obj = {<br>  name: ‘Rainy’,<br>  say: function () {<br>    setTimeout(() =&gt; {<br>      console.log(<code>I&#39;m ${this.name}</code>);<br>    })<br>  }<br>}<br>obj.say(); // I’m Rainy</code></pre><br><p>而如果是普通函数，由于 setTimeout 函数内的 this 指向 window，所以找不到 name 值：</p><br><pre><code>const obj = {<br>  name: ‘Rainy’,<br>  say: function () {<br>    setTimeout(function () {<br>      console.log(<code>I&#39;m ${this.name}</code>);<br>    })<br>  }<br>}<br>obj.say(); // I’m</code></pre><br><p>可以将箭头函数的该行为看作：</p><br><pre><code>const obj = {<br>  name: ‘Rainy’,<br>  say: function () {<br>    const self = this;<br>    setTimeout(function () {<br>      console.log(<code>I&#39;m ${self.name}</code>);<br>    })<br>  }<br>}<br>obj.say(); // I’m Rainy</code></pre><br><p>实际上这是由于箭头函数本身没有 this，其中的 this 实际上是外部函数的 this 绑定。</p><br><p>且箭头函数中的 this 值无法改变：</p><br><pre><code>const obj = {<br>  name: ‘Rainy’,<br>  say: function () {<br>    setTimeout((() =&gt; console.log(<code>I&#39;m ${this.name}</code>)).bind({name: ‘Null’}))<br>  }<br>}<br>obj.say(); // I’m Rainy</code></pre><br><p>而非箭头函数：</p><br><pre><code>const obj = {<br>  name: ‘Rainy’,<br>  say: function () {<br>    setTimeout((function () {console.log(<code>I&#39;m ${this.name}</code>)}).bind({name: ‘Null’}))<br>  }<br>}<br>obj.say(); // I’m Null</code></pre><br><p>也正因为如此，箭头函数无法作为构造函数，因为 this 值无法绑定至构造函数的实例。</p><br><hr><br><h2 data-id="heading-4">参考</h2><br><ul><br>    <li>《深入理解 ES6》</li><br>    <li>《实战 ES2015》</li><br>    <li><a href="https://link.juejin.im?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2F" target="_blank" rel="nofollow noopener noreferrer">MDN</a></li><br></ul></div>
+
+<p>我的github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/es6/es6--function.md" target="_blank" rel="noopener">https://github.com/es6 – function.md</a></p>
+<p>我的个人博客地址：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
+<p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
+<p>我的博客园地址：<a href="http://www.cnblogs.com/wuxiaolong555" target="_blank" rel="noopener">http://www.cnblogs.com/wuxiaolong555</a></p>
+<p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
+<p>邮箱：wuxiaolong802@163.com</p>
+<p><strong>文章转载自：<a href="https://juejin.im/entry/5afb9483f265da0b84559865?utm_medium=hao.caibaojian.com&amp;utm_source=hao.caibaojian.com" target="_blank" rel="noopener">ES6 札记：函数</a></strong></p>
 
       
     </div>
@@ -415,7 +416,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
+            <a href="/tags/es6/" rel="tag"># es6</a>
           
         </div>
       
@@ -428,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/04/vue.js开发神器devtools的安装方法/" rel="next" title="vue.js开发神器devtools的安装方法">
-                <i class="fa fa-chevron-left"></i> vue.js开发神器devtools的安装方法
+              <a href="/2018/05/16/js基础进阶--函数柯里化carrying/" rel="next" title="js基础进阶--函数柯里化carrying">
+                <i class="fa fa-chevron-left"></i> js基础进阶--函数柯里化carrying
               </a>
             
           </div>
@@ -437,10 +438,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/04/--save-dev 与 --save的区别/" rel="prev" title="--save-dev 与 --save的区别">
-                --save-dev 与 --save的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -609,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#相同点"><span class="nav-number">1.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同点"><span class="nav-number">2.</span> <span class="nav-text">不同点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、实现方式"><span class="nav-number">2.1.</span> <span class="nav-text">1、实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、编译过程"><span class="nav-number">2.2.</span> <span class="nav-text">2、编译过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、编译条件"><span class="nav-number">2.3.</span> <span class="nav-text">3、编译条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、性能消耗"><span class="nav-number">2.4.</span> <span class="nav-text">4、性能消耗</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">默认值对 arguments 的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">rest 参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
