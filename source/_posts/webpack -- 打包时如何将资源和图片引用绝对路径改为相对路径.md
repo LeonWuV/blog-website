@@ -1,9 +1,9 @@
 ---
 title: webpack -- 打包时如何将资源和图片引用绝对路径改为相对路径
 date: 2018-07-18 20:49:06
-tags: 工具/tools
+tags: webpack
 ---
-欢迎访问我的个人博客：[http://www.xiaolongwu.cn](http://www.xiaolongwu.cn)
+
 ## 前言
 最近在用vue-cli+webpack做项目，项目架构搭好了之后，想build之后看看效果，但是build出来的index.html文件中的默认资源引用都是绝对路径，也就是相对于根目录的绝对路径；但是我项目如果部署到线上也不一定是在根目录里呀，所以这种默认相对于根目录的绝对路径肯定是不实用的；
 ## 解决方案
