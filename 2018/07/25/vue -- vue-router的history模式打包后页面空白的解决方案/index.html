@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript基础," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="js编码的实用技巧(二)在平时的开发中，编码技巧很重要，会让你少写很多代码，起到事倍功半的效果。 下面总结几种简单的技巧，大家共同学习一下 1、 利用+、-、/1,*1将字符串转换为整数型这个方法试用于将字符串类型的数字转换为整数型，如果带字母就会返回NaN。 123456789var a = &amp;quot;1234&amp;quot;, b = &amp;quot;leonWuv&amp;quot;;//我们想把a转换为">
-<meta name="keywords" content="JavaScript基础">
+<meta name="description" content="前言采坑记录，以便后面翻阅 首先你需要确认页面空白不是由资源文件路径不正确引起的，如果资源找不到就将绝对路径改为相对路劲，具体解决方案看这里：webpack–资源和css中图片引用打包为相对路径的方案 问题现象在本地开发环境没有任何问题，路由也正常显示，但是打包并部到服务器之后，访问页面就是空白，看控制台也没有报错，当时就是懵逼状态！！ 仔细想一下，history模式下就是在操作html5的his">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js编码的实用技巧(一)">
-<meta property="og:url" content="http://xiaolongwu.cn/2017/11/24/js编码的实用技巧1/index.html">
+<meta property="og:title" content="vue -- vue-router的history模式打包后页面空白的解决方案">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/07/25/vue -- vue-router的history模式打包后页面空白的解决方案/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="js编码的实用技巧(二)在平时的开发中，编码技巧很重要，会让你少写很多代码，起到事倍功半的效果。 下面总结几种简单的技巧，大家共同学习一下 1、 利用+、-、/1,*1将字符串转换为整数型这个方法试用于将字符串类型的数字转换为整数型，如果带字母就会返回NaN。 123456789var a = &amp;quot;1234&amp;quot;, b = &amp;quot;leonWuv&amp;quot;;//我们想把a转换为">
+<meta property="og:description" content="前言采坑记录，以便后面翻阅 首先你需要确认页面空白不是由资源文件路径不正确引起的，如果资源找不到就将绝对路径改为相对路劲，具体解决方案看这里：webpack–资源和css中图片引用打包为相对路径的方案 问题现象在本地开发环境没有任何问题，路由也正常显示，但是打包并部到服务器之后，访问页面就是空白，看控制台也没有报错，当时就是懵逼状态！！ 仔细想一下，history模式下就是在操作html5的his">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-08T10:55:31.449Z">
+<meta property="og:image" content="http://olv6wm3nj.bkt.clouddn.com/18-7-25/61418914.jpg">
+<meta property="og:updated_time" content="2018-07-25T11:15:17.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js编码的实用技巧(一)">
-<meta name="twitter:description" content="js编码的实用技巧(二)在平时的开发中，编码技巧很重要，会让你少写很多代码，起到事倍功半的效果。 下面总结几种简单的技巧，大家共同学习一下 1、 利用+、-、/1,*1将字符串转换为整数型这个方法试用于将字符串类型的数字转换为整数型，如果带字母就会返回NaN。 123456789var a = &amp;quot;1234&amp;quot;, b = &amp;quot;leonWuv&amp;quot;;//我们想把a转换为">
+<meta name="twitter:title" content="vue -- vue-router的history模式打包后页面空白的解决方案">
+<meta name="twitter:description" content="前言采坑记录，以便后面翻阅 首先你需要确认页面空白不是由资源文件路径不正确引起的，如果资源找不到就将绝对路径改为相对路劲，具体解决方案看这里：webpack–资源和css中图片引用打包为相对路径的方案 问题现象在本地开发环境没有任何问题，路由也正常显示，但是打包并部到服务器之后，访问页面就是空白，看控制台也没有报错，当时就是懵逼状态！！ 仔细想一下，history模式下就是在操作html5的his">
+<meta name="twitter:image" content="http://olv6wm3nj.bkt.clouddn.com/18-7-25/61418914.jpg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2017/11/24/js编码的实用技巧1/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/07/25/vue -- vue-router的history模式打包后页面空白的解决方案/"/>
 
 
 
 
 
-  <title>js编码的实用技巧(一) | Leon Private</title>
+  <title>vue -- vue-router的history模式打包后页面空白的解决方案 | Leon Private</title>
   
 
 
@@ -263,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/11/24/js编码的实用技巧1/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/07/25/vue -- vue-router的history模式打包后页面空白的解决方案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -280,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js编码的实用技巧(一)</h1>
+          <h1 class="post-title" itemprop="name headline">vue -- vue-router的history模式打包后页面空白的解决方案</h1>
         
 
         <div class="post-meta">
@@ -292,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-24T14:34:10+08:00">
-                2017-11-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T19:18:14+08:00">
+                2018-07-25
               </time>
             
 
@@ -324,7 +326,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  744字
+                  808字
                 </span>
               
 
@@ -361,26 +363,33 @@
       
 
       
-        <h4 id="js编码的实用技巧-二"><a href="#js编码的实用技巧-二" class="headerlink" title="js编码的实用技巧(二)"></a><a href="http://xiaolongwu.cn/2017/11/24/js%E7%BC%96%E7%A0%81%E7%9A%84%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A72/#more">js编码的实用技巧(二)</a></h4><p>在平时的开发中，编码技巧很重要，会让你少写很多代码，起到事倍功半的效果。</p>
-<p>下面总结几种简单的技巧，大家共同学习一下</p>
-<h4 id="1、-利用-、-、-1-1将字符串转换为整数型"><a href="#1、-利用-、-、-1-1将字符串转换为整数型" class="headerlink" title="1、 利用+、-、/1,*1将字符串转换为整数型"></a>1、 利用+、-、/1,*1将字符串转换为整数型</h4><p>这个方法试用于将字符串类型的数字转换为整数型，如果带字母就会返回NaN。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;1234&quot;, b = &quot;leonWuv&quot;;</span><br><span class="line">//我们想把a转换为1234的整数型，一般方法</span><br><span class="line">console.log(typeof Number(a))  //number</span><br><span class="line">//简单写法</span><br><span class="line">console.log(+a + 1,typeof +a);  //1235 number</span><br><span class="line">console.log(a - 0 + 1,typeof (a-0)); //1235 number</span><br><span class="line">console.log(a*1 + 1,typeof (a*1));  //1235 number</span><br><span class="line">console.log(a/1 + 1,typeof (a/1));  //1235 number</span><br><span class="line">console.log(b/1 + 1,typeof (b/1));  //NaN number</span><br></pre></td></tr></table></figure>
-<p>这个也是用于 Date();它将返回时间戳</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//以下方法都返回时间戳</span><br><span class="line">console.log(+ new Date()); //1512378253218  2017年12月04日17时左右;</span><br><span class="line">console.log(Date.parse(new Date())); //1512378253000  注意后三位向下取整为000;</span><br><span class="line">console.log(new Date(&quot;2017/1/1&quot;).getTime()); ////1483200000000</span><br></pre></td></tr></table></figure>
-<h4 id="2、利用-强制转换布尔值"><a href="#2、利用-强制转换布尔值" class="headerlink" title="2、利用!!强制转换布尔值"></a>2、利用!!强制转换布尔值</h4><p>我们需要验证一个变量是否存在或者有效时，可以使用！！来简单快速的判断</p>
-<p>这个技巧我在 <a href="http://blog.csdn.net/wxl1555/article/details/78595729" target="_blank" rel="noopener">javaScript数据类型你都弄明白了吗？绝对干货</a>这篇博文中的第四部分提到过</p>
-<p>总结一下就是：只要变量的值为:0、null、” “、undefined或者NaN都将返回的是false，反之返回的是true。看下面例子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 0,b = &quot;12&quot;;</span><br><span class="line">console.log(!!c); //false</span><br><span class="line">// 分解上面的代码--Boolean(c)得false，取非为true，再取非为false。</span><br><span class="line">console.log(!!d)  //true</span><br><span class="line">// 分解上面的代码--Boolean(d)true，取非为false，再取非为true</span><br></pre></td></tr></table></figure>
-<h4 id="3、在遍历数组时，缓存数组的length"><a href="#3、在遍历数组时，缓存数组的length" class="headerlink" title="3、在遍历数组时，缓存数组的length"></a>3、在遍历数组时，缓存数组的length</h4><p>在处理一个数组循环时，我们好多人通常会这么写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">    console.log(array[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当我们遍历一个小型数组时，这样写是可以的，但是当我们处理一个大型数组时，这样写就会每次循环都计算数组的长度，会有延误，这时我们可以这样写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var length = array.length;</span><br><span class="line">for(var i = 0; i &lt; length; i++) &#123;</span><br><span class="line">    console.log(array[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当然我们也可以这样写，这两种方式都是可以的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0, length = array.length; i &lt; length; i++) &#123;</span><br><span class="line">    console.log(array[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="4、合理利用-amp-amp-运算符"><a href="#4、合理利用-amp-amp-运算符" class="headerlink" title="4、合理利用&amp;&amp;运算符"></a>4、合理利用&amp;&amp;运算符</h4><p>看看这段代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(a)&#123;</span><br><span class="line">	console.log(&quot;hello leonWu&quot;);</span><br><span class="line">	//解释一下这段代码，如果Boolean(a)为true，就打印出hello leonWu</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们稍微修改一下上面的代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a &amp;&amp; console.log(&quot;hello leonWu&quot;); //结果是一样的，但是这样是不是简单清晰多了，代码量也少了</span><br></pre></td></tr></table></figure>
-<h2 id="未完待续。。。。"><a href="#未完待续。。。。" class="headerlink" title="未完待续。。。。"></a>未完待续。。。。</h2><h4 id="js编码的实用技巧-二-1"><a href="#js编码的实用技巧-二-1" class="headerlink" title="js编码的实用技巧(二)"></a><a href="http://xiaolongwu.cn/2017/11/24/js%E7%BC%96%E7%A0%81%E7%9A%84%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A72/#more">js编码的实用技巧(二)</a></h4><p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>采坑记录，以便后面翻阅</p>
+<p>首先你需要确认页面空白不是由资源文件路径不正确引起的，如果资源找不到就将绝对路径改为相对路劲，具体解决方案看这里：<a href="https://blog.csdn.net/wxl1555/article/details/81105204" target="_blank" rel="noopener">webpack–资源和css中图片引用打包为相对路径的方案</a></p>
+<h3 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h3><p>在本地开发环境没有任何问题，路由也正常显示，但是打包并部到服务器之后，访问页面就是空白，看控制台也没有报错，当时就是懵逼状态！！</p>
+<p>仔细想一下，history模式下就是在操作html5的history的一些api，所以肯定是url出了问题。</p>
+<h3 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h3><p>本地开发环境中，我们访问的地址为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:8888</span><br></pre></td></tr></table></figure></p>
+<p>以上没什么毛病，一切都好使</p>
+<p>但是，我们的项目并没有部署在nginx的根目录，而是在根目录的/aaa/目录下</p>
+<p>所以我们默认的访问地址为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">www.xxxx.com:9999/aaa/   </span><br><span class="line"></span><br><span class="line">//即去找aaa目录下的index.html文件</span><br><span class="line"></span><br><span class="line">// 等价于开发环境的 localhost:8888</span><br></pre></td></tr></table></figure></p>
+<p>这里问题就来了，我们配的路由中并没有aaa，所以我们的路由不认识aaa，这就是问题</p>
+<p>找到问题之后去看了下官方文档，还真找到了解决方案，请看这里<a href="https://router.vuejs.org/zh/api/#base" target="_blank" rel="noopener">官方文档</a></p>
+<p>解决方案就是给路由中加一个base的属性，值为 ‘/aaa’即可<br><img src="http://olv6wm3nj.bkt.clouddn.com/18-7-25/61418914.jpg" alt="image"></p>
+<h3 id="引深"><a href="#引深" class="headerlink" title="引深"></a>引深</h3><p>如果我们要直接访问某个路由，是不是直接在地址栏里输入url + 路由地址，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.xxxx.com:9999/aaa/login</span><br></pre></td></tr></table></figure></p>
+<p>但是，当我们敲了回车之后，页面上一个很大的404</p>
+<p>为什么呢？</p>
+<p>我们来看一下后台服务器是如何处理个请求的，服务器会默认去找aaa文件夹下面的login文件，如果没找到就去找aaa/login/下面的index.html文件，如果没找到就会返回给前台404页面；</p>
+<p>像这种直接在浏览器地址栏直接输入一个路由地址时，我们的路由值起不到任何作用的，只会返回404；</p>
+<p>解决方案就是在后台服务器去做一些操作，官方文档也有这部分的说明，<a href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90" target="_blank" rel="noopener">文档</a></p>
+<p>由于我们项目不是部署在根目录下，所以和官方给出的解决方案有点不太一样，我们用的是nginx；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location /aaa &#123;</span><br><span class="line">    root home/xxx/www   //你自己的根目录地址</span><br><span class="line">    try_files $uri $uri/ /aaa/;     //这里的 /aaa/ 也可以写成/aaa/index.html</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$uri为变量，代表你访问的地址。</p>
+<p>上面配置的意思大概是，如果访问aaa/文件夹下面的某个文件，找不到时就返回/aaa/下面的index.html文件</p>
+<p>这样之前的问题就解决了</p>
+<p>我的个人博客地址：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
+<p>github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/vue/vue%20--%20vue-router%E7%9A%84history%E6%A8%A1%E5%BC%8F%E6%89%93%E5%8C%85%E5%90%8E%E9%A1%B5%E9%9D%A2%E7%A9%BA%E7%99%BD%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.md" target="_blank" rel="noopener">https://github.com/vue – vue-router的history模式打包后页面空白的解决方案.md</a></p>
+<p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
+<p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
+<p>邮箱：wuxiaolong802@163.com</p>
 
       
     </div>
@@ -427,7 +436,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript基础/" rel="tag"># JavaScript基础</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -440,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/24/js编码的实用技巧2/" rel="next" title="js编码的实用技巧(二)">
-                <i class="fa fa-chevron-left"></i> js编码的实用技巧(二)
+              <a href="/2018/07/23/vue -- 如何去掉url默认的锚点#/" rel="next" title="vue -- 如何去掉url默认的锚点#">
+                <i class="fa fa-chevron-left"></i> vue -- 如何去掉url默认的锚点#
               </a>
             
           </div>
@@ -449,10 +458,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/04/vue中如何实现样式之间的切换/" rel="prev" title="vue中如何实现样式之间的切换">
-                vue中如何实现样式之间的切换 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -621,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#js编码的实用技巧-二"><span class="nav-number">1.</span> <span class="nav-text">js编码的实用技巧(二)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1、-利用-、-、-1-1将字符串转换为整数型"><span class="nav-number">2.</span> <span class="nav-text">1、 利用+、-、/1,*1将字符串转换为整数型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、利用-强制转换布尔值"><span class="nav-number">3.</span> <span class="nav-text">2、利用!!强制转换布尔值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、在遍历数组时，缓存数组的length"><span class="nav-number">4.</span> <span class="nav-text">3、在遍历数组时，缓存数组的length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、合理利用-amp-amp-运算符"><span class="nav-number">5.</span> <span class="nav-text">4、合理利用&amp;&amp;运算符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续。。。。"><span class="nav-number"></span> <span class="nav-text">未完待续。。。。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js编码的实用技巧-二-1"><span class="nav-number">1.</span> <span class="nav-text">js编码的实用技巧(二)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题现象"><span class="nav-number">2.</span> <span class="nav-text">问题现象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析问题"><span class="nav-number">3.</span> <span class="nav-text">分析问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引深"><span class="nav-number">4.</span> <span class="nav-text">引深</span></a></li></ol></div>
             
 
           </div>
