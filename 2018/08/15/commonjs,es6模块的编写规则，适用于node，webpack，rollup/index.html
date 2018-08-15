@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vue," />
+  <meta name="keywords" content="nodejs," />
 
 
 
@@ -79,23 +79,18 @@
 
 
 
-<meta name="description" content="1、安装 去gitHub上clone项目，地址 https://github.com/vuejs/vue-devtools    【传送门】  下载好后进入vue-devtools-master工程  执行npm install —–&amp;gt;npm run build.  修改manifest.json 中的persistent为true。如下图   打开谷歌浏览器设置—&amp;gt;扩展程序–&amp;gt;">
-<meta name="keywords" content="vue">
+<meta name="description" content="一、commonjs的编写规则首先说明一下，commonjs模块规范被广泛使用在nodejs中，webpack也支持，rollup如果要支持则需要安装两个插件，rollup-plugin-node-resolve和rollup-plugin-commonjs 也可以参考下这篇博文：require和import机制 commonjs模块要向外暴露 module.exports={}，也就是暴露一个对">
+<meta name="keywords" content="nodejs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue.js开发神器devtools的安装方法">
-<meta property="og:url" content="http://xiaolongwu.cn/2017/12/04/vue.js开发神器devtools的安装方法/index.html">
+<meta property="og:title" content="commonjs,es6模块的编写规则，适用于node，webpack，rollup">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/08/15/commonjs,es6模块的编写规则，适用于node，webpack，rollup/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="1、安装 去gitHub上clone项目，地址 https://github.com/vuejs/vue-devtools    【传送门】  下载好后进入vue-devtools-master工程  执行npm install —–&amp;gt;npm run build.  修改manifest.json 中的persistent为true。如下图   打开谷歌浏览器设置—&amp;gt;扩展程序–&amp;gt;">
+<meta property="og:description" content="一、commonjs的编写规则首先说明一下，commonjs模块规范被广泛使用在nodejs中，webpack也支持，rollup如果要支持则需要安装两个插件，rollup-plugin-node-resolve和rollup-plugin-commonjs 也可以参考下这篇博文：require和import机制 commonjs模块要向外暴露 module.exports={}，也就是暴露一个对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20170725180434383?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170725175034787?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170725175504648?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170725175532105?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-08-12T18:33:47.724Z">
+<meta property="og:updated_time" content="2018-08-15T07:17:40.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue.js开发神器devtools的安装方法">
-<meta name="twitter:description" content="1、安装 去gitHub上clone项目，地址 https://github.com/vuejs/vue-devtools    【传送门】  下载好后进入vue-devtools-master工程  执行npm install —–&amp;gt;npm run build.  修改manifest.json 中的persistent为true。如下图   打开谷歌浏览器设置—&amp;gt;扩展程序–&amp;gt;">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170725180434383?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="commonjs,es6模块的编写规则，适用于node，webpack，rollup">
+<meta name="twitter:description" content="一、commonjs的编写规则首先说明一下，commonjs模块规范被广泛使用在nodejs中，webpack也支持，rollup如果要支持则需要安装两个插件，rollup-plugin-node-resolve和rollup-plugin-commonjs 也可以参考下这篇博文：require和import机制 commonjs模块要向外暴露 module.exports={}，也就是暴露一个对">
 
 
 
@@ -125,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2017/12/04/vue.js开发神器devtools的安装方法/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/08/15/commonjs,es6模块的编写规则，适用于node，webpack，rollup/"/>
 
 
 
 
 
-  <title>vue.js开发神器devtools的安装方法 | Leon Private</title>
+  <title>commonjs,es6模块的编写规则，适用于node，webpack，rollup | Leon Private</title>
   
 
 
@@ -268,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/12/04/vue.js开发神器devtools的安装方法/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/08/15/commonjs,es6模块的编写规则，适用于node，webpack，rollup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -285,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue.js开发神器devtools的安装方法</h1>
+          <h1 class="post-title" itemprop="name headline">commonjs,es6模块的编写规则，适用于node，webpack，rollup</h1>
         
 
         <div class="post-meta">
@@ -297,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T14:34:10+08:00">
-                2017-12-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T15:18:16+08:00">
+                2018-08-15
               </time>
             
 
@@ -329,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  250字
+                  812字
                 </span>
               
 
@@ -345,7 +340,7 @@
                   <span class="post-meta-item-text">阅读时长 </span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  4分钟
                 </span>
               
             </div>
@@ -366,28 +361,33 @@
       
 
       
-        <h2 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h2><ol>
-<li><p>去gitHub上clone项目，地址 <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="noopener">https://github.com/vuejs/vue-devtools</a>    <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="noopener">【传送门】</a></p>
+        <h4 id="一、commonjs的编写规则"><a href="#一、commonjs的编写规则" class="headerlink" title="一、commonjs的编写规则"></a>一、commonjs的编写规则</h4><p>首先说明一下，commonjs模块规范被广泛使用在nodejs中，webpack也支持，rollup如果要支持则需要安装两个插件，rollup-plugin-node-resolve和rollup-plugin-commonjs</p>
+<p>也可以参考下这篇博文：<a href="https://blog.csdn.net/wxl1555/article/details/81613327" target="_blank" rel="noopener">require和import机制</a></p>
+<p>commonjs模块要向外暴露 module.exports={}，也就是暴露一个对象，默认值为一个空对象;</p>
+<p>写法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// say.js</span><br><span class="line">//一定要包裹在对象中 还要是顶级作用域</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    sayHi:function()&#123;</span><br><span class="line">        console.log(&quot;你好啊&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//main.js 引用后就可以使用了</span><br><span class="line">const say = require(&quot;./say.js&quot;);</span><br><span class="line">say.sayHi();</span><br></pre></td></tr></table></figure></p>
+<p>顺便说一下exports，他其实是module.exports的一个引用，即exports = module.exports，也可以理解为是module.exports的浅复制对象；</p>
+<p>我们可能也经常见到如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// b.js</span><br><span class="line">exports.hi = function () &#123;</span><br><span class="line">    console.log(&apos;hi 1111&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//main1.js</span><br><span class="line">const b = require(&quot;./b.js&quot;);</span><br><span class="line">b.hi();</span><br><span class="line">// 其实，exports.hi就等于是给module.exports对象上添加新的属性方法</span><br></pre></td></tr></table></figure></p>
+<h4 id="二、ES6模块的编写规则"><a href="#二、ES6模块的编写规则" class="headerlink" title="二、ES6模块的编写规则"></a>二、ES6模块的编写规则</h4><p>webpack和rollup完美支持es6模块，nodejs在9+版本之后支持es6模块了</p>
+<h5 id="1-整体抛出"><a href="#1-整体抛出" class="headerlink" title="1. 整体抛出"></a>1. 整体抛出</h5><p>被引用的组件要暴露 export default {}</p>
+<p>引用时 用import Cal from “组件的路径”;</p>
+<p>然后就可以用 Cal点出来组件中属性或者方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//代码</span><br><span class="line">//cal.js的内容</span><br><span class="line">export default &#123;</span><br><span class="line">    add:function (n1,n2)&#123;</span><br><span class="line">        return n1+n2;</span><br><span class="line">    &#125;,</span><br><span class="line">    num:34</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//main.js 引用后就可以使用了</span><br><span class="line">import Cal from &quot;./cal.js&quot;;</span><br><span class="line">console.log(Cal.add(4,5));</span><br><span class="line">console.log(Cal.num);</span><br></pre></td></tr></table></figure>
+<h5 id="2-单个抛出"><a href="#2-单个抛出" class="headerlink" title="2. 单个抛出"></a>2. 单个抛出</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//cal.js的内容</span><br><span class="line">//声明直接导出</span><br><span class="line">export const num =123;</span><br><span class="line"></span><br><span class="line">//先声明后导出</span><br><span class="line">const Cal =&#123;</span><br><span class="line">    sub:function(n1,n2)&#123;</span><br><span class="line">        console.log(n1-n2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">export &#123; Cal &#125;;</span><br><span class="line"></span><br><span class="line">//main.js 引用后就可以使用了 也要是顶级作用域 注意 命名很重要 要一致</span><br><span class="line">import &#123; Cal,num&#125; from &quot;./cal.js&quot;;</span><br><span class="line">Cal.sub(12,1);</span><br><span class="line">console.log(num);</span><br></pre></td></tr></table></figure>
+<h4 id="三、export-default-和-export-区别"><a href="#三、export-default-和-export-区别" class="headerlink" title="三、export default 和 export 区别"></a>三、export default 和 export 区别</h4><ol>
+<li><p>export与export default均可用于导出常量、函数、文件、模块等</p>
 </li>
-<li><p>下载好后进入vue-devtools-master工程  执行npm install —–&gt;npm run build.</p>
+<li><p>你可以在其它文件或模块中通过import+(常量 | 函数 |文件|模块)名的方式，将其导入，以便能够对其进行使用</p>
 </li>
-<li><p>修改manifest.json 中的persistent为true。如下图</p>
-<p><img src="http://img.blog.csdn.net/20170725180434383?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-</li>
-<li><p>打开谷歌浏览器设置—&gt;扩展程序–&gt;勾选开发者模式—&gt;添加工程中的shells–&gt;chrome的文件夹或者直接拖动shells–&gt;chrome文件夹。到此就安装好了。如下图</p>
-<p><img src="http://img.blog.csdn.net/20170725175034787?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-</li>
-<li><p>有人问那我为什么打开我的开发着模式看不到效果呢？</p>
-</li>
+<li>在一个文件或模块中，export、import可以有多个，export default仅有一个</li>
+<li>通过export方式导出，在导入时要加{ }，export default则不需要</li>
 </ol>
-<hr>
-<h3 id="别人是这样的"><a href="#别人是这样的" class="headerlink" title="别人是这样的"></a><strong>别人是这样的</strong></h3><p><img src="http://img.blog.csdn.net/20170725175504648?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<hr>
-<h3 id="而我是指这样的"><a href="#而我是指这样的" class="headerlink" title="而我是指这样的"></a><strong>而我是指这样的</strong></h3><p> <img src="http://img.blog.csdn.net/20170725175532105?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<hr>
-<h4 id="那为什么呢？因为这个工具只能在vue项目的页面上显示出来，所以你还必须跑起来一个vue项目才能看到效果。"><a href="#那为什么呢？因为这个工具只能在vue项目的页面上显示出来，所以你还必须跑起来一个vue项目才能看到效果。" class="headerlink" title="那为什么呢？因为这个工具只能在vue项目的页面上显示出来，所以你还必须跑起来一个vue项目才能看到效果。"></a>那为什么呢？因为这个工具只能在vue项目的页面上显示出来，所以你还必须跑起来一个vue项目才能看到效果。</h4><hr>
-<h4 id="那就快点启动自己的vue项目去页面看看效果吧！"><a href="#那就快点启动自己的vue项目去页面看看效果吧！" class="headerlink" title="那就快点启动自己的vue项目去页面看看效果吧！"></a>那就快点启动自己的vue项目去页面看看效果吧！</h4><p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//1.export</span><br><span class="line">//demo1.js</span><br><span class="line">export const str = &apos;hello world&apos;</span><br><span class="line">export function f(a)&#123; return a+1&#125;</span><br><span class="line">对应的导入方式：</span><br><span class="line"></span><br><span class="line">//demo2.js</span><br><span class="line">import &#123; str, f &#125; from &apos;demo1&apos; //也可以分开写两次，导入的时候带花括号</span><br><span class="line"></span><br><span class="line">//2.export default</span><br><span class="line">//demo1.js</span><br><span class="line">export default const str = &apos;hello world&apos;</span><br><span class="line">对应的导入方式：</span><br><span class="line"></span><br><span class="line">//demo2.js</span><br><span class="line">import str from &apos;demo1&apos; //导入的时候没有花括号</span><br></pre></td></tr></table></figure>
+<p>使用export default命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名</p>
+<p>我的github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/nodejs/commonjs%2Ces6%E6%A8%A1%E5%9D%97%E7%9A%84%E7%BC%96%E5%86%99%E8%A7%84%E5%88%99%EF%BC%8C%E9%80%82%E7%94%A8%E4%BA%8Enode%EF%BC%8Cwebpack%EF%BC%8Crollup.md" target="_blank" rel="noopener">commonjs,es6模块的编写规则，适用于node，webpack，rollup.md</a></p>
+<p>我的个人博客地址：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
+<p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
+<p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
+<p>邮箱：wuxiaolong802@163.com</p>
 
       
     </div>
@@ -434,7 +434,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
+            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
           
         </div>
       
@@ -447,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/04/vue中如何实现样式之间的切换/" rel="next" title="vue中如何实现样式之间的切换">
-                <i class="fa fa-chevron-left"></i> vue中如何实现样式之间的切换
+              <a href="/2018/08/13/webpack -- 简单的使用总结/" rel="next" title="webpack -- 简单的使用总结">
+                <i class="fa fa-chevron-left"></i> webpack -- 简单的使用总结
               </a>
             
           </div>
@@ -456,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/04/--save-dev 与 --save的区别/" rel="prev" title="--save-dev 与 --save的区别">
-                --save-dev 与 --save的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -628,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、安装"><span class="nav-number">1.</span> <span class="nav-text">1、安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#别人是这样的"><span class="nav-number">1.1.</span> <span class="nav-text">别人是这样的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#而我是指这样的"><span class="nav-number">1.2.</span> <span class="nav-text">而我是指这样的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#那为什么呢？因为这个工具只能在vue项目的页面上显示出来，所以你还必须跑起来一个vue项目才能看到效果。"><span class="nav-number">1.2.1.</span> <span class="nav-text">那为什么呢？因为这个工具只能在vue项目的页面上显示出来，所以你还必须跑起来一个vue项目才能看到效果。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#那就快点启动自己的vue项目去页面看看效果吧！"><span class="nav-number">1.2.2.</span> <span class="nav-text">那就快点启动自己的vue项目去页面看看效果吧！</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、commonjs的编写规则"><span class="nav-number">1.</span> <span class="nav-text">一、commonjs的编写规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、ES6模块的编写规则"><span class="nav-number">2.</span> <span class="nav-text">二、ES6模块的编写规则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-整体抛出"><span class="nav-number">2.1.</span> <span class="nav-text">1. 整体抛出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-单个抛出"><span class="nav-number">2.2.</span> <span class="nav-text">2. 单个抛出</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、export-default-和-export-区别"><span class="nav-number">3.</span> <span class="nav-text">三、export default 和 export 区别</span></a></li></ol></div>
             
 
           </div>
