@@ -262,6 +262,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/11/24/js编码的实用技巧1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wuxiaolong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my-logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon Private">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/24/js编码的实用技巧1/" itemprop="url">js编码的实用技巧(一)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-24T14:34:10+08:00">
+                2017-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  744字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 </span>
+                
+                <span title="阅读时长">
+                  3分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          js编码的实用技巧(二)在平时的开发中，编码技巧很重要，会让你少写很多代码，起到事倍功半的效果。
+下面总结几种简单的技巧，大家共同学习一下
+1、 利用+、-、/1,*1将字符串转换为整数型这个方法试用于将字符串类型的数字转换为整数型，如果带字母就会返回NaN。
+123456789var a = &q
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/24/js编码的实用技巧1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/11/10/JSON.parse() 报错Unexpected token o in JSON at position 1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -421,7 +581,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/10/14/css3自定义滚动条样式写法/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -440,7 +600,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/14/css3自定义滚动条样式写法/" itemprop="url">css3自定义滚动条样式写法</a></h1>
+                <a class="post-title-link" href="/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/" itemprop="url">js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题</a></h1>
         
 
         <div class="post-meta">
@@ -484,7 +644,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  658字
+                  504字
                 </span>
               
 
@@ -500,7 +660,7 @@
                   <span class="post-meta-item-text">阅读时长 </span>
                 
                 <span title="阅读时长">
-                  3分钟
+                  2分钟
                 </span>
               
             </div>
@@ -523,170 +683,14 @@
       
         
           
-          先简单介绍一下各个属性
-::-webkit-scrollbar        滚动条整体部分，其中的属性有width,height,background,border等。
-::-webkit-scrollbar-button  滚动条两端的按钮。可以用display:none让其不显示，也可以添加背
+          先热身看看下面的额代码会打印出什么？
+12345for (var i = 0; i &lt; 5; i++) &#123;		  	setTimeout(function () &#123;		   		 console.log(i);		  	&#125;, 100);		&#125;
+
+上面的结
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/14/css3自定义滚动条样式写法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/10/14/js中的快速排序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wuxiaolong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my-logo.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leon Private">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/14/js中的快速排序/" itemprop="url">js中的快速排序</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-14T14:34:10+08:00">
-                2017-10-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  302字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 </span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          快速排序代码12345678910111213141516171819202122232425262728293031323334function quickSort(arr)&#123;    //判断如果数组长度为一，则直接返回        if(arr.length &lt;= 1)&#12
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/14/js中的快速排序/#more" rel="contents">
+            <a class="btn" href="/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -897,7 +901,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/10/14/css3自定义滚动条样式写法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -916,7 +920,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/" itemprop="url">js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题</a></h1>
+                <a class="post-title-link" href="/2017/10/14/css3自定义滚动条样式写法/" itemprop="url">css3自定义滚动条样式写法</a></h1>
         
 
         <div class="post-meta">
@@ -960,7 +964,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  504字
+                  658字
                 </span>
               
 
@@ -976,7 +980,7 @@
                   <span class="post-meta-item-text">阅读时长 </span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  3分钟
                 </span>
               
             </div>
@@ -999,14 +1003,13 @@
       
         
           
-          先热身看看下面的额代码会打印出什么？
-12345for (var i = 0; i &lt; 5; i++) &#123;		  	setTimeout(function () &#123;		   		 console.log(i);		  	&#125;, 100);		&#125;
-
-上面的结
+          先简单介绍一下各个属性
+::-webkit-scrollbar        滚动条整体部分，其中的属性有width,height,background,border等。
+::-webkit-scrollbar-button  滚动条两端的按钮。可以用display:none让其不显示，也可以添加背
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/14/js中的setTimeout详解，和关于它的setTimeout(function(){}，0)问题/#more" rel="contents">
+            <a class="btn" href="/2017/10/14/css3自定义滚动条样式写法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1366,7 +1369,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1416,7 +1419,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
