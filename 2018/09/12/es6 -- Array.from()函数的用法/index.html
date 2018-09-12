@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="webpack," />
+  <meta name="keywords" content="es6," />
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="前言最近在用vue-cli+webpack做项目，项目架构搭好了之后，想build之后看看效果，但是build出来的index.html文件中的默认资源引用都是绝对路径，也就是相对于根目录的绝对路径；但是我项目如果部署到线上也不一定是在根目录里呀，所以这种默认相对于根目录的绝对路径肯定是不实用的； 解决方案 我们的根目录下有个config文件夹，下面有个index.js，如下图，我们把build对">
-<meta name="keywords" content="webpack">
+<meta name="description" content="前言ES6为Array增加了from函数用来将其他对象转换成数组。 当然，其他对象也是有要求，也不是所有的，可以将两种对象转换成数组。 1.部署了Iterator（迭代器）接口的对象，比如：Set，Map，Array。  2.类数组对象，什么叫类数组对象，就是一个对象必须有length属性，没有length，转出来的就是空数组。 具体用法Array.from可以接受三个参数 我们看定义：Array">
+<meta name="keywords" content="es6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack -- 打包时如何将资源和图片引用绝对路径改为相对路径">
-<meta property="og:url" content="http://xiaolongwu.cn/2018/07/18/webpack -- 打包时如何将资源和图片引用绝对路径改为相对路径/index.html">
+<meta property="og:title" content="es6 -- Array.from()函数的用法">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/09/12/es6 -- Array.from()函数的用法/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="前言最近在用vue-cli+webpack做项目，项目架构搭好了之后，想build之后看看效果，但是build出来的index.html文件中的默认资源引用都是绝对路径，也就是相对于根目录的绝对路径；但是我项目如果部署到线上也不一定是在根目录里呀，所以这种默认相对于根目录的绝对路径肯定是不实用的； 解决方案 我们的根目录下有个config文件夹，下面有个index.js，如下图，我们把build对">
+<meta property="og:description" content="前言ES6为Array增加了from函数用来将其他对象转换成数组。 当然，其他对象也是有要求，也不是所有的，可以将两种对象转换成数组。 1.部署了Iterator（迭代器）接口的对象，比如：Set，Map，Array。  2.类数组对象，什么叫类数组对象，就是一个对象必须有length属性，没有length，转出来的就是空数组。 具体用法Array.from可以接受三个参数 我们看定义：Array">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://olv6wm3nj.bkt.clouddn.com/18-7-18/22460434.jpg">
-<meta property="og:image" content="http://olv6wm3nj.bkt.clouddn.com/18-7-18/73533934.jpg">
-<meta property="og:image" content="http://olv6wm3nj.bkt.clouddn.com/18-7-18/69751319.jpg">
-<meta property="og:updated_time" content="2018-09-12T09:55:54.460Z">
+<meta property="og:updated_time" content="2018-09-12T09:52:56.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack -- 打包时如何将资源和图片引用绝对路径改为相对路径">
-<meta name="twitter:description" content="前言最近在用vue-cli+webpack做项目，项目架构搭好了之后，想build之后看看效果，但是build出来的index.html文件中的默认资源引用都是绝对路径，也就是相对于根目录的绝对路径；但是我项目如果部署到线上也不一定是在根目录里呀，所以这种默认相对于根目录的绝对路径肯定是不实用的； 解决方案 我们的根目录下有个config文件夹，下面有个index.js，如下图，我们把build对">
-<meta name="twitter:image" content="http://olv6wm3nj.bkt.clouddn.com/18-7-18/22460434.jpg">
+<meta name="twitter:title" content="es6 -- Array.from()函数的用法">
+<meta name="twitter:description" content="前言ES6为Array增加了from函数用来将其他对象转换成数组。 当然，其他对象也是有要求，也不是所有的，可以将两种对象转换成数组。 1.部署了Iterator（迭代器）接口的对象，比如：Set，Map，Array。  2.类数组对象，什么叫类数组对象，就是一个对象必须有length属性，没有length，转出来的就是空数组。 具体用法Array.from可以接受三个参数 我们看定义：Array">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2018/07/18/webpack -- 打包时如何将资源和图片引用绝对路径改为相对路径/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/09/12/es6 -- Array.from()函数的用法/"/>
 
 
 
 
 
-  <title>webpack -- 打包时如何将资源和图片引用绝对路径改为相对路径 | Leon Private</title>
+  <title>es6 -- Array.from()函数的用法 | Leon Private</title>
   
 
 
@@ -267,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/07/18/webpack -- 打包时如何将资源和图片引用绝对路径改为相对路径/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/09/12/es6 -- Array.from()函数的用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -284,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">webpack -- 打包时如何将资源和图片引用绝对路径改为相对路径</h1>
+          <h1 class="post-title" itemprop="name headline">es6 -- Array.from()函数的用法</h1>
         
 
         <div class="post-meta">
@@ -296,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T20:49:06+08:00">
-                2018-07-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-12T17:59:15+08:00">
+                2018-09-12
               </time>
             
 
@@ -328,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  498字
+                  968字
                 </span>
               
 
@@ -344,7 +340,7 @@
                   <span class="post-meta-item-text">阅读时长 </span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  4分钟
                 </span>
               
             </div>
@@ -365,23 +361,37 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在用vue-cli+webpack做项目，项目架构搭好了之后，想build之后看看效果，但是build出来的index.html文件中的默认资源引用都是绝对路径，也就是相对于根目录的绝对路径；但是我项目如果部署到线上也不一定是在根目录里呀，所以这种默认相对于根目录的绝对路径肯定是不实用的；</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
-<li>我们的根目录下有个config文件夹，下面有个index.js，如下图，我们把build对象下的assetsPublicPath的值改为 ‘./‘,代表当前路径，（之前的’/‘,表示根目录）</li>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>ES6为Array增加了from函数用来将其他对象转换成数组。</p>
+<p>当然，其他对象也是有要求，也不是所有的，可以将两种对象转换成数组。</p>
+<pre><code>1.部署了Iterator（迭代器）接口的对象，比如：Set，Map，Array。
+
+2.类数组对象，什么叫类数组对象，就是一个对象必须有length属性，没有length，转出来的就是空数组。
+</code></pre><h4 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h4><p>Array.from可以接受三个参数</p>
+<p>我们看定义：Array.from(arrayLike [, mapFn [, thisArg]])</p>
+<pre><code>arrayLike：被转换的的对象。
+
+mapFn：map函数。
+
+thisArg：map函数中this指向的对象。
+</code></pre><h5 id="第一个参数"><a href="#第一个参数" class="headerlink" title="第一个参数"></a>第一个参数</h5><p>在这里很好理解，就是要被转换的对象</p>
+<h5 id="第二个参数，map函数"><a href="#第二个参数，map函数" class="headerlink" title="第二个参数，map函数"></a>第二个参数，map函数</h5><p>用来对转换中的每一个元素进行加工，并将加工后的结果作为结果数组的元素值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.from([1, 2, 3, 4, 5], (n) =&gt; n + 1))</span><br><span class="line"></span><br><span class="line">// 结果[2,3,4,5,6] map函数的实际的做用是给每个元素都加了1</span><br></pre></td></tr></table></figure>
+<h5 id="第三个参数，map函数中this指向的对象"><a href="#第三个参数，map函数中this指向的对象" class="headerlink" title="第三个参数，map函数中this指向的对象"></a>第三个参数，map函数中this指向的对象</h5><p>该参数是非常有用的，我们可以将被处理的数据和处理对象分离，将各种不同的处理数据的方法封装到不同的的对象中去，处理方法采用相同的名字。</p>
+<p>在调用Array.from对数据对象进行转换时，可以将不同的处理对象按实际情况进行注入，以得到不同的结果，适合解耦。</p>
+<p>这种做法是模板设计模式的应用，有点类似于依赖注入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">    </span><br><span class="line">    add: function (n) &#123;</span><br><span class="line">        return n + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log( Array.from(</span><br><span class="line">  [1, 2, 3, 4, 5], </span><br><span class="line">  function (x)&#123;</span><br><span class="line">    return this.add(x)</span><br><span class="line">  &#125;, </span><br><span class="line">  obj))</span><br><span class="line">  </span><br><span class="line">  //结果 [2,3,4,5,6]</span><br></pre></td></tr></table></figure>
+<h4 id="转换set对象"><a href="#转换set对象" class="headerlink" title="转换set对象"></a>转换set对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   const setArr = new Set();</span><br><span class="line">setArr.add(1).add(2).add(&quot;www&quot;);</span><br><span class="line">console.log(Array.from(setArr));</span><br><span class="line">// 结果 [1, 2, &quot;www&quot;]</span><br><span class="line"></span><br><span class="line">const setArr1 = new Set([1,1,12,2,3,4,5,5,6,6]);</span><br><span class="line">console.log(Array.from(setArr1));</span><br><span class="line">// 或者使用展开表达式 console.log([...setArr1]);</span><br><span class="line">// 结果 [1, 12, 2, 3, 4, 5, 6] </span><br><span class="line">// 同时不难发现set具有去重的功能</span><br></pre></td></tr></table></figure>
+<h4 id="转换map对象"><a href="#转换map对象" class="headerlink" title="转换map对象"></a>转换map对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   const mapArr = new Map();</span><br><span class="line">mapArr.set(&apos;m1&apos;, 1);</span><br><span class="line">mapArr.set(&apos;m2&apos;, 2);</span><br><span class="line">mapArr.set(&apos;m3&apos;, 3);</span><br><span class="line">console.log(Array.from(mapArr));</span><br><span class="line">// 结果 [[&apos;m1&apos;, 1],[&apos;m2&apos;, 2],[&apos;m3&apos;, 3]]</span><br><span class="line">console.log(Array.from(mapArr)[1]);</span><br><span class="line">// 结果 [&quot;m2&quot;, 2]</span><br></pre></td></tr></table></figure>
+<h4 id="转换类数组对象"><a href="#转换类数组对象" class="headerlink" title="转换类数组对象"></a>转换类数组对象</h4><p>一个类数组对象必须要有length属性，他们的元素属性名必须是数值或者可以转换成数值的字符。</p>
+<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ol>
+<li>属性名代表了数组的索引号，如果没有这个索引号，转出来的数组中对应的元素就为length长度个undefined。</li>
+<li>如果没有length属性，转换出来的数组也是空的；</li>
 </ol>
-<p><img src="http://olv6wm3nj.bkt.clouddn.com/18-7-18/22460434.jpg" alt="image"></p>
-<p>这样我们就解决了index.html中资源引用的问题，由原来的绝对路径改为了相对路径</p>
-<ol>
-<li>但是我们项目中css文件里的图片路径之前是不是这么写的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: url(&quot;../../static/img/img.png&quot;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>打包后就变成了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: url(&quot;./static/img/img.png&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>这样肯定是不对的，所以css的资源引入路径也需要修改，我们打包后在dist文件下会有一个static文件夹，下面有一个img文件夹，里面放的是图片资源，同样在static文件夹下会有一个css文件，里面是我们的css文件，如下图</p>
-<p><img src="http://olv6wm3nj.bkt.clouddn.com/18-7-18/73533934.jpg" alt="image"></p>
-<p>我们再来看一下，似乎我们之前css文件里的引用路径是没有问题的，所以我们就需要修改css打包的配置路径，我们打开build文件夹下的utils.js，在如下位置加上一段代码即可</p>
-<p><img src="http://olv6wm3nj.bkt.clouddn.com/18-7-18/69751319.jpg" alt="image"></p>
+<h5 id="带length"><a href="#带length" class="headerlink" title="带length"></a>带length</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//注意看区别</span><br><span class="line">    console.log(Array.from(&#123;</span><br><span class="line">      	0: &apos;dd&apos;,</span><br><span class="line">     	1: &apos;gg&apos;,</span><br><span class="line">      	2: &apos;w3&apos;,</span><br><span class="line">      	length:3</span><br><span class="line">    &#125;))</span><br><span class="line">    // 结果 [&quot;dd&quot;, &quot;gg&quot;, &quot;w3&quot;]</span><br><span class="line">    </span><br><span class="line">    console.log(Array.from(&#123;</span><br><span class="line">	  	0: &apos;dd&apos;,</span><br><span class="line">	 	1: &apos;gg&apos;,</span><br><span class="line">	  	4: &apos;w3&apos;,</span><br><span class="line">	  	length:3</span><br><span class="line">	&#125;))</span><br><span class="line">	// 结果 [&quot;dd&quot;, &quot;gg&quot;, undefined]</span><br><span class="line">	</span><br><span class="line">	console.log(Array.from(&#123;</span><br><span class="line">	  	&quot;0&quot;: &apos;dd&apos;,</span><br><span class="line">	 	1: &apos;gg&apos;,</span><br><span class="line">	  	&quot;3&quot;: &apos;w3&apos;,</span><br><span class="line">	  	length:6</span><br><span class="line">	&#125;))</span><br><span class="line">	// 结果 [&quot;dd&quot;, &quot;gg&quot;, undefined, &quot;w3&quot;, undefined, undefined]</span><br><span class="line">	</span><br><span class="line">//总结，生成数组的长度由length属性确定，如果相应索引位置上没有值，则为undefined</span><br></pre></td></tr></table></figure>
+<h5 id="不带length"><a href="#不带length" class="headerlink" title="不带length"></a>不带length</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log( Array.from(&#123;</span><br><span class="line">  	0: 3,</span><br><span class="line">  	1: 12</span><br><span class="line">&#125;))</span><br><span class="line">// 结果 []</span><br></pre></td></tr></table></figure>
+<h5 id="对象的属性名不能转换成索引号时"><a href="#对象的属性名不能转换成索引号时" class="headerlink" title="对象的属性名不能转换成索引号时"></a>对象的属性名不能转换成索引号时</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   console.log(Array.from(&#123;</span><br><span class="line">  	&quot;s&quot;: &apos;dd&apos;,</span><br><span class="line"> 	&quot;ss&quot;: &apos;gg&apos;,</span><br><span class="line">  	&quot;n&quot;: &apos;w3&apos;,</span><br><span class="line">  	length:3</span><br><span class="line">&#125;))</span><br><span class="line">   // 结果 [undefined, undefined, undefined]</span><br></pre></td></tr></table></figure>
+<p>我的github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/es6/es6%20--%20Array.from(" target="_blank" rel="noopener">es6 – Array.from()函数的用法</a>%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95.md)</p>
 <p>我的个人博客地址：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
-<p>github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/webpack/webpack%20--%20%E6%89%93%E5%8C%85%E6%97%B6%E5%A6%82%E4%BD%95%E5%B0%86%E8%B5%84%E6%BA%90%E5%92%8C%E5%9B%BE%E7%89%87%E5%BC%95%E7%94%A8%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%94%B9%E4%B8%BA%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84.md" target="_blank" rel="noopener">https://github.com/打包时如何将资源和图片引用绝对路径改为相对路径.md</a></p>
 <p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
 <p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
 <p>邮箱：wuxiaolong802@163.com</p>
@@ -431,7 +441,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/webpack/" rel="tag"># webpack</a>
+            <a href="/tags/es6/" rel="tag"># es6</a>
           
         </div>
       
@@ -444,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/24/es6--function/" rel="next" title="es6--function">
-                <i class="fa fa-chevron-left"></i> es6--function
+              <a href="/2018/09/10/专业程序员的七个特质/" rel="next" title="专业程序员的七个特质">
+                <i class="fa fa-chevron-left"></i> 专业程序员的七个特质
               </a>
             
           </div>
@@ -453,10 +463,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/19/webpack-dev-server启动时报错/" rel="prev" title="webpack -- webpack-dev-server启动时报错">
-                webpack -- webpack-dev-server启动时报错 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -625,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体用法"><span class="nav-number">2.</span> <span class="nav-text">具体用法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一个参数"><span class="nav-number">2.1.</span> <span class="nav-text">第一个参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第二个参数，map函数"><span class="nav-number">2.2.</span> <span class="nav-text">第二个参数，map函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三个参数，map函数中this指向的对象"><span class="nav-number">2.3.</span> <span class="nav-text">第三个参数，map函数中this指向的对象</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转换set对象"><span class="nav-number">3.</span> <span class="nav-text">转换set对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转换map对象"><span class="nav-number">4.</span> <span class="nav-text">转换map对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转换类数组对象"><span class="nav-number">5.</span> <span class="nav-text">转换类数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意："><span class="nav-number">5.1.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#带length"><span class="nav-number">5.2.</span> <span class="nav-text">带length</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不带length"><span class="nav-number">5.3.</span> <span class="nav-text">不带length</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象的属性名不能转换成索引号时"><span class="nav-number">5.4.</span> <span class="nav-text">对象的属性名不能转换成索引号时</span></a></li></ol></li></ol></div>
             
 
           </div>
