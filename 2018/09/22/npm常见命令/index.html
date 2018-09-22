@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript基础," />
+  <meta name="keywords" content="nodejs," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="前言 既然我们选择了vue，那么在做东西时就不要想着去操作dom，所有的都交给vue来解决。 下面来说一个很简单但是很常用的效果，可能人人都会用到这样的需求 请看下图   导航栏的样式切换功能，如果我们使用jquery之类的东西来写，可能要写好多代码，那么我们用vue呢，  代码如下html 附上vue中style与class绑定API 1234&amp;lt;div id=&amp;quot;wrap&amp;quot">
-<meta name="keywords" content="JavaScript基础">
+<meta name="description" content="npm的常见命令 下载安装某个模块 npm install  -D（添加到开发环境）/-S（添加到生产环境） 使用以下命令来卸载模块 npm uninstall       查看所有全局安装的模块   npm list -g  查看依赖的某个模块的当前版本号   npm list   -g    //不带-g为此项目内查找  升级依赖包版本 npm update    搜索模块 npm searc">
+<meta name="keywords" content="nodejs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue中如何实现样式之间的切换">
-<meta property="og:url" content="http://xiaolongwu.cn/2017/12/04/vue中如何实现样式之间的切换/index.html">
+<meta property="og:title" content="npm常见命令">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/09/22/npm常见命令/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="前言 既然我们选择了vue，那么在做东西时就不要想着去操作dom，所有的都交给vue来解决。 下面来说一个很简单但是很常用的效果，可能人人都会用到这样的需求 请看下图   导航栏的样式切换功能，如果我们使用jquery之类的东西来写，可能要写好多代码，那么我们用vue呢，  代码如下html 附上vue中style与class绑定API 1234&amp;lt;div id=&amp;quot;wrap&amp;quot">
+<meta property="og:description" content="npm的常见命令 下载安装某个模块 npm install  -D（添加到开发环境）/-S（添加到生产环境） 使用以下命令来卸载模块 npm uninstall       查看所有全局安装的模块   npm list -g  查看依赖的某个模块的当前版本号   npm list   -g    //不带-g为此项目内查找  升级依赖包版本 npm update    搜索模块 npm searc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20170805170856509?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-09-12T09:55:54.429Z">
+<meta property="og:updated_time" content="2018-09-22T15:14:16.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue中如何实现样式之间的切换">
-<meta name="twitter:description" content="前言 既然我们选择了vue，那么在做东西时就不要想着去操作dom，所有的都交给vue来解决。 下面来说一个很简单但是很常用的效果，可能人人都会用到这样的需求 请看下图   导航栏的样式切换功能，如果我们使用jquery之类的东西来写，可能要写好多代码，那么我们用vue呢，  代码如下html 附上vue中style与class绑定API 1234&amp;lt;div id=&amp;quot;wrap&amp;quot">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170805170856509?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="npm常见命令">
+<meta name="twitter:description" content="npm的常见命令 下载安装某个模块 npm install  -D（添加到开发环境）/-S（添加到生产环境） 使用以下命令来卸载模块 npm uninstall       查看所有全局安装的模块   npm list -g  查看依赖的某个模块的当前版本号   npm list   -g    //不带-g为此项目内查找  升级依赖包版本 npm update    搜索模块 npm searc">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2017/12/04/vue中如何实现样式之间的切换/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/09/22/npm常见命令/"/>
 
 
 
 
 
-  <title>vue中如何实现样式之间的切换 | Leon Private</title>
+  <title>npm常见命令 | Leon Private</title>
   
 
 
@@ -265,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2017/12/04/vue中如何实现样式之间的切换/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/09/22/npm常见命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -282,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue中如何实现样式之间的切换</h1>
+          <h1 class="post-title" itemprop="name headline">npm常见命令</h1>
         
 
         <div class="post-meta">
@@ -294,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T01:34:10+08:00">
-                2017-12-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-22T23:15:11+08:00">
+                2018-09-22
               </time>
             
 
@@ -326,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  353字
+                  601字
                 </span>
               
 
@@ -363,23 +361,44 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p> 既然我们选择了vue，那么在做东西时就不要想着去操作dom，所有的都交给vue来解决。</p>
-<p>下面来说一个很简单但是很常用的效果，可能人人都会用到这样的需求</p>
-<h3 id="请看下图"><a href="#请看下图" class="headerlink" title="请看下图"></a>请看下图</h3><p><img src="http://img.blog.csdn.net/20170805170856509?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3hsMTU1NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<hr>
-<p> 导航栏的样式切换功能，如果我们使用jquery之类的东西来写，可能要写好多代码，那么我们用vue呢，</p>
-<hr>
-<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><p><strong>html</strong></p>
-<p><a href="https://cn.vuejs.org/v2/guide/class-and-style.html#%E5%AF%B9%E8%B1%A1%E8%AF%AD%E6%B3%95" target="_blank" rel="noopener">附上vue中style与class绑定API</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=&quot;wrap&quot; class=&quot;box&quot;&gt;</span><br><span class="line">	&lt;div v-for=&quot;(list,index) in navLists&quot; class=&quot;nav&quot; :class=&quot;&#123; red:changeRed == index&#125;&quot; @click=&quot;reds(index)&quot;&gt;&#123;&#123;list.text&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>css</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	padding: 0;margin: 0;</span><br><span class="line">&#125;</span><br><span class="line">.box&#123;</span><br><span class="line">	height: 40px;</span><br><span class="line">	background: cyan;</span><br><span class="line">&#125;</span><br><span class="line">.nav&#123;</span><br><span class="line">	line-height: 40px;</span><br><span class="line">	display: inline-block;</span><br><span class="line">	margin-left: 100px;</span><br><span class="line">	cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line">.red&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>js</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//前提是必须引入vuejs哦！</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">			el:&quot;#wrap&quot;,</span><br><span class="line">			data:&#123;</span><br><span class="line">				navLists:[</span><br><span class="line">					&#123;</span><br><span class="line">						&quot;text&quot;:&quot;首页&quot;						</span><br><span class="line">					&#125;,</span><br><span class="line">					&#123;</span><br><span class="line">						&quot;text&quot;:&quot;组件&quot;						</span><br><span class="line">					&#125;,</span><br><span class="line">					&#123;</span><br><span class="line">						&quot;text&quot;:&quot;API&quot;						</span><br><span class="line">					&#125;,</span><br><span class="line">					&#123;</span><br><span class="line">						&quot;text&quot;:&quot;我们&quot;						</span><br><span class="line">					&#125;</span><br><span class="line">				],</span><br><span class="line">				changeRed:0</span><br><span class="line">			&#125;,</span><br><span class="line">			methods:&#123;</span><br><span class="line">				reds:function(index)&#123;</span><br><span class="line">					this.changeRed = index;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br></pre></td></tr></table></figure>
-<p>仔细看看我们的js代码除了模拟的数据其实就只有一个简单的逻辑处理，比起之前的各种操作dom省了好多事。</p>
-<p>有没有更喜欢vuejs啊</p>
-<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+        <h4 id="npm的常见命令"><a href="#npm的常见命令" class="headerlink" title="npm的常见命令"></a>npm的常见命令</h4><ol>
+<li>下载安装某个模块 npm install <module name=""> -D（添加到开发环境）/-S（添加到生产环境）</module></li>
+<li><p>使用以下命令来卸载模块 npm uninstall <package>    </package></p>
+</li>
+<li><p>查看所有全局安装的模块   npm list -g</p>
+</li>
+<li><p>查看依赖的某个模块的当前版本号   npm list <package>  -g    //不带-g为此项目内查找</package></p>
+</li>
+<li><p>升级依赖包版本 npm update <package> </package></p>
+</li>
+<li><p>搜索模块 npm search <package></package></p>
+</li>
+<li><p>浏览器端打开项目地址 npm repo <package>   //是git地址</package></p>
+</li>
+<li><p>在浏览器端查看项目  npm home <package> //是git地址</package></p>
+</li>
+<li><p>查看全局安装地址 npm root -g </p>
+</li>
+<li>npm outdated 查看当前过期依赖，其中current显示当前安装版本，latest显示依赖包的最新版本，wanted显示我们可以升级到可以不破坏当前代码的版本</li>
+<li>npm view <jquery> versions  查看npm服务器上某个包的所有版本,只显示版本号      </jquery></li>
+<li>npm view <jquery> version   查看npm服务器上某个包的最新版本,只显示版本号       </jquery></li>
+<li>npm info <jquery>  查看npm服务器上某个包的所有版本     类似于（npm view <jquery>）</jquery></jquery></li>
+<li>npm的start命令是一个特殊的脚本名称，其特殊性表现在，在命令行中使用npm start就可以执行其在脚本里对应的命令，如果对应的此脚本名称不是start，想要在命令行中运行时，需要这样用npm run {script name} 如npm run build</li>
+<li>npm config ls 或者npm config list  查看npm的配置文件</li>
+<li>npm config ls -l 获取更多的npm的配置文件</li>
+<li>npm config get registry  查看npm下载包的源</li>
+<li>npm config set registry  <url>  设置npm下载包的源</url></li>
+<li>npm i -g npm@5.6.0 安装指定版本的npm</li>
+<li>npm i -g npm@latest  安装最新版本的npm</li>
+<li>npm cache clean –force 删除缓存目录下的所有数据。为了保证缓存数据的有效性和完整性，需要加上 –force 参数</li>
+<li>npm cache verify 验证缓存数据的完整性和有效性，清楚垃圾数据</li>
+</ol>
+<h4 id="不定期更新……"><a href="#不定期更新……" class="headerlink" title="不定期更新……"></a>不定期更新……</h4><hr>
+<p>我的github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/nodejs/npm%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4.md" target="_blank" rel="noopener">npm常见命令</a></p>
+<p>我的个人博客地址：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
+<p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
+<p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
+<p>邮箱：wuxiaolong802@163.com</p>
 
       
     </div>
@@ -426,7 +445,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript基础/" rel="tag"># JavaScript基础</a>
+            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
           
         </div>
       
@@ -439,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/24/js编码的实用技巧1/" rel="next" title="js编码的实用技巧(一)">
-                <i class="fa fa-chevron-left"></i> js编码的实用技巧(一)
+              <a href="/2018/09/18/js基础 -- window.btoa和window.atob使用详解/" rel="next" title="js基础 -- window.btoa和window.atob使用详解">
+                <i class="fa fa-chevron-left"></i> js基础 -- window.btoa和window.atob使用详解
               </a>
             
           </div>
@@ -448,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/04/--save-dev 与 --save的区别/" rel="prev" title="--save-dev 与 --save的区别">
-                --save-dev 与 --save的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -620,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请看下图"><span class="nav-number">2.</span> <span class="nav-text">请看下图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码如下"><span class="nav-number">3.</span> <span class="nav-text">代码如下</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#npm的常见命令"><span class="nav-number">1.</span> <span class="nav-text">npm的常见命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不定期更新……"><span class="nav-number">2.</span> <span class="nav-text">不定期更新……</span></a></li></ol></div>
             
 
           </div>
