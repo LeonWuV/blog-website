@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="es6," />
+  <meta name="keywords" content="码农工具," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="欢迎访问我的个人博客：http://www.xiaolongwu.cn 前言promise为es6引进的语言标准，为异步编程的一种解决方案； 阅读此文的前提是了解promise的基本用法和特性，比如他自执行特性、状态不可逆特性等 抛出问题且看下面代码和问题12345678910111213setTimeout(function()&amp;#123;console.log(1)&amp;#125;,0);new">
-<meta name="keywords" content="es6">
+<meta name="description" content="Prettier是最近很火的一个代码美化工具，其中文意思是“漂亮的、机灵的”，它能够解析代码，使用你自己设定的规则来重新打印出格式规范的代码。 他的整个圈子很强大，有基于各种编辑器的插件（vs code，atom），有脚本类的，有插件类的（eslint的插件eslint-plugin-prettier）。 更多有关prettier的信息，请点击 这里 Prettier具有以下几个有优点： 可配置化">
+<meta name="keywords" content="码农工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="promise和setTimeout执行顺序的问题">
-<meta property="og:url" content="http://xiaolongwu.cn/2018/04/23/promise和setTimeout执行顺序的问题/index.html">
+<meta property="og:title" content="Prettier的三种使用场景和使用方法">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/09/26/Prettier的三种使用场景和使用方法/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="欢迎访问我的个人博客：http://www.xiaolongwu.cn 前言promise为es6引进的语言标准，为异步编程的一种解决方案； 阅读此文的前提是了解promise的基本用法和特性，比如他自执行特性、状态不可逆特性等 抛出问题且看下面代码和问题12345678910111213setTimeout(function()&amp;#123;console.log(1)&amp;#125;,0);new">
+<meta property="og:description" content="Prettier是最近很火的一个代码美化工具，其中文意思是“漂亮的、机灵的”，它能够解析代码，使用你自己设定的规则来重新打印出格式规范的代码。 他的整个圈子很强大，有基于各种编辑器的插件（vs code，atom），有脚本类的，有插件类的（eslint的插件eslint-plugin-prettier）。 更多有关prettier的信息，请点击 这里 Prettier具有以下几个有优点： 可配置化">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://segmentfault.com/img/bVPkJb?w=1350&h=926">
-<meta property="og:updated_time" content="2018-09-12T09:55:54.380Z">
+<meta property="og:updated_time" content="2018-09-26T11:25:40.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="promise和setTimeout执行顺序的问题">
-<meta name="twitter:description" content="欢迎访问我的个人博客：http://www.xiaolongwu.cn 前言promise为es6引进的语言标准，为异步编程的一种解决方案； 阅读此文的前提是了解promise的基本用法和特性，比如他自执行特性、状态不可逆特性等 抛出问题且看下面代码和问题12345678910111213setTimeout(function()&amp;#123;console.log(1)&amp;#125;,0);new">
-<meta name="twitter:image" content="https://segmentfault.com/img/bVPkJb?w=1350&h=926">
+<meta name="twitter:title" content="Prettier的三种使用场景和使用方法">
+<meta name="twitter:description" content="Prettier是最近很火的一个代码美化工具，其中文意思是“漂亮的、机灵的”，它能够解析代码，使用你自己设定的规则来重新打印出格式规范的代码。 他的整个圈子很强大，有基于各种编辑器的插件（vs code，atom），有脚本类的，有插件类的（eslint的插件eslint-plugin-prettier）。 更多有关prettier的信息，请点击 这里 Prettier具有以下几个有优点： 可配置化">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2018/04/23/promise和setTimeout执行顺序的问题/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/09/26/Prettier的三种使用场景和使用方法/"/>
 
 
 
 
 
-  <title>promise和setTimeout执行顺序的问题 | Leon Private</title>
+  <title>Prettier的三种使用场景和使用方法 | Leon Private</title>
   
 
 
@@ -265,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/04/23/promise和setTimeout执行顺序的问题/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/09/26/Prettier的三种使用场景和使用方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -282,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">promise和setTimeout执行顺序的问题</h1>
+          <h1 class="post-title" itemprop="name headline">Prettier的三种使用场景和使用方法</h1>
         
 
         <div class="post-meta">
@@ -294,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T18:40:14+08:00">
-                2018-04-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T19:26:15+08:00">
+                2018-09-26
               </time>
             
 
@@ -326,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  379字
+                  1,001字
                 </span>
               
 
@@ -342,7 +340,7 @@
                   <span class="post-meta-item-text">阅读时长 </span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  4分钟
                 </span>
               
             </div>
@@ -363,17 +361,60 @@
       
 
       
-        <p>欢迎访问我的个人博客：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
-<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>promise为es6引进的语言标准，为异步编程的一种解决方案；</p>
-<p>阅读此文的前提是了解promise的基本用法和特性，比如他自执行特性、状态不可逆特性等</p>
-<h4 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h4><p>且看下面代码和问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(function()&#123;console.log(1)&#125;,0);</span><br><span class="line">new Promise(function(resolve)&#123;</span><br><span class="line">    console.log(2)</span><br><span class="line">    for( var i=0 ; i&lt;10000 ; i++ )&#123;</span><br><span class="line">        i==9999 &amp;&amp; resolve()</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(3)</span><br><span class="line">&#125;).then(function()&#123;</span><br><span class="line">    console.log(4)</span><br><span class="line">&#125;);</span><br><span class="line">console.log(5);</span><br><span class="line">// 这的问题是，为什么答案是 2 3 5 4 1</span><br><span class="line">// 而不是 2 3 5 1 4</span><br></pre></td></tr></table></figure></p>
-<p> 既然promise.then和setTimeout都是异步的，那么在事件循环队列中  promise.then的事件应该排在setTimeout后面，那为什么promise.then却在setTimeout前面被打印了出来？</p>
-<h4 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h4><p>这个问题，我是这么理解的，浏览器读取script标签中的代码也是一个事件队列，Promise的任务会在当前事件循环末尾中执行，而setTimeout中的任务是在下一次事件循环执行</p>
-<p><img src="https://segmentfault.com/img/bVPkJb?w=1350&amp;h=926" alt="image"></p>
-<p>上图为《你不知道的JavaScript》中卷中第二部分的第一章第5小节的内容</p>
-<p>github资源地址：<a href="https://github.com/LeonWuV/leonwuv.github.io/blob/hexo/source/_posts/promise%E5%92%8CsetTimeout%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98.md" target="_blank" rel="noopener">https://github.com/promise和setTimeout执行顺序的问题.md</a></p>
-<p>我的个人博客：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
-<p>csdn博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
+        <p>Prettier是最近很火的一个代码美化工具，其中文意思是“漂亮的、机灵的”，它能够解析代码，使用你自己设定的规则来重新打印出格式规范的代码。</p>
+<p>他的整个圈子很强大，有基于各种编辑器的插件（vs code，atom），有脚本类的，有插件类的（eslint的插件eslint-plugin-prettier）。</p>
+<p>更多有关prettier的信息，请点击 <a href="https://github.com/prettier" target="_blank" rel="noopener">这里</a></p>
+<h4 id="Prettier具有以下几个有优点："><a href="#Prettier具有以下几个有优点：" class="headerlink" title="Prettier具有以下几个有优点："></a>Prettier具有以下几个有优点：</h4><ol>
+<li>可配置化</li>
+<li>支持多种语言</li>
+<li>集成多数的编辑器</li>
+<li>简洁的配置项</li>
+</ol>
+<h4 id="官方给的例子"><a href="#官方给的例子" class="headerlink" title="官方给的例子"></a>官方给的例子</h4><p>使用Prettier在code review时不需要再讨论代码样式，节省了时间与精力。下面使用官方的例子来简单的了解下它的工作方式。</p>
+<p><strong>格式化前</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());</span><br></pre></td></tr></table></figure></p>
+<p><strong>格式化后</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">foo(</span><br><span class="line">  reallyLongArg(),</span><br><span class="line">  omgSoManyParameters(),</span><br><span class="line">  IShouldRefactorThis(),</span><br><span class="line">  isThereSeriouslyAnotherOne()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="几种使用方式"><a href="#几种使用方式" class="headerlink" title="几种使用方式"></a>几种使用方式</h4><h5 id="一、编辑器插件类"><a href="#一、编辑器插件类" class="headerlink" title="一、编辑器插件类"></a>一、编辑器插件类</h5><p>在这里以vs code为例，也是最简单的使用方式，我在这里强烈推荐，我自己也是这么用的。</p>
+<p>这种方式的优点就是开发时随意写，写完后一键格式化。按下快捷键，Prettier就会帮我们重写想要格式化的文件，不需要像eslint那样报错后我们需要一行一行去修改。</p>
+<p>安装vs code的插件Prettier - Code formatter，这里不再赘述如何安装vs code的插件。</p>
+<p>使用方法：</p>
+<blockquote>
+<p>格式化某个文件时，在打开文件的当前页按shift + alt + f</p>
+<p>格式话某段代码时，先选中这段代码，在按 shift + alt + f</p>
+</blockquote>
+<h5 id="二、脚本类"><a href="#二、脚本类" class="headerlink" title="二、脚本类"></a>二、脚本类</h5><p><strong>安装</strong></p>
+<p>使用yarn<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add prettier --dev --exact</span><br><span class="line">// and globally</span><br><span class="line">yarn global add prettier</span><br></pre></td></tr></table></figure></p>
+<p>使用npm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev --save-exact prettier</span><br><span class="line">// and globally</span><br><span class="line">npm install --g prettier</span><br></pre></td></tr></table></figure>
+<p>这里需要全局安装一下prettier，不然prettier命令会无效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//测试是否安装成功</span><br><span class="line">prettier -v</span><br><span class="line">// 会打印出版本号</span><br></pre></td></tr></table></figure>
+<p><strong>使用</strong></p>
+<p>1.使用prettier默认配置规则格式化文件方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">prettier --write &lt;文件路劲+文件名&gt;</span><br><span class="line"></span><br><span class="line">//例如，格式化当前路劲下的aaa.js文件</span><br><span class="line">prettier --write  ./aaa.js</span><br></pre></td></tr></table></figure>
+<p>2.自定义配置文件使用方式</p>
+<p>自定义文件的格式可以有多种</p>
+<ul>
+<li>.prettierrc 文件，支持yaml和json格式；或者加上扩展名也可以，可选的扩展名有 .yaml/.yml/.json</li>
+<li>.prettierrc.toml 文件</li>
+<li>prettier.config.js or .prettierrc.js 返回一个对象</li>
+<li>或者在package.json文件中加上prettier对象</li>
+</ul>
+<p>关于这部分的<a href="https://prettier.io/docs/en/configuration.html" target="_blank" rel="noopener">官方文档</a></p>
+<p>以上这几个文件名是prettier默认会去查找的文件，执行方式为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//默认配置文件都是在根目录下，只要使用了以上几种命名都可使用下面的命令</span><br><span class="line">prettier --config --write &lt;文件路劲+文件名&gt;</span><br><span class="line">// 例如</span><br><span class="line">prettier --config --write ./aaa.js</span><br><span class="line"></span><br><span class="line">//如果配置文件没在根目录下，则需要加上配置文件的路劲</span><br><span class="line">prettier --config &lt;配置文件路径+文件名&gt; --write &lt;文件路劲+文件名&gt;</span><br><span class="line"></span><br><span class="line">//其实他的规则很符合一般脚本规则，比如webpack，eslint，babel等</span><br></pre></td></tr></table></figure>
+<p>json 配置文件写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;semi&quot;: false,</span><br><span class="line">    &quot;singleQuote&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>toml 文件写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#  .prettierrc.toml</span><br><span class="line">semi = false</span><br><span class="line">singleQuote = true</span><br></pre></td></tr></table></figure></p>
+<p>yaml文件写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># .prettierrc</span><br><span class="line">semi: false</span><br><span class="line">singleQuote: true</span><br></pre></td></tr></table></figure>
+<p>js写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// prettier.config.js or .prettierrc.js 返回对象</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  semi: false,</span><br><span class="line">  singleQuote: true</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h5 id="插件类"><a href="#插件类" class="headerlink" title="插件类"></a>插件类</h5><p><strong>这里以eslint为例</strong></p>
+<p>当做eslint的插件来使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//安装</span><br><span class="line">yarn add --dev prettier eslint-plugin-prettier</span><br></pre></td></tr></table></figure></p>
+<p>在eslint的配置文件中添加配置</p>
+<p>在.eslintrc 或者 .eslintrc.json 或者 .eslintrc.js文件中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;plugins&quot;: [&quot;prettier&quot;],</span><br><span class="line">  &quot;rules&quot;: &#123;</span><br><span class="line">    &quot;prettier/prettier&quot;: &quot;error&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我的个人博客地址：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
+<p>github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/%E7%A0%81%E5%86%9C%E5%B7%A5%E5%85%B7/Prettier%E7%9A%84%E4%B8%89%E7%A7%8D%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.md" target="_blank" rel="noopener">关于代码格式化工具Prettier的多种使用方法总结</a></p>
+<p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
 <p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
 <p>邮箱：wuxiaolong802@163.com</p>
 
@@ -422,7 +463,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/es6/" rel="tag"># es6</a>
+            <a href="/tags/码农工具/" rel="tag"># 码农工具</a>
           
         </div>
       
@@ -435,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/19/js获取一个字符串中个数最多的字母/" rel="next" title="js获取一个字符串中个数最多的字母">
-                <i class="fa fa-chevron-left"></i> js获取一个字符串中个数最多的字母
+              <a href="/2018/09/22/npm常见命令/" rel="next" title="npm常见命令">
+                <i class="fa fa-chevron-left"></i> npm常见命令
               </a>
             
           </div>
@@ -444,10 +485,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/03/深入理解弹性盒flex布局/" rel="prev" title="深入理解弹性盒flex布局">
-                深入理解弹性盒flex布局 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -616,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抛出问题"><span class="nav-number">2.</span> <span class="nav-text">抛出问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#答案"><span class="nav-number">3.</span> <span class="nav-text">答案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Prettier具有以下几个有优点："><span class="nav-number">1.</span> <span class="nav-text">Prettier具有以下几个有优点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#官方给的例子"><span class="nav-number">2.</span> <span class="nav-text">官方给的例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几种使用方式"><span class="nav-number">3.</span> <span class="nav-text">几种使用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、编辑器插件类"><span class="nav-number">3.1.</span> <span class="nav-text">一、编辑器插件类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、脚本类"><span class="nav-number">3.2.</span> <span class="nav-text">二、脚本类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插件类"><span class="nav-number">3.3.</span> <span class="nav-text">插件类</span></a></li></ol></li></ol></div>
             
 
           </div>
