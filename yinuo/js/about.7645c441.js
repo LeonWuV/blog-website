@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{"5fa4":function(e,t,n){"use strict";n.r(t);var a=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},i=[function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"home"},[n("div",[e._v("diary")])])}],r={},s=r,l=n("2877"),u=Object(l["a"])(s,a,i,!1,null,null,null);u.options.__file="Diary.vue";t["default"]=u.exports}}]);
+//# sourceMappingURL=about.7645c441.js.map
