@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js基础进阶," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基本知识1. Ajax是什么？答：Ajax是一种可以在浏览器和服务器之间使用异步数据传输（HTTP请求）的技术。使用它可以让页面请求少量的数据，而不用刷新整个页面。而传统的页面（不使用Ajax）要刷新部分内容，必须重载整个网页页面。 2. Ajax基于什么？答：它基于的是XMLHttpRequest（XHR）。这是一个比较粗糙的API，不符合关注分离的设计原则（Separation of Conc">
+<meta name="keywords" content="js基础进阶">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js基础进阶--从ajax到fetch的理解">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/12/26/js基础进阶--从ajax到fetch的理解/index.html">
+<meta property="og:site_name" content="Leon Private">
+<meta property="og:description" content="基本知识1. Ajax是什么？答：Ajax是一种可以在浏览器和服务器之间使用异步数据传输（HTTP请求）的技术。使用它可以让页面请求少量的数据，而不用刷新整个页面。而传统的页面（不使用Ajax）要刷新部分内容，必须重载整个网页页面。 2. Ajax基于什么？答：它基于的是XMLHttpRequest（XHR）。这是一个比较粗糙的API，不符合关注分离的设计原则（Separation of Conc">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-26T15:54:01.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js基础进阶--从ajax到fetch的理解">
+<meta name="twitter:description" content="基本知识1. Ajax是什么？答：Ajax是一种可以在浏览器和服务器之间使用异步数据传输（HTTP请求）的技术。使用它可以让页面请求少量的数据，而不用刷新整个页面。而传统的页面（不使用Ajax）要刷新部分内容，必须重载整个网页页面。 2. Ajax基于什么？答：它基于的是XMLHttpRequest（XHR）。这是一个比较粗糙的API，不符合关注分离的设计原则（Separation of Conc">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":5},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/12/26/js基础进阶--从ajax到fetch的理解/"/>
+
+
+
+
+
+  <title>js基础进阶--从ajax到fetch的理解 | Leon Private</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	 <a href="https://github.com/LeonWuV?tab=repositories"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leon Private</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome Everyone To Exchange</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user-circle-o"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/12/26/js基础进阶--从ajax到fetch的理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wuxiaolong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my-logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leon Private">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js基础进阶--从ajax到fetch的理解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-26T23:53:02+08:00">
+                2018-12-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,372字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 </span>
+                
+                <span title="阅读时长">
+                  6分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h4><h5 id="1-Ajax是什么？"><a href="#1-Ajax是什么？" class="headerlink" title="1. Ajax是什么？"></a>1. Ajax是什么？</h5><p>答：Ajax是一种可以在浏览器和服务器之间使用异步数据传输（HTTP请求）的技术。使用它可以让页面请求少量的数据，而不用刷新整个页面。而传统的页面（不使用Ajax）要刷新部分内容，必须重载整个网页页面。</p>
+<h5 id="2-Ajax基于什么？"><a href="#2-Ajax基于什么？" class="headerlink" title="2. Ajax基于什么？"></a>2. Ajax基于什么？</h5><p>答：它基于的是XMLHttpRequest（XHR）。这是一个比较粗糙的API，不符合关注分离的设计原则（Separation of Concerns），配置和使用都不是那么友好。</p>
+<h5 id="3-Ajax的库？"><a href="#3-Ajax的库？" class="headerlink" title="3. Ajax的库？"></a>3. Ajax的库？</h5><p>答：基于上面的原因，各种ajax库引用而生，然而最有名的就是jQuery的API中的 $.ajax() 。 $.ajax() 它的一个优势异步操作，但jQuery的异步操作是基于事件的异步模型，没有promise那么友好。</p>
+<h5 id="4-fetch产生的背景？"><a href="#4-fetch产生的背景？" class="headerlink" title="4. fetch产生的背景？"></a>4. fetch产生的背景？</h5><p>答：综合上面所讲的各种因素，fetch这个api应运而生，它和XMLHttpRequest都是浏览器window对象的原生api。但好用归好用，它存在着一些问题（这个问题下面详讲，并讲解相对应的解决方案），再加上兼容性问题（ie11以下压根不支持），所以很多开发者使用了axios这个第三方库。</p>
+<h5 id="5-支持promise的库（axios）？"><a href="#5-支持promise的库（axios）？" class="headerlink" title="5. 支持promise的库（axios）？"></a>5. 支持promise的库（axios）？</h5><p>答：axios 这个库现在是一个比较通用的行业解决方案，axios 流行开来的一个原因是promise，另一个原因是基于数据操作的库的流行（vue.js, angular.js, react.js等），而传统的jQuery是基于dom操作的库。但它也存在着缺陷，就是我们使用前，要保证这个库已经被引入。</p>
+<p>其实，就我个人而言，我还是比较喜欢使用fetch的。在开发中遇到兼容性的问题，只需要同构fetch即可，而不需要额外的引入一个库。下面就重点说一下fetch。</p>
+<h4 id="fetch-的使用"><a href="#fetch-的使用" class="headerlink" title="fetch 的使用"></a>fetch 的使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fetch(url, options)</span><br><span class="line">    .then(response =&gt; console.log(responese))</span><br><span class="line">    .catch(err =&gt; console.log(err))</span><br></pre></td></tr></table></figure>
+<p>url：请求的地址</p>
+<p>options： 请求的相关参数配置</p>
+<p>response：请求返回的对象</p>
+<p>then：正常返回数据</p>
+<p>catch： 返回异常</p>
+<p>请求参数配置 options 详情可参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch#%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0" target="_blank" rel="noopener">MDN fetch</a>  我在这里就不再赘述</p>
+<h4 id="fetch存在的问题及解决方案"><a href="#fetch存在的问题及解决方案" class="headerlink" title="fetch存在的问题及解决方案"></a>fetch存在的问题及解决方案</h4><ol>
+<li>fetch得到数据你需要两个步骤<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fetch(&apos;https://api.github.com/users&apos;)</span><br><span class="line">    .then(res =&gt; &#123;</span><br><span class="line">        console.log(res)</span><br><span class="line">        return res.text()</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(data =&gt; &#123;</span><br><span class="line">        console.log(data)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>fetch的使用需要浏览器支持promise， fetch的返回值也是一个promise对象；</p>
+<p>通过上面的代码，可以发现直接打印返回的 Response 对象中压根就没有数据，要想获取到所需的数据，必须经一个中间的方法 response.text() （<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch#Body" target="_blank" rel="noopener">fetch提供了5中方法</a>），如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 具体功能请自行查阅</span><br><span class="line">arrayBuffer()</span><br><span class="line">blob()</span><br><span class="line">json()</span><br><span class="line">text()</span><br><span class="line">formData()</span><br></pre></td></tr></table></figure></p>
+<p> 而fetch的封装库axios解决了这个问题，使用起来就要方便的多，它返回的 Response 对象中却有数据，在 data 属性内。参考代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">axios.get(&apos;https://api.github.com/users&apos;)</span><br><span class="line">    .then(res =&gt; console.log(res));</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>fetch的请求默认是不带 cookie</li>
+</ol>
+<p>解决这个问题，需要在 options 中配置 {credentials: ‘include’}</p>
+<ol>
+<li>并非所有的请求错误都会 reject</li>
+</ol>
+<p>也就是说 catch 方法并不能捕获所有的错误，当错误可以用一个状态码（如：404，500等）的形式表示时，fetch 返回的 Promise 不会拥有reject，只有当网络故障或请求被阻止时 catch 才有效。</p>
+<p>解决这个问题，我们可判断 Response 对象中的 ok 是否为true，如果不是，用 Promise 手动添加一个 reject 即可。参考代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">fetch(&apos;https://api.github.com/usrs&apos;)</span><br><span class="line">    .then(res =&gt; &#123;</span><br><span class="line">        if (res.ok) &#123;</span><br><span class="line">            return res.text()</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return Promise.reject(&apos;请求失败&apos;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(data =&gt; &#123;</span><br><span class="line">        console.log(data)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(err =&gt; &#123;</span><br><span class="line">        console.log(err)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>当然，如果是用axios库就不需要考虑这个问题，因为axios已经为我们封装好了；</p>
+<h4 id="fetch和async、await在实际中一起使用"><a href="#fetch和async、await在实际中一起使用" class="headerlink" title="fetch和async、await在实际中一起使用"></a>fetch和async、await在实际中一起使用</h4><p>async和await是es7的api，在实际开发中加入一些polyfill库，比如最流行的的babel，我们就可以使用它们了；</p>
+<p>如果你还不了解它们，请跳转至：<a href="https://www.cnblogs.com/SamWeb/p/8417940.html" target="_blank" rel="noopener">用async/await来处理异步</a></p>
+<p>在实际中我们会经常遇到异步嵌套的问题，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">fetch(&apos;https://api.github.com/usrs&apos;)</span><br><span class="line">    .then(res =&gt; &#123;</span><br><span class="line">        if (res.ok) &#123;</span><br><span class="line">            return res.text()</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return Promise.reject(&apos;请求失败&apos;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(data =&gt; &#123;</span><br><span class="line">        let url = data.url</span><br><span class="line">        </span><br><span class="line">        fetch(url)</span><br><span class="line">        .then(res =&gt; &#123;</span><br><span class="line">            if (res.ok) &#123;</span><br><span class="line">                return res.text()</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                return Promise.reject(&apos;请求失败&apos;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .then(data =&gt; &#123;</span><br><span class="line">            console.log(data)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(err =&gt; &#123;</span><br><span class="line">        console.log(err)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<p>上面就是在收到相应之后再发起一个请求，这样的代码是不是看着很难受；</p>
+<p>下面我们来用async和await改一下，感受一下用同步的方式写异步的感觉：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 封装aa</span><br><span class="line">async function aa() &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        let res = await fetch(&apos;https://api.github.com/usrs&apos;)</span><br><span class="line">        let data = await res.text()</span><br><span class="line">        let url = data.url</span><br><span class="line">        let res1 = await fetch(url)</span><br><span class="line">        let data1 = await res1.text()</span><br><span class="line">        console.log(data)</span><br><span class="line">    &#125; catch(e) &#123;</span><br><span class="line">        console.log(&quot;error&quot;, e)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 调用aa</span><br><span class="line">aa()</span><br></pre></td></tr></table></figure></p>
+<p>看看上面的代码是不是舒服多了 ，也简单多了；</p>
+<p>github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/js%E5%9F%BA%E7%A1%80%E8%BF%9B%E9%98%B6/js%E5%9F%BA%E7%A1%80%E8%BF%9B%E9%98%B6--%E4%BB%8Eajax%E5%88%B0fetch%E7%9A%84%E7%90%86%E8%A7%A3.md" target="_blank" rel="noopener">js基础进阶–从ajax到fetch的理解</a></p>
+<p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
+<p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
+<p>邮箱：wuxiaolong802@163.com</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/chatpay.png" alt="wuxiaolong 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wuxiaolong 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js基础进阶/" rel="tag"># js基础进阶</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/24/git -- git emoji列表（github commit 前面的小icon）/" rel="next" title="git -- git emoji列表（github commit 前面的小icon）">
+                <i class="fa fa-chevron-left"></i> git -- git emoji列表（github commit 前面的小icon）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/my-logo.png"
+                alt="wuxiaolong" />
+            
+              <p class="site-author-name" itemprop="name">wuxiaolong</p>
+              <p class="site-description motion-element" itemprop="description">This is a place share code</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/LeonWuV/leonwuv.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wuxiaolong802@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://blog.csdn.net/wxl1555" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-book"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide" target="_blank" title="MDN">
+                      
+                        <i class="fa fa-fw fa-share-square"></i>MDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-list"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.enjoychineselearning.com/" title="媳妇网站" target="_blank">媳妇网站</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本知识"><span class="nav-number">1.</span> <span class="nav-text">基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-Ajax是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">1. Ajax是什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-Ajax基于什么？"><span class="nav-number">1.2.</span> <span class="nav-text">2. Ajax基于什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Ajax的库？"><span class="nav-number">1.3.</span> <span class="nav-text">3. Ajax的库？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-fetch产生的背景？"><span class="nav-number">1.4.</span> <span class="nav-text">4. fetch产生的背景？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-支持promise的库（axios）？"><span class="nav-number">1.5.</span> <span class="nav-text">5. 支持promise的库（axios）？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fetch-的使用"><span class="nav-number">2.</span> <span class="nav-text">fetch 的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fetch存在的问题及解决方案"><span class="nav-number">3.</span> <span class="nav-text">fetch存在的问题及解决方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fetch和async、await在实际中一起使用"><span class="nav-number">4.</span> <span class="nav-text">fetch和async、await在实际中一起使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wuxiaolong</span>
+
+  
+</div>
+
+
+  <div class="powered-by"> <a class="theme-link" target="_blank" href="http://blog.csdn.net/wxl1555">我的CSDN</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+  <span class="post-meta-divider">|</span>
+
+
+  <div class="theme-info"> <a class="theme-link" target="_blank" href="http://www.enjoychineselearning.com">媳妇网站</a> </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
