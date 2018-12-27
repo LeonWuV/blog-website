@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vue," />
+  <meta name="keywords" content="nodejs," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言在用vue-cli3做组件测试时，出现个问题，记录一下 报错如下 Cannot set property ‘render’ of undefined 解决方案后来发现是因为 组件里写了script标签，没写 export default {} 加上这句话之后就好使了  我的个人博客地址：http://www.xiaolongwu.cn github资源地址：vue – Cannot set p">
-<meta name="keywords" content="vue">
+<meta name="description" content="前言我们在写nodejs时，是不是有这样的痛点，每次改完代码后都需要重启node服务，这个是很操蛋的事情。 nodemon介绍在这里，我要给大家介绍一个自动重启工具，他就是nodemon； nodemon会监听项目路径下的文件，如果发生变化就会重启服务，那么他就完美解决了我们上面说的每次改完代码需要手动重启服务的痛点； 当然在github上也有很多相关功能的工具，比如forever、node-de">
+<meta name="keywords" content="nodejs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue -- Cannot set property &#39;render&#39; of undefined解决方法">
-<meta property="og:url" content="http://xiaolongwu.cn/2018/11/15/vue -- Cannot set property 'render' of undefined解决方法/index.html">
+<meta property="og:title" content="nodejs--自动重启工具nodemon简介">
+<meta property="og:url" content="http://xiaolongwu.cn/2018/12/28/nodejs--自动重启工具nodemon简介/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="前言在用vue-cli3做组件测试时，出现个问题，记录一下 报错如下 Cannot set property ‘render’ of undefined 解决方案后来发现是因为 组件里写了script标签，没写 export default {} 加上这句话之后就好使了  我的个人博客地址：http://www.xiaolongwu.cn github资源地址：vue – Cannot set p">
+<meta property="og:description" content="前言我们在写nodejs时，是不是有这样的痛点，每次改完代码后都需要重启node服务，这个是很操蛋的事情。 nodemon介绍在这里，我要给大家介绍一个自动重启工具，他就是nodemon； nodemon会监听项目路径下的文件，如果发生变化就会重启服务，那么他就完美解决了我们上面说的每次改完代码需要手动重启服务的痛点； 当然在github上也有很多相关功能的工具，比如forever、node-de">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-15T09:23:17.241Z">
+<meta property="og:updated_time" content="2018-12-27T17:42:32.010Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue -- Cannot set property &#39;render&#39; of undefined解决方法">
-<meta name="twitter:description" content="前言在用vue-cli3做组件测试时，出现个问题，记录一下 报错如下 Cannot set property ‘render’ of undefined 解决方案后来发现是因为 组件里写了script标签，没写 export default {} 加上这句话之后就好使了  我的个人博客地址：http://www.xiaolongwu.cn github资源地址：vue – Cannot set p">
+<meta name="twitter:title" content="nodejs--自动重启工具nodemon简介">
+<meta name="twitter:description" content="前言我们在写nodejs时，是不是有这样的痛点，每次改完代码后都需要重启node服务，这个是很操蛋的事情。 nodemon介绍在这里，我要给大家介绍一个自动重启工具，他就是nodemon； nodemon会监听项目路径下的文件，如果发生变化就会重启服务，那么他就完美解决了我们上面说的每次改完代码需要手动重启服务的痛点； 当然在github上也有很多相关功能的工具，比如forever、node-de">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2018/11/15/vue -- Cannot set property 'render' of undefined解决方法/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2018/12/28/nodejs--自动重启工具nodemon简介/"/>
 
 
 
 
 
-  <title>vue -- Cannot set property 'render' of undefined解决方法 | Leon Private</title>
+  <title>nodejs--自动重启工具nodemon简介 | Leon Private</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/11/15/vue -- Cannot set property 'render' of undefined解决方法/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/12/28/nodejs--自动重启工具nodemon简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue -- Cannot set property 'render' of undefined解决方法</h1>
+          <h1 class="post-title" itemprop="name headline">nodejs--自动重启工具nodemon简介</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T17:21:11+08:00">
-                2018-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-28T01:42:15+08:00">
+                2018-12-28
               </time>
             
 
@@ -324,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  149字
+                  363字
                 </span>
               
 
@@ -361,13 +361,14 @@
       
 
       
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在用vue-cli3做组件测试时，出现个问题，记录一下</p>
-<p>报错如下 Cannot set property ‘render’ of undefined</p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>后来发现是因为 组件里写了script标签，没写 export default {}</p>
-<p>加上这句话之后就好使了</p>
-<hr>
-<p>我的个人博客地址：<a href="http://www.xiaolongwu.cn" target="_blank" rel="noopener">http://www.xiaolongwu.cn</a></p>
-<p>github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/vue/vue%20--%20Cannot%20set%20property%20&#39;render&#39;%20of%20undefined%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md" target="_blank" rel="noopener">vue – Cannot set property ‘render’ of undefined解决方法</a></p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>我们在写nodejs时，是不是有这样的痛点，每次改完代码后都需要重启node服务，这个是很操蛋的事情。</p>
+<h4 id="nodemon介绍"><a href="#nodemon介绍" class="headerlink" title="nodemon介绍"></a>nodemon介绍</h4><p>在这里，我要给大家介绍一个自动重启工具，他就是nodemon；</p>
+<p>nodemon会监听项目路径下的文件，如果发生变化就会重启服务，那么他就完美解决了我们上面说的每次改完代码需要手动重启服务的痛点；</p>
+<p>当然在github上也有很多相关功能的工具，比如forever、node-dev等，在这里我们主要说nodemon，如果你对其他的有兴趣，可以自行查看；</p>
+<p>nodemon能流行起来的原因就是他使用简单，可配置性高；</p>
+<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><p>博主以npm包管理器为例，其他的不在赘述；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 安装</span><br><span class="line">npm install -g nodemon</span><br><span class="line"></span><br><span class="line">// 启动node服务</span><br><span class="line">nodemon server.js   //相当于node server.js</span><br></pre></td></tr></table></figure></p>
+<p>我们有时可能需要让nodemon忽略某个文件、需要debug模式等等，这些就需要在nodemon的配置文件中去配置，详细配置文档请跳转至<a href="https://github.com/remy/nodemon" target="_blank" rel="noopener">github仓库查看doc</a>；</p>
+<p>我的github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/nodejs/nodejs--%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AF%E5%B7%A5%E5%85%B7nodemon%E7%AE%80%E4%BB%8B.md" target="_blank" rel="noopener">nodejs–自动重启工具nodemon简介</a></p>
 <p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
 <p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
 <p>邮箱：wuxiaolong802@163.com</p>
@@ -417,7 +418,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
+            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
           
         </div>
       
@@ -430,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/22/You are using the runtime-only build of Vue where the template compiler is not a/" rel="next" title="You are using the runtime-only build of Vue where the template compiler is not a">
-                <i class="fa fa-chevron-left"></i> You are using the runtime-only build of Vue where the template compiler is not a
+              <a href="/2018/12/26/js基础进阶--从ajax到fetch的理解/" rel="next" title="js基础进阶--从ajax到fetch的理解">
+                <i class="fa fa-chevron-left"></i> js基础进阶--从ajax到fetch的理解
               </a>
             
           </div>
@@ -439,10 +440,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/15/vue -- 父组件通过$refs获取子组件的值和方法/" rel="prev" title="vue -- 父组件通过$refs获取子组件的值和方法">
-                vue -- 父组件通过$refs获取子组件的值和方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -611,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nodemon介绍"><span class="nav-number">2.</span> <span class="nav-text">nodemon介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用"><span class="nav-number">3.</span> <span class="nav-text">如何使用</span></a></li></ol></div>
             
 
           </div>
