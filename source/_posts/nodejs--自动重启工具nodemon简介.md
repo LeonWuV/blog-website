@@ -28,6 +28,11 @@ nodemon server.js   //相当于node server.js
 
 ```
 
+如果想手动重启node项目，在终端中输入rs即可，如下图所示。
+
+
+![https://raw.githubusercontent.com/LeonWuV/ftp/master/pictures/nodemon/1545962846(1).png](https://raw.githubusercontent.com/LeonWuV/ftp/master/pictures/nodemon/1545962846(1).png)
+
 我们有时可能需要让nodemon忽略某个文件、需要debug模式等等，这些就需要在nodemon的配置文件中去配置，详细配置文档请跳转至[github仓库查看doc](https://github.com/remy/nodemon)；
 
 
