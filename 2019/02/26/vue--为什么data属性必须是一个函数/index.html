@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript基础," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言在开发中，兼容性问题是最常见的，今天就来介绍一下关于获取滚动条高度的兼容性写法，宽度同理，我在这里就不一一解释了 各浏览器的写法 IE6/7/8   1document.documentElement.scrollTop  IE9以上  1window.pageYOffset或者document.documentElement.scrollTop  Safari  1window.pageYO">
-<meta name="keywords" content="JavaScript基础">
+<meta name="description" content="前言老规矩，我们还是先说为什么。 问题描述：为什么在vue组件中，我们的data属性必须是一个函数,new Vue()中的data除外，因为new Vue中只有一个data属性。 原因：因为我们能抽离出来的组件，肯定是具有复用性的，它在项目中会存在多个实例。如果data属性值是一个对象时，那么它所有的实例都会共享这些数据，这是很麻烦的事情，你不能确保你的所有实例中的属性值都不会重复。 我们的期望是">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js基础--获取浏览器当前页面的滚动条高度的兼容写法">
-<meta property="og:url" content="http://xiaolongwu.cn/2018/03/28/js基础--获取浏览器当前页面的滚动条高度的兼容写法/index.html">
+<meta property="og:title" content="vue--为什么data属性必须是一个函数">
+<meta property="og:url" content="http://xiaolongwu.cn/2019/02/26/vue--为什么data属性必须是一个函数/index.html">
 <meta property="og:site_name" content="Leon Private">
-<meta property="og:description" content="前言在开发中，兼容性问题是最常见的，今天就来介绍一下关于获取滚动条高度的兼容性写法，宽度同理，我在这里就不一一解释了 各浏览器的写法 IE6/7/8   1document.documentElement.scrollTop  IE9以上  1window.pageYOffset或者document.documentElement.scrollTop  Safari  1window.pageYO">
+<meta property="og:description" content="前言老规矩，我们还是先说为什么。 问题描述：为什么在vue组件中，我们的data属性必须是一个函数,new Vue()中的data除外，因为new Vue中只有一个data属性。 原因：因为我们能抽离出来的组件，肯定是具有复用性的，它在项目中会存在多个实例。如果data属性值是一个对象时，那么它所有的实例都会共享这些数据，这是很麻烦的事情，你不能确保你的所有实例中的属性值都不会重复。 我们的期望是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-13T14:58:13.410Z">
+<meta property="og:updated_time" content="2019-02-26T09:42:19.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js基础--获取浏览器当前页面的滚动条高度的兼容写法">
-<meta name="twitter:description" content="前言在开发中，兼容性问题是最常见的，今天就来介绍一下关于获取滚动条高度的兼容性写法，宽度同理，我在这里就不一一解释了 各浏览器的写法 IE6/7/8   1document.documentElement.scrollTop  IE9以上  1window.pageYOffset或者document.documentElement.scrollTop  Safari  1window.pageYO">
+<meta name="twitter:title" content="vue--为什么data属性必须是一个函数">
+<meta name="twitter:description" content="前言老规矩，我们还是先说为什么。 问题描述：为什么在vue组件中，我们的data属性必须是一个函数,new Vue()中的data除外，因为new Vue中只有一个data属性。 原因：因为我们能抽离出来的组件，肯定是具有复用性的，它在项目中会存在多个实例。如果data属性值是一个对象时，那么它所有的实例都会共享这些数据，这是很麻烦的事情，你不能确保你的所有实例中的属性值都不会重复。 我们的期望是">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaolongwu.cn/2018/03/28/js基础--获取浏览器当前页面的滚动条高度的兼容写法/"/>
+  <link rel="canonical" href="http://xiaolongwu.cn/2019/02/26/vue--为什么data属性必须是一个函数/"/>
 
 
 
 
 
-  <title>js基础--获取浏览器当前页面的滚动条高度的兼容写法 | Leon Private</title>
+  <title>vue--为什么data属性必须是一个函数 | Leon Private</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2018/03/28/js基础--获取浏览器当前页面的滚动条高度的兼容写法/">
+    <link itemprop="mainEntityOfPage" href="http://xiaolongwu.cn/2019/02/26/vue--为什么data属性必须是一个函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuxiaolong">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js基础--获取浏览器当前页面的滚动条高度的兼容写法</h1>
+          <h1 class="post-title" itemprop="name headline">vue--为什么data属性必须是一个函数</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T21:05:10+08:00">
-                2018-03-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T17:34:10+08:00">
+                2019-02-26
               </time>
             
 
@@ -324,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  268字
+                  359字
                 </span>
               
 
@@ -361,34 +361,17 @@
       
 
       
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在开发中，兼容性问题是最常见的，今天就来介绍一下关于获取滚动条高度的兼容性写法，宽度同理，我在这里就不一一解释了</p>
-<h4 id="各浏览器的写法"><a href="#各浏览器的写法" class="headerlink" title="各浏览器的写法"></a>各浏览器的写法</h4><ul>
-<li>IE6/7/8 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.scrollTop</span><br></pre></td></tr></table></figure>
-<ul>
-<li>IE9以上</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.pageYOffset或者document.documentElement.scrollTop</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Safari</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.pageYOffset 与document.body.scrollTop</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Firefox</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.pageYOffset 或者 document.documentElement.scrollTop</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Chrome</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.scrollTop</span><br></pre></td></tr></table></figure>
-<h4 id="具体的写法"><a href="#具体的写法" class="headerlink" title="具体的写法"></a>具体的写法</h4><p>通过上面列出的主流浏览器的兼容性，其实我们不难看出，其实只要我们判断到document.body.scrollTop和document.documentElement.scrollTop就会包括上面所有的浏览器；故最终的写法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">console.log(scrollTop);</span><br></pre></td></tr></table></figure>
-<p>如果需要监听滚动条，那么就监听onscroll事件即可；如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">document.body.onscroll = function()&#123;</span><br><span class="line">    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">    console.log(scrollTop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>我的CSDN博客：<a href="http://blog.csdn.net/wxl1555" target="_blank" rel="noopener">http://blog.csdn.net/wxl1555</a></strong></p>
-<p><strong>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</strong></p>
-<p><strong>邮箱：wuxiaolong802@163.com</strong></p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>老规矩，我们还是先说为什么。</p>
+<p>问题描述：为什么在vue组件中，我们的data属性必须是一个函数,new Vue()中的data除外，因为new Vue中只有一个data属性。</p>
+<p>原因：因为我们能抽离出来的组件，肯定是具有复用性的，它在项目中会存在多个实例。如果data属性值是一个对象时，那么它所有的实例都会共享这些数据，这是很麻烦的事情，你不能确保你的所有实例中的属性值都不会重复。</p>
+<p>我们的期望是，组件的每个实例都能独立的维护自己的数据。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>我们都知道，在JavaScript中，函数具有独立作用域快的特点，外部是无法访问其内部的变量。</p>
+<p>试想一下，如果我们组件中的data返回一个函数，他的每个实例就会有自己的作用域空间，也就是独立的数据，每个实例之间不会相互影响。</p>
+<p>所以，组件中的data属性必须是一个函数。</p>
+<p>github资源地址：<a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/vue/vue--%E4%B8%BA%E4%BB%80%E4%B9%88data%E5%B1%9E%E6%80%A7%E5%BF%85%E9%A1%BB%E6%98%AF%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0.md" target="_blank" rel="noopener">vue–为什么data属性必须是一个函数</a></p>
+<p>我的CSDN博客地址：<a href="https://blog.csdn.net/wxl1555" target="_blank" rel="noopener">https://blog.csdn.net/wxl1555</a></p>
+<p>如果您对我的博客内容有疑惑或质疑的地方，请在下方评论区留言，或邮件给我，共同学习进步。</p>
+<p>邮箱：wuxiaolong802@163.com</p>
 
       
     </div>
@@ -435,7 +418,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript基础/" rel="tag"># JavaScript基础</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -448,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/27/js基础--如何判断浏览器标签页是隐藏或者显示状态/" rel="next" title="js基础--如何判断浏览器标签页是隐藏或者显示状态">
-                <i class="fa fa-chevron-left"></i> js基础--如何判断浏览器标签页是隐藏或者显示状态
+              <a href="/2019/02/19/es6 -- 默认参数Default，不定参数Rest，扩展运算符Spread详解/" rel="next" title="es6 -- 默认参数Default，不定参数Rest，扩展运算符Spread详解">
+                <i class="fa fa-chevron-left"></i> es6 -- 默认参数Default，不定参数Rest，扩展运算符Spread详解
               </a>
             
           </div>
@@ -457,10 +440,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/30/css基础--深入理解opacity和rgba的区别/" rel="prev" title="css基础--深入理解opacity和rgba的区别">
-                css基础--深入理解opacity和rgba的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -629,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各浏览器的写法"><span class="nav-number">2.</span> <span class="nav-text">各浏览器的写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体的写法"><span class="nav-number">3.</span> <span class="nav-text">具体的写法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
             
 
           </div>
